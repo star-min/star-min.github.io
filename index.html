@@ -1,29 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>크로스미디어</title>
+
+    <meta name="url" content="https://www.sktelecom.com/index.html">
+    <meta name="title" content="SKtelecom">
+    <meta name="description" content="SKtelecom 기업정보,주가정보,경영정보,메타버스">
+    <meta name="keywords" content="SK텔레콤,SKtelecom,메타버스">
+
+    <meta property="og:url" content="https://www.sktelecom.com/index.html">
+    <meta property="og:title" content="SKtelecom">
+    <meta property="og:description" content="SKtelecom 기업정보,주가정보,경영정보,메타버스">
+    <meta property="og:image" content="./img/art_547244_1624353913.jpg">
+
+    <title>SKtelecom</title>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+<!--
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+    <style>
+          @font-face {
+        font-family: 'scB';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    } 
+    @font-face {
+        font-family: 'ROKAF';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSlabSerifBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    } 
+    </style>
+-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" href="./css/normalize.css">
+
+<style>
+    * { margin: 0; padding: 0; }
+    body, html { font-family: 'Noto Sans KR', sans-serif; width: 100%; } 
+    ul { list-style: none; } 
+    a { text-decoration: none; color: #333; }
+
+ /*   .vs_tit { font-family: 'scB'; }
+    .vs_com { font-family: 'Nanum Gothic', sans-serif; } */
+    i[class*='xi'] { font-size:28px; color:#000; }
+    i[class*='xi']:hover { color:rgb(226, 55, 25); }
+
+    .wrap { clear:both; width: 100%; }
+    #hd { clear:both; width: 100%;  }
+    .hd_wrap { clear:both; width: 1280px; margin: 0 auto; }
+    .logo { display:block; width: 250px; float:left; }
+    .logo img { display:block; width: 100%; }
+    #gnb { float:left; }
+    #gnb > ul > li { float:left; padding-left: 50px; padding-right: 20px;  }
+    #gnb > ul > li > span { display:block; line-height: 36px; cursor:pointer; }
+
+    #tnb { float:right; }
+
+    #content { clear:both; width: 100%; }
+    #ft { clear:both; width: 100%; }
+
+</style>
 </head>
 <body>
-    <h1>Navigator 객체</h1>
-    <script>
-    for(var key in navigator){
-        document.write(key+" : "+navigator[key]+"<br>");
-    }    
-    console.log(navigator.vendor); 
-    console.log(navigator.platform); 
-    // 여기부터 크로스미디어 구현
-    var desk = "win16|win32|win64|mac|macintel|linux"; //데스크탑 운영체제의 종류를 저장
-    if(navigator.platform) {
-        if(desk.indexOf(navigator.platform.toLowerCase()) < 0) { //현재 브라우저의 운영체제와 미리 저장한 운영체제를 비교
-            location.href = "mobile.html";
-        } else {
-            location.href = "desktop.html";
-        }
-    }
-    //여기까지
-    </script>
+
+    <div class="wrap">
+        <header id="hd">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo">
+                    <img src="./img/art_547244_1624353913.jpg" alt="로고">
+                </a>
+                <nav id="gnb">
+                    <ul>
+                        <li>
+                            <span>회사소개</span>
+                            <ul class="sub">
+                                <li><a href="https://www.sktelecom.com/view/introduce/vision.do">비전</a></li>
+                                <li><a href="https://www.sktelecom.com/view/introduce/mobile.do">사업소개</a></li>
+                                <li><a href="https://www.sktelecom.com/view/introduce/history.do">연혁</a></li>
+                                <li><a href="https://www.sktelecom.com/view/introduce/brand.do">Cl/Bl</a></li>
+                                <li><a href="https://www.sktelecom.com/view/introduce/sports.do">스포츠</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>지속가능경영</span>
+                            <ul class="sub">
+                                <li><a href="https://www.youtube.com/watch?v=wGNn1yS_IZM&list=PLhp6UuAYrPtpKClw14KDGOSNNUOlLKnzh">[ESG스토리]</a></li>
+                                <li><a href="https://www.sktelecom.com/view/manage/intro.do">ESG추진방향</a></li>
+                                <li><a href="https://www.sktelecom.com/view/manage/csr.do">ESG추진체계</a></li>
+                                <li><a href="https://www.sktelecom.com/view/manage/policy.do">이해관계자 참여</a></li>
+                                <li><a href="https://www.sktelecom.com/manage/lib/persist.do">지속경영자료실</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>경영정보</span>
+                            <ul class="sub">
+                                <li><a href="https://www.sktelecom.com/view/investor/structure.do">지배구조</a></li>
+                                <li><a href="https://www.sktelecom.com/view/investor/meeting.do">주주총회</a></li>
+                                <li><a href="https://www.sktelecom.com/view/investor/incorporation.do">정관</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>재무정보</span>
+                            <ul class="sub">
+                                <li><a href="https://www.sktelecom.com/view/investor/highlight.do">재무 하이라이트</a></li>
+                                <li><a href="https://www.sktelecom.com/view/investor/creditgrade.do">신용등급</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>주식정보</span>
+                            <ul class="sub">
+                                <li><a href="https://www.sktelecom.com/view/investor/state.do">주주현황</a></li>
+                                <li><a href="https://www.sktelecom.com/view/investor/return.do">주주환원</a></li>
+                                <li><a href="https://dividend.sktelecom.com/main.do">배당조회</a></li>
+                                <li><a href="https://www.sktelecom.com/view/investor/information.do">주가정보</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <p id="tnb">
+                    <a href="">로그인</a>
+                    <a href="">사이트맵</a>
+                    <a href="">오시는길</a>
+                </p>
+            </div>
+        </header>
+        <div id="content">
+            <figure id="vs">
+                <ul class="img_box">
+                    <li>
+                        <a href="https://www.sktelecom.com/view/introduce/vision.do">
+                            <img src="" alt="비전" class="pic">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">AI & Digital Infra <br>서비스 컴퍼니</h2>
+                                <p class="vs_com">SK텔레콤은 안정적인 유.무선 통신 인프라와 AI기반 ICT 기술과 서비스를 통해, <br>고객의 ICT 경험이 삶의 풍요로움을 실현할 수 있도록 <br>혁신의 여정을 이어갑니다.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.sktelecom.com/view/manage/intro.do">
+                            <img src="" alt="ESG추진방향" class="pic">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">ESG 경영을 통한 <br>지속 가능한 성장</h2>
+                                <p class="vs_com">SK텔레컴은 ICT기술을 기반으로 탄소 배출 절감.사회 안전망 구축 등 <br>지속 가능한 사회를 위해 노력하고 있습니다.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.skt.ai/kr/index.do">
+                            <img src="" alt="SKT AI" class="pic">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">사람과 AI가 공종하는 <br>행복한 세상</h2>
+                                <p class="vs_com">SK텔레콤은 사람과 AI가 함께 공존하며, <br>더 행복하고 라음다운 세상을 실현할 수 있도록 연구를 지속하고 있습니다.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="" alt="서비스" class="pic">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">SK텔레콤-SK스퀘어가 <br>만드는 ICT 시너지</h2>
+                                <p class="vs_com">SK텔레콤과 SK스퀘어가 함께 <br>ICT 서비스.기술 혁신을 이어 나갑니다.</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="btn_group">
+                    <botton class="prev_btn"><i class="xi-arrow-left"></i></botton>
+                    <button class="next_btn"><i class="xi-arrow-right"></i></button>
+                </div>
+            </figure>
+            <div class="grid_box">
+                <ul class="grid_wrap">
+                    <li class="col2 item1">
+                        <a href="">
+                            <h3 class="col_tit">통신</h3>
+                            <p class="col_com">5G 시대에도 <br>대한민국 대표 통신기업</p>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li class="col2 item2">
+                        <a href="">
+                            <h3 class="col_tit">구독</h3>
+                            <p class="col_com">AI 기반 <br>고객 맞춤형 구독 서비스</p>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li class="col2 item3">
+                        <a href="">
+                            <h3 class="col_tit">메타버스</h3>
+                            <p class="col_com">다양한 파트너와 함께하는 <br>글로벌 오픈 메타버스 서비스</p>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li class="col2 item4">
+                        <a href="">
+                            <h3 class="col_tit w">AI</h3>
+                            <p class="col_w_com">고객의 생활속 모든 순간을 <br>함께하는</p>
+                        </a>
+                    </li>
+                    <li class="col2 item5">
+                        <a href="">
+                            <h3 class="col_tit w">DigitalServise</h3>
+                            <p class="col_w_com">디지털 인프라를 기반으로한 <br>고객 맞춤형 B2B 서비스</p>
+                        </a>
+                    </li>
+                    <li class="col2 item6">
+                        <a href="">
+                            <h3 class="col_tit w"></h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer id="ft">
+            <div class="ft_wrap">
+                <nav class="fnb">
+                    <a href="">사이트맵</a>
+                    <a href="">윤리경영</a>
+                    <a href="">사외내방신청</a>
+                    <a href="">협력사신문고</a>
+                    <a href="">공정위 4대 실천 사항</a>
+                    <a href="">보안신고센터</a>
+                    <a href="">개인정보처리방침</a>
+                </nav>
+                <nav class="sub">
+                    <ul>
+                        <li class="sns1">
+                            <a href="" title="페이스북"><i class="xi-facebook"></i></a>
+                        </li>
+                        <li class="sns2">
+                            <a href="" title="유튜브"><i class="xi-youtube-play"></i></a>
+                        </li>
+                        <li class="sns3">
+                            <a href="" title="네이버 포스트"><i class="xi-naver"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright">Copyright © SKtelecom All rights reserved. 대표번호 : 031-1234-1111</p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
