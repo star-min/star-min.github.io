@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
     <meta name="url" content="https://www.sktelecom.com/index.html">
     <meta name="title" content="SKtelecom">
     <meta name="description" content="SKtelecom 기업정보,주가정보,경영정보,메타버스">
@@ -39,8 +41,8 @@
     } 
     </style>
 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-<link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./css/normalize.css">
 
 <style>
     * { margin: 0; padding: 0; }
@@ -59,8 +61,16 @@
     .logo { display:block; width: 250px; float:left; }
     .logo img { display:block; width: 100%; }
     #gnb { float:left; }
-    #gnb > ul > li { float:left; padding-left: 50px; padding-right: 20px;  }
+
+    #gnb > ul > li { float:left; padding-left: 50px; padding-right: 20px; 
+    position: relative; }
     #gnb > ul > li > span { display:block; line-height: 36px; cursor:pointer; }
+    #gnb ul li .sub {display: none; position: absolute; left: 10px; top: 36px; z-index: 999;
+    padding-left: 10px; width: 160px; height: 200px; background-color: #fff;}
+    #gnb ul li .sub li { line-height: 38px;}
+    #gnb ul li:hover .sub {display: block;}
+
+    /* .pic 크기를 와이드를 붙여야함 */
 
     #tnb { float:right; }
 
@@ -137,7 +147,7 @@
                 <ul class="img_box">
                     <li>
                         <a href="https://www.sktelecom.com/view/introduce/vision.do">
-                            <img src="" alt="비전" class="pic">
+                            <img src="./img/sk01.png" alt="비전" class="pic">
                             <div class="tit_box">
                                 <h2 class="vs_tit">AI & Digital Infra <br>서비스 컴퍼니</h2>
                                 <p class="vs_com">SK텔레콤은 안정적인 유.무선 통신 인프라와 AI기반 ICT 기술과 서비스를 통해, <br>고객의 ICT 경험이 삶의 풍요로움을 실현할 수 있도록 <br>혁신의 여정을 이어갑니다.</p>
