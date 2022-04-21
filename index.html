@@ -20,27 +20,22 @@
     <title>SKtelecom</title>
 
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-<!--
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    
 
     <style>
-          @font-face {
-        font-family: 'scB';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    } 
     @font-face {
-        font-family: 'ROKAF';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSlabSerifBold.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    } 
+    font-family: 'LeferiPoint-SpecialItalicA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-SpecialItalicA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
     </style>
--->
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="./css/normalize.css">
 
@@ -56,9 +51,12 @@
     i[class*='xi']:hover { color:rgb(226, 55, 25); }
 
     .wrap { clear:both; width: 100%; }
-    #hd { clear:both; width: 100%; position: fixed; background-color: rgba(255, 255, 255, 0.7);  }
+
+    /* position: fixed; background-color: rgba(255, 255, 255, 0.7) */
+    #hd { clear:both; width: 100%; top: 0px; z-index: 999; } 
+
     .hd_wrap { clear:both; width: 1280px; margin: 0 auto; }
-    .logo { display:block; width: 230px; float:left; }
+    .logo { display:block; width: 230px; float:left;  }
     .logo img { display:block; width: 100%; }
     #gnb { float:left; margin-top: 15px;}
 
@@ -69,14 +67,26 @@
     padding-left: 10px; width: 160px; height: 200px; background-color: #fff;}
     #gnb ul li .sub li { line-height: 38px;}
     #gnb ul li:hover .sub {display: block;}
+    
+    #gnb ul li .sub li:hover a { color: green;}
+    #gnb ul li:hover span { color: forestgreen;}
+    #tnb a:hover { color: forestgreen;}
 
     #tnb { float:right; padding-top: 20px; padding-bottom: 20px;}
     #tnb a { padding-left: 20px; font-size: 0.8em;}
 
     #content { clear:both; width: 100%; }
+    #vs {width: 100%; overflow: hidden;}
+    .img_box { width: 400%;}
+    .img_box li { float: left; width: 25%; position: relative;}
+    .img_box li a {display: block;}
+    .img_box li a img { display: block; width: 100%; height: auto;}
+    .img_box .tit_box { position: absolute; top: 50px; left: 50px; color: #fff; 
+        text-shadow: 1px 1px 1px #000; padding-left: 40px;} 
+    .vs_tit { font-size:42px; line-height: 1.6;}
+    .vs_com { font-size: 16px; padding-top: 40px;}
     #ft { clear:both; width: 100%; }
 
-    .pic {max-width: 100%; height: auto;}       /* 이부분이 pic에 사진 자동보정 기능 */
 
 </style>
 </head>
@@ -148,7 +158,7 @@
                 <ul class="img_box">
                     <li>
                         <a href="https://www.sktelecom.com/view/introduce/vision.do">
-                            <img src="./img/sk01.jpg " alt="비전" class="pic">
+                            <img src="./img/sk02.jpg " alt="비전" class="pic">
                             <div class="tit_box">
                                 <h2 class="vs_tit">AI & Digital Infra <br>서비스 컴퍼니</h2>
                                 <p class="vs_com">SK텔레콤은 안정적인 유.무선 통신 인프라와 AI기반 ICT 기술과 서비스를 통해, <br>고객의 ICT 경험이 삶의 풍요로움을 실현할 수 있도록 <br>혁신의 여정을 이어갑니다.</p>
@@ -157,7 +167,7 @@
                     </li>
                     <li>
                         <a href="https://www.sktelecom.com/view/manage/intro.do">
-                            <img src="./img/sk02.jpg" alt="ESG추진방향" class="pic">
+                            <img src="./img/sk01.jpg " alt="ESG추진방향" class="pic">
                             <div class="tit_box">
                                 <h2 class="vs_tit">ESG 경영을 통한 <br>지속 가능한 성장</h2>
                                 <p class="vs_com">SK텔레컴은 ICT기술을 기반으로 탄소 배출 절감.사회 안전망 구축 등 <br>지속 가능한 사회를 위해 노력하고 있습니다.</p>
@@ -187,6 +197,21 @@
                     <botton class="prev_btn"><i class="xi-arrow-left"></i></botton>
                     <button class="next_btn"><i class="xi-arrow-right"></i></button>
                 </div>
+                <script>
+                    $(document).ready(function(){
+                        wd = $(window).width();
+                        var intv = setInterval(function(){
+                            ani1();
+                        }, 3000);
+                        function ani1(){
+                            $(".img_box").not(":animated").animate({"margin-left":-wd+"px"}, 600, function(){
+                                $(".img_box li").eq(0).appendTo($(".img_box"));
+                                $(".img_box").css("margin-left","0px");
+                            });
+                        }
+                    });    
+                    </script>
+    
             </figure>
             <div class="grid_box">
                 <ul class="grid_wrap">
