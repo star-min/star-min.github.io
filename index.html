@@ -98,14 +98,31 @@
 
     .grid_box { clear: both; width: 100%;}
     .grid_wrap { clear: both; width: 100%;}
-    .grid_wrap li { float: left; width: ; background-position: center center;}
-    .grid_wrap li .item1 { }
+    .grid_wrap li { float: left; height: 16.66667vw; background-position: center center;}
+    .grid_wrap li.item1 { background-color: #d0dee8; } 
+    .grid_wrap li.item2 { background-color: skyblue; } 
+    .grid_wrap li.item3 { background-image: url(./img/meta.jpg) } 
+    .grid_wrap li.item4 { background-image: url(./img/ai.jpg);}
+    .grid_wrap li.item5 { background-image: url(./img/service.png);}
 
-    .col1 { width: 8.33333%;}
-    .col2 { width: 16.66667%;}
-    .col3 { width: 25%;}
-    .col4 { width: 33.33333;}
+    .col1 { width: 8.33333%; }
+    .col2 { width: 20%; }
+    .col3 { width: 25%; }
+    .col4 { width: 33.33333%; }
+    .col5 { width: 41.66667%; }
+    .col6 { width: 50%; }
     .grid_wrap li a { display: block; padding: 28px;}
+    .col_tit, .col_com { color:#000; }
+    .col_tit { padding-top: 18px; font-size: 25px; }
+    .col_tit.w , .col_com.w { color:#fff; text-shadow:1px 1px 1px rgb(63, 38, 38); padding-top: 0; }
+    .col_com {color: #000;}
+    .col_com { font-size:18px; padding-top: 20px; font-weight: 200;  }
+    .col_com.w { font-size: 18px; padding-top: 20px;}
+
+    .arrow { display: block; padding: 50px; width: 150px; height: 100px; margin: 0 auto; z-index: 99999;
+    color: orange;  font-family: jalnan; font-size: 20px; }
+    .arrow:hover { transform: scale(1.5); transition: .5s; }
+
     #ft { clear:both; width: 100%; }
 
 </style>
@@ -239,38 +256,33 @@
                         <a href="">
                             <h3 class="col_tit">통신</h3>
                             <p class="col_com">5G 시대에도 <br>대한민국 대표 통신기업</p>
-                            <span class="arrow"></span>
+                            <span class="arrow">-바로가기-</span>
                         </a>
                     </li>
                     <li class="col2 item2">
                         <a href="">
                             <h3 class="col_tit">구독</h3>
                             <p class="col_com">AI 기반 <br>고객 맞춤형 구독 서비스</p>
-                            <span class="arrow"></span>
+                            <span class="arrow">-바로가기-</span>
                         </a>
                     </li>
                     <li class="col2 item3">
                         <a href="">
-                            <h3 class="col_tit">메타버스</h3>
-                            <p class="col_com">다양한 파트너와 함께하는 <br>글로벌 오픈 메타버스 서비스</p>
+                            <h3 class="col_tit w">메타버스</h3>
+                            <p class="col_com w">다양한 파트너와 함께하는 <br>글로벌 오픈 메타버스 서비스</p>
                             <span class="arrow"></span>
                         </a>
                     </li>
                     <li class="col2 item4">
                         <a href="">
                             <h3 class="col_tit w">AI</h3>
-                            <p class="col_w_com">고객의 생활속 모든 순간을 <br>함께하는</p>
+                            <p class="col_com w">고객의 생활속 모든 순간을 <br>함께하는</p>
                         </a>
                     </li>
                     <li class="col2 item5">
                         <a href="">
                             <h3 class="col_tit w">DigitalServise</h3>
-                            <p class="col_w_com">디지털 인프라를 기반으로한 <br>고객 맞춤형 B2B 서비스</p>
-                        </a>
-                    </li>
-                    <li class="col2 item6">
-                        <a href="">
-                            <h3 class="col_tit w"></h3>
+                            <p class="col_com w">디지털 인프라를 기반으로한 <br>고객 맞춤형 B2B 서비스</p>
                         </a>
                     </li>
                 </ul>
