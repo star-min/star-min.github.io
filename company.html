@@ -48,6 +48,38 @@
     .page { clear:both; min-height:100vh; display:none; }
     .page:target { display:block; }
 
+    .vi_title { font-size: 35px; line-height: 60px; }
+    .vi_desc { font-size: 15px; padding-bottom: 30px; line-height: 30px; }
+    
+    /* 사업소개 */
+    .jalang { height: 410px; padding-top: 64px; background-color: #f0f0f0;}
+    .intro_title { width: 1040px; margin-left: auto; margin-right: auto;}
+    .intro_hd { font-size: 30px; line-height: 45px; }
+    .intro_nav { padding-top: 5px; padding-bottom: 35px; }
+    .intro_nav p { font-size: 16px; line-height: 26px; }
+    .vision_desc { margin-right: 100px; display: inline-block; text-align: center; }
+    .vision_con { font-size: 18px; line-height: 30px; padding-top: 15px; font-weight: 400; letter-spacing: -0.03em; }
+    .vision_span { font-size: 23px; font-weight: 600; }
+
+    /* 연혁 */
+    .eum1 { padding-bottom: 51px; font-size: 40px; line-height: 60px; font-weight: 600;}
+    .eum2 { font-size: 16px; font-weight: 300; line-height: 26px; letter-spacing: -0.025em;}
+    .eum3 {  padding-top: 26px; font-size: 16px; font-weight: 300; line-height: 26px; }
+
+    /* cibi */
+    .cibi {padding-bottom: 92px;}
+    .cibi_tit {width: 1040px; margin-left: auto; margin-right: auto;}
+    .cibi_hd {font-size: 30px; line-height: 45px; padding: 0; font-weight: 600;}
+    .cibi_p {padding-top: 21px; padding-bottom: 64px;}
+    .cibi_d {padding-left: 186px;}
+
+    /* 스포츠 */
+    .spo_tit { position: relative; width: 1040px; margin-left: auto; margin-right: auto; }
+    .spo_tit2 { width: 1040px; margin-left: auto; margin-right: auto; }
+    .spo_hd { padding-top: 96px; margin-bottom: 26px; font-size: 55px; line-height: 64px; font-weight: 400; letter-spacing: 0; }
+    .spo_nav { border-width: 2px; border-style: solid; border-bottom-color: rgb(32,32,33); }
+    .spo_p1 { font-size: 15px; line-height: 25px; letter-spacing: 0; font-weight: 400; }
+    .spo_p2 { margin-top: 24px; font-size: 15px; line-height: 25px; letter-spacing: 0; font-weight: 400; }
     </style>
 </head>
 <body>
@@ -91,8 +123,8 @@
                         <li>
                             <span>재무정보</span>
                             <ul class="sub">
-                                <li><a href="finance.html#page#1">재무 하이라이트</a></li>
-                                <li><a href="finance.html#page#2">신용등급</a></li>
+                                <li><a href="midea.html#page1">재무하이라이트</a></li>
+                                <li><a href="midea.html#page2">신용등급</a></li>
                             </ul>
                         </li>
                         <li>
@@ -100,8 +132,6 @@
                             <ul class="sub">
                                 <li><a href="stock.html#page1">주주현황</a></li>
                                 <li><a href="stock.html#page2">주주환원</a></li>
-                                <li><a href="stock.html#page3">배당조회</a></li>
-                                <li><a href="stock.html#page4">주가정보</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -155,7 +185,11 @@
                     </div>
                     <div class="page_con">
                         <div class="page_wrap">
-
+                            <p class="vi_title" >SK의 경영철학 SKMS</p>
+                            <p class="vi_desc" >SKMS(SK Management System)는 SK 고유의 기업문화 및 경영이념, 경영기법을 체계적으로 정리한 것으로써, 1979년 처음 제정되었습니다.<br>
+                                SK텔레콤은 구성원의 행복을 경영활동의 궁극적인 목적으로 정의하고,<br>
+                                자사의 ICT 기술을 기반으로 고객과 이해관계자 등의 행복 증진과 사회의 지속가능한 발전을 위해 노력하고 있습니다. </p>
+                            <img src="./img/iron.png" alt="철학">
                         </div>
                     </div>
                 </section>
@@ -193,7 +227,37 @@
                     </div>
                     <div class="page_con">
                         <div class="page_wrap">
-
+                            <section class="jalang">
+                                <div class="intro_title">
+                                    <h4 class="intro_hd">대한민국 3대 고객만족도 최장기간 연속 1위</h4>
+                                    <div class="intro_nav">
+                                       <p>SK텔레콤은 대한민국 3대 고객만족도 조사 최장기간 1위, 5G 통신품질평가 1위 등 고객 가치 혁신을 위해 노력하고 있습니다.</p>
+                                    </div>
+                                    <div style=" font-size: 0;">
+                                        <figure class="vision_desc">
+                                            <img src="./img/ncs1.jpg" alt="ncsi">
+                                            <figcaption class="vision_con">
+                                                "국가고객만족도"<br>
+                                                <span class="vision_span">24년 연속</span>
+                                            </figcaption>
+                                        </figure>
+                                        <figure class="vision_desc">
+                                            <img src="./img/ncs2.jpg" alt="ncsi">
+                                            <figcaption class="vision_con">
+                                                "한국산업 고객만족도"<br>
+                                                <span class="vision_span">24년 연속</span>
+                                            </figcaption>
+                                        </figure>
+                                        <figure style=" margin-right: 100px; display: inline-block; text-align: center;">
+                                            <img src="./img/ncs3.jpg" alt="ncsi">
+                                            <figcaption class="vision_con">
+                                                " KS-SQI 한국산업 서비스 품질지수"<br>
+                                                <span class="vision_span">22년 연속</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </section>
@@ -235,8 +299,22 @@
                         </div>
                     </div>
                     <div class="page_con">
-                        <div class="page_wrap">
-
+                        <div class="page_wrap" style="opacity: 1; transform: translate(0px, 0px);">
+                            <p class="eum1" >
+                                [2020년대] 부동의 1등 통신 역량을 기반으로<br> 빅 테크(Big Tech) 기업으로 진화
+                            </p>
+                            <p class="eum2" >
+                                2020년대 들어 SK텔레콤은 부동의 1등인 통신을 넘어 미디어, 모빌리티, 커머스, 융합보안, 모빌리티 등 다양한 미래사업군을 확보·육성해 나가고 있습니다.
+                            </p>
+                            <p class="eum3" >
+                                SK텔레콤은 2020년 4월 SK브로드밴드-티브로드 합병 법인을 출범했습니다. 이를 통해 IPTV·케이블 TV·OTT(웨이브)를 아우르는 가입자 1,000만 명의 종합 미디어 사업을 키웠습니다.
+                            </p>
+                            <p class="eum3" > 
+                                2020년 12월에는 모빌리티 사업부를 물적 분할해 티맵모빌리티㈜를 출범하였으며, 2021년 4월 글로벌 모빌리티 기업 우버와 함께 합작회사 ‘우티(UT)’를 설립했습니다.<br> 보안 영역에서는 2021년 3월, SK쉴더스(舊ADT캡스)와 SK인포섹을 통합해, 물리 보안과 정보 보안을 합친 융합보안 사업자로서 성장을 본격화했습니다.<br> 커머스 분야에서는 2021년 8월 11번가에서 아마존 상품을 직접 구매할 수 있는 아마존 글로벌 스토어를 론칭했습니다.
+                            </p>
+                            <p class="eum3"> 
+                                2021년 11월 1일 SK텔레콤은 SK텔레콤(존속회사)과 SK스퀘어(신설회사) 분할을 통해 각각 AI·Digital Infra 회사와 반도체·ICT 혁신기술 투자전문회사로 재탄생했습니다.<br> SK텔레콤은 통신을 넘어 빅테크(Big Tech) 기업으로 진화하기 위해 투자 효율성과 사업 경쟁력을 높여 나간다는 계획입니다.
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -270,7 +348,23 @@
                     </div>
                     <div class="page_con">
                         <div class="page_wrap">
-
+                            <section class="cibi">
+                                <div class="cibi_tit">
+                                    <h4 class="cibi_hd">Corporate Identity</h4>
+                                    <div>
+                                        <div class="cibi_p">
+                                            <p>
+                                                ‘행복날개’는 SK DBL(Double Bottom Line) 경영의 양대축인 사회적 가치와 경제적 가치를 동시에 추구함으로써<br>SK와 사회 구성원 모두가 비상하는 모습을 형상화한 것입니다.
+                                            </p>
+                                        </div>
+                                        <div class="cibi_d">
+                                            <figure>
+                                                <img src="./img/brand.png" alt="flyer">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </section>
@@ -312,7 +406,37 @@
                     </div>
                     <div class="page_con">
                         <div class="page_wrap">
-
+                            <div class="spo_tit" >
+                                <h3 class="spo_hd" >SK telecom 스포츠</h3>
+                            </div>
+                            <div class="spo_tit2">
+                                <div class="spo_nav">
+                                    <div style="float: right;">
+                                        <img src="./img/sports.jpg" alt="sports">
+                                    </div>
+                                    <div>
+                                        <p class="spo_p1" >
+                                            SK텔
+                                            레콤은 스포츠를 통해 감동을 나누고 팬과 함께 행복을 키워나갑니다.<br>
+                                            고객에게 받은 관심과 사랑을 스포츠를 통해 환원하기 위해<br>
+                                            스포츠 구단 운영과 다양한 종목의 후원 활동을 하고 있습니다.
+                                        </p>
+                                        <p class="spo_p2" >
+                                            SK나이츠 농구단과 T1 게임단을 운영하고,<br>
+                                            최경주 / 이보미 / 김한별 골프 선수 후원을 통해 최고 기량의 선수를 육성하며,<br>
+                                            매 년 SK텔레콤 오픈 골프대회를 개최하고 있습니다.
+                                        </p>
+                                        <p class="spo_p2">
+                                            또한 스피드스케이팅 국가대표팀 후원, 장애인사이클 선수단 후원,<br>
+                                            대한펜싱협회 회장사를 담당하여 아마추어 스포츠 활성화를 위해 노력하고 있습니다.
+                                        </p>
+                                        <p class="spo_p2">
+                                            또, SK텔레콤은 나눔을 통해 ESG(환경·사회·지배구조) 경영을 선도하는 기업으로<br>
+                                            스포츠를 통해 기업과 고객, 스포츠와 팬의 화합의 장을 마련하고자 노력하고 있습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
