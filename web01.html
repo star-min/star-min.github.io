@@ -49,6 +49,25 @@
         .tb1 td.c2 { text-align: left;}
         .tb1 td a { padding-left: 1em;}
 
+        .tb2 { display: table; width: 640px; margin: 0 auto; margin-bottom: 60px;
+        border-collapse: collapse;}
+        .tb2 tr { display: table-row; }
+        .tb2 th, .tb2 td { display: table-cell; line-height:  36px; border-bottom: 2px solid #333;}
+        .tb2 tr:first-child th,td { border-top: 2px solid #333; }
+        .tb2 th { background-color: gray; }
+        .tb2 td { }
+        
+        .tb3 { display: table; width: 700px; margin: 0 auto; margin-bottom:  60px;}
+        .tb3 ul { display: table-row;}
+        .tb3 .th, .tb3 .td { display: table-cell; line-height:  36px; border-bottom: 2px solid #333;}
+        .tb3 .tr:first-child .td,.tb3 .tr:first-child .th { border-top: 2px solid #333;}
+        .tb3 .e1, .tb3 .e3 { text-align: center; background-color: gray;}
+        .tb3 .e2, .tb3 .e4 { text-align: center; }
+        .tb3 .e2, .tb3 .e4:hover { font-size: large;}
+
+        .lst3 { width: 240px; margin: 0 auto;}
+        .lst3 li {width: 40px; height: 40px; background-image: url(./img/sum/iconset.png);}
+
         #ft { width: 100%;}
 
     </style>
@@ -181,14 +200,34 @@
             </div>
             <div class="con_wrap">
                 <div class="page_wrap">
-                    <h2 class="page_tit">페이지2 제목</h2>
-                    <table class="tb1">
-                        <thead>
-                            <th class="c1">번호</th>
-                            <th class="c2">제목</th>
-                            <th class="c3">작성자</th>
-                            <th class="c4">작성일</th>
-                        </thead>
+                    <h2 class="sec_tit">페이지2 제목</h2>
+                    <table class="tb2">
+                        <tbody >
+                            <tr>
+                                <th class="d1">항목명</th>
+                                <td class="d2">항목데이터</td>
+                                <th class="d3">항목명</th>
+                                <td class="d4">항목데이터</td>
+                            </tr>
+                            <tr>
+                                <th class="d1">항목명</th>
+                                <td class="d2">항목데이터</td>
+                                <th class="d3">항목명</th>
+                                <td class="d4">항목데이터</td>
+                            </tr>
+                            <tr>
+                                <th class="d1">항목명</th>
+                                <td class="d2">항목데이터</td>
+                                <th class="d3">항목명</th>
+                                <td class="d4">항목데이터</td>
+                            </tr>
+                            <tr>
+                                <th class="d1">항목명</th>
+                                <td class="d2">항목데이터</td>
+                                <th class="d3">항목명</th>
+                                <td class="d4">항목데이터</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -209,6 +248,32 @@
             <div class="con_wrap">
                 <div class="page_wrap">
                     <h2 class="page_tit">페이지3 제목</h2>
+                    <div class="tb3">
+                        <ul class="tr">
+                            <li class="th e1">항목명</li>
+                            <li class="td e2">항목내용</li>
+                            <li class="th e3">항목명</li>
+                            <li class="td e4">항목내용</li>
+                        </ul>
+                        <ul class="tr">
+                            <li class="th e1">항목명</li>
+                            <li class="td e2">항목내용</li>
+                            <li class="th e3">항목명</li>
+                            <li class="td e4">항목내용</li>
+                        </ul>
+                        <ul class="tr">
+                            <li class="th e1">항목명</li>
+                            <li class="td e2">항목내용</li>
+                            <li class="th e3">항목명</li>
+                            <li class="td e4">항목내용</li>
+                        </ul>
+                        <ul class="tr">
+                            <li class="th e1">항목명</li>
+                            <li class="td e2">항목내용</li>
+                            <li class="th e3">항목명</li>
+                            <li class="td e4">항목내용</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -228,6 +293,14 @@
             <div class="con_wrap">
                 <div class="page_wrap">
                     <h2 class="page_tit">페이지3 제목</h2>
+                    <ul class="lst3">
+                        <li class="icon1"><img src="" alt=""></li>
+                        <li class="icon2"><img src="" alt=""></li>
+                        <li class="icon3"><img src="" alt=""></li>
+                        <li class="icon4"><img src="" alt=""></li>
+                        <li class="icon5"><img src="" alt=""></li>
+                        <li class="icon6"><img src="" alt=""></li>
+                    </ul>
                 </div>
             </div>
         </section>
