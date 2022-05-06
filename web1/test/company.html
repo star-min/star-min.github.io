@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="apple-touch-icon" href="./img/favicon.ico">
+    <!-- 검색(메타) 정보 -->
+    <meta name="url" content="https://www.samsungdisplay.co.kr">
+    <meta name="title" content="삼성디스플레이">
+    <meta name="description" content="삼성디스플레이의 기업정보,제품정보,미디어,커뮤니티">
+    <meta name="keywords" content="삼성디스플레이,HD,퀀텀">
+    <!-- 오픈 그래프 -->
+    <meta property="og:url" content="https://www.samsungdisplay.co.kr">
+    <meta property="og:title" content="삼성디스플레이">
+    <meta property="og:description" content="삼성디스플레이의 기업정보,제품정보,미디어,커뮤니티">
+    <meta property="og:image" content="./img/logo-square-letter.png">
+    <title>삼성 Display</title>
+    <!-- 기본 플러그인 연결 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 웹 폰트/폰트 모듈 연결 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+    @font-face {
+        font-family: 'scB';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    } 
+    @font-face {
+        font-family: 'ROKAF';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSlabSerifBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }   
+    </style>
+    <!-- 웹 아이콘 연결 -->
+    <!-- XEIcon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 스타일 초기화 모듈 연결 -->
+    <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="sub_common.css">
+    <style>
+    #page1 .page_wrap { background-color: aquamarine; }
+    #page2 .page_wrap { background-color:azure }
+    #page3 .page_wrap { background-color:beige }
+    #page4 .page_wrap { background-color:cornsilk; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo">
+                    <img src="./img/samsung_logo.svg" alt="로고">
+                </a>
+                <nav id="gnb">
+                    <ul>
+                        <li>
+                            <span>기업정보</span>
+                            <ul class="sub">
+                                <li><a href="company.html#page1">기업개요</a></li>
+                                <li><a href="company.html#page2">CEO 인사말</a></li>
+                                <li><a href="company.html#page3">연혁</a></li>
+                                <li><a href="company.html#page4">사업장 정보</a></li>
+                                <li><a href="company.html#page5">전자공고</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>제품정보</span>
+                            <ul class="sub">
+                                <li><a href="product.html#page1">OLED Display</a></li>
+                                <li><a href="product.html#page2">QD Display</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>경영전략</span>
+                            <ul class="sub">
+                                <li><a href="manage.html#page1">지속가능경영</a></li>
+                                <li><a href="manage.html#page2">인권정책</a></li>
+                                <li><a href="manage.html#page3">녹색경영</a></li>
+                                <li><a href="manage.html#page4">사회공헌</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>미디어센터</span>
+                            <ul class="sub">
+                                <li><a href="media.html#page1">뉴스</a></li>
+                                <li><a href="media.html#page2">소셜미디어</a></li>
+                                <li><a href="media.html#page3">영상</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>커뮤니티</span>
+                            <ul class="sub">
+                                <li><a href="community.html#page1">채용정보</a></li>
+                                <li><a href="community.html#page2">직무소개</a></li>
+                                <li><a href="community.html#page3">공지사항</a></li>
+                                <li><a href="community.html#page3">자료실</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <p id="tnb">
+                    <a href="">로그인</a>
+                    <a href="">사이트맵</a>
+                    <a href="">오시는길</a>
+                </p>
+            </div>
+        </header>
+        <div id="content">
+            <div class="content_wrap">
+                <section class="page" id="page1">
+                    <figure class="sub_ban">
+                        <img src="./img/company1.jpg" alt="기업개요">
+                        <div class="tit_box">
+                            <h2 class="sub_tit">기업 개요</h2>
+                            <p class="sub_com">삼성디스플레이는 앞선 기술력을 바탕으로 세계 디스플레이 시장을 선도하고 있으며,<br>
+                                끊임없는 기술혁신을 통해 상상 속에서만 가능했던 제품을 현실로 만드는 회사입니다.</p>
+                        </div>
+                    </figure>
+                    <div class="bread_box">
+                        <div class="bread_wrap">
+                            <ul class="bread">
+                                <li class="item1">
+                                    <a href="index" class="home">HOME</a>
+                                </li>
+                                <li class="item2">기업정보</li>
+                                <li class="item3">
+                                    <select name="sel" id="sel1" class="sel">
+                                        <option value="company.html#page1" selected>기업개요</option>
+                                        <option value="company.html#page2">CEO 인사말</option>
+                                        <option value="company.html#page3">연혁</option>
+                                        <option value="company.html#page4">사업장 정보</option>
+                                        <option value="company.html#page5">전자공고</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page_con">
+                        <div class="page_wrap">
+
+                        </div>
+                    </div>
+                </section>
+                <section class="page" id="page2">
+                    <figure class="sub_ban">
+                        <img src="./img/company2_1.jpg" alt="CEO 인사말">
+                        <div class="tit_box">
+                            <h2 class="sub_tit">CEO 인사말</h2>
+                            <p class="sub_com">인간의 삶에 가치를 더하고 인류의 삶에 공헌하는 글로벌 초일류기업으로 항상 여러분과 함께 하겠습니다.</p>
+                        </div>
+                    </figure>
+                    <div class="bread_box">
+                        <div class="bread_wrap">
+                            <ul class="bread">
+                                <li class="item1">
+                                    <a href="index" class="home">HOME</a>
+                                </li>
+                                <li class="item2">기업정보</li>
+                                <li class="item3">
+                                    <select name="sel" id="sel2" class="sel">
+                                        <option value="company.html#page1">기업개요</option>
+                                        <option value="company.html#page2" selected>CEO 인사말</option>
+                                        <option value="company.html#page3">연혁</option>
+                                        <option value="company.html#page4">사업장 정보</option>
+                                        <option value="company.html#page5">전자공고</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page_con">
+                        <div class="page_wrap">
+                            
+                        </div>
+                    </div>
+                </section>
+                <section class="page" id="page3">
+                    <figure class="sub_ban">
+                        <img src="./img/company3.jpg" alt="연혁">
+                        <div class="tit_box">
+                            <h2 class="sub_tit">연혁</h2>
+                            <p class="sub_com">세계 디스플레이 역사의 한 가운데 삼성디스플레이가 있습니다.</p>
+                        </div>
+                    </figure>
+                    <div class="bread_box">
+                        <div class="bread_wrap">
+                            <ul class="bread">
+                                <li class="item1">
+                                    <a href="index" class="home">HOME</a>
+                                </li>
+                                <li class="item2">기업정보</li>
+                                <li class="item3">
+                                    <select name="sel" id="sel3" class="sel">
+                                        <option value="company.html#page1">기업개요</option>
+                                        <option value="company.html#page2">CEO 인사말</option>
+                                        <option value="company.html#page3" selected>연혁</option>
+                                        <option value="company.html#page4">사업장 정보</option>
+                                        <option value="company.html#page5">전자공고</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page_con">
+                        <div class="page_wrap">
+                            
+                        </div>
+                    </div>
+                </section>
+                <section class="page" id="page4">
+                    <figure class="sub_ban">
+                        <img src="./img/company4.jpg" alt="사업장 정보">
+                        <div class="tit_box">
+                            <h2 class="sub_tit">사업장 정보</h2>
+                            <p class="sub_com">삼성디스플레이의 사업장, 글로벌 네트워크, 연구소 정보입니다.</p>
+                        </div>
+                    </figure>
+                    <div class="bread_box">
+                        <div class="bread_wrap">
+                            <ul class="bread">
+                                <li class="item1">
+                                    <a href="index" class="home">HOME</a>
+                                </li>
+                                <li class="item2">기업정보</li>
+                                <li class="item3">
+                                    <select name="sel" id="sel4" class="sel">
+                                        <option value="company.html#page1">기업개요</option>
+                                        <option value="company.html#page2">CEO 인사말</option>
+                                        <option value="company.html#page3">연혁</option>
+                                        <option value="company.html#page4" selected>사업장 정보</option>
+                                        <option value="company.html#page5">전자공고</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page_con">
+                        <div class="page_wrap">
+                            
+                        </div>
+                    </div>
+                </section>
+                <section class="page" id="page5">
+                    <figure class="sub_ban">
+                        <img src="./img/company5.jpg" alt="전자공고">
+                        <div class="tit_box">
+                            <h2 class="sub_tit">전자공고</h2>
+                            <p class="sub_com">고객과의 신뢰와 기업의 가치를 높이기 위한 첫걸음으로 정확한 전자공고를 제공합니다.</p>
+                        </div>
+                    </figure>
+                    <div class="bread_box">
+                        <div class="bread_wrap">
+                            <ul class="bread">
+                                <li class="item1">
+                                    <a href="index" class="home">HOME</a>
+                                </li>
+                                <li class="item2">기업정보</li>
+                                <li class="item3">
+                                    <select name="sel" id="sel5" class="sel">
+                                        <option value="company.html#page1">기업개요</option>
+                                        <option value="company.html#page2">CEO 인사말</option>
+                                        <option value="company.html#page3">연혁</option>
+                                        <option value="company.html#page4">사업장 정보</option>
+                                        <option value="company.html#page5" selected>전자공고</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page_con">
+                        <div class="page_wrap">
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <script>
+            $(document).ready(function(){
+                $(".sel").change(function(){
+                    location.href = this.value;
+                });
+            });    
+            </script>
+        </div>
+        <footer id="ft">
+            <div class="ft_wrap">
+                <nav class="fnb">
+                    <a href="">사이트맵</a>
+                    <a href="">Contact US</a>
+                    <a href="">회원약관</a>
+                    <a href="">개인정보처리방침</a>
+                    <a href="">보안신고센터</a>
+                    <a href="">협력사</a>
+                </nav>
+                <nav class="snb">
+                    <ul>
+                        <li class="sns1">
+                            <a href="" title="페이스북"><i class="xi-facebook"></i></a>
+                        </li>
+                        <li class="sns2">
+                            <a href="" title="유튜브"><i class="xi-youtube-play"></i></a>
+                        </li>
+                        <li class="sns3">
+                            <a href="" title="네이버 포스트"><i class="xi-naver"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright">Copyright © SAMSUNG DISPLAY All rights reserved. 대표번호 : 031-5181-1114</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="apple-touch-icon" href="./img/favicon.ico">
+
+    <meta name="url" content="https://www.sktelecom.com/index.html">
+    <meta name="title" content="SKtelecom">
+    <meta name="description" content="SKtelecom 기업정보,주가정보,경영정보,메타버스">
+    <meta name="keywords" content="SK텔레콤,SKtelecom,메타버스">
+
+    <meta property="og:url" content="https://www.sktelecom.com/index.html">
+    <meta property="og:title" content="SKtelecom">
+    <meta property="og:description" content="SKtelecom 기업정보,주가정보,경영정보,메타버스">
+    <meta property="og:image" content="./img/art_547244_1624353913.jpg">
+    <title>SKtelecom</title>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+    <style>
+    @font-face {
+    font-family: 'swagger';
+    src: url("fonts/SDSwaggerTTF.ttf");
+    font-weight: normal;
+    font-style: normal;}
+    @font-face {
+    font-family: 'jalnan';
+    src: url("fonts/Jalnan.ttf");
+    font-weight: normal;
+    font-style: normal;}
+    @font-face {
+    font-family: 'GangwonEdu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="sub_common.css">
+
+    <style>
+    .page { clear:both; min-height:100vh; display:none; }
+    .page:target { display:block; }
+
+    .vi_title { font-size: 35px; line-height: 60px; }
+    .vi_desc { font-size: 15px; padding-bottom: 30px; line-height: 30px; }
+
+    /* 주주현황 */
+    .table-type-nor { position: relative; padding-top: 50px; border-top: 1px solid #8c8c8c; background-color: #f9f9f9; margin-left: 350px;  margin-right: 800px; margin-top: 100px; margin-bottom: 200px;}
+    .table-type-nor ul { border-top: 1px solid #8c8c8c; background-color: #fff; }
+    .table-type-nor ul li { padding: 14px; font-size: 13px; border-bottom: 1px solid #d1d1d1; }
+    .table-type-nor ul li span { width: 23%;}
+    .cate { padding-left: 20px; text-align: left; }
+    .cate-th { position: absolute; top: 15px; left: 20px; font-size: 20px;}
+    .rel { position: relative; }
+    .table-type-nor ul li span { display: inline-block; font-size: 13px; line-height: 20px; color: #1a1a1a; letter-spacing: -0.05em; }
+    .th { display: inline-block; width: 100%; top: -50px; left: 0; text-align: center;}
+    .right.first {width: 48px; text-align: right;}
+
+    /* 주주환원 */
+    .desc-nor-b { margin-top: 45px; color: #666; font-size: 13px; line-height: 21px; color: #4c4c4c; letter-spacing: -0.02em; }
+    .fw-bold { font-weight: 600; color: #666; }
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <header id="hd">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo">
+                    <img src="./img/art_547244_1624353913.jpg" alt="로고">
+                </a>
+                <nav id="gnb">
+                    <ul>
+                        <li>
+                            <span>회사소개</span>
+                            <ul class="sub">
+                                <li><a href="company.html#page1">비전</a></li>
+                                <li><a href="company.html#page2">사업소개</a></li>
+                                <li><a href="company.html#page3">연혁</a></li>
+                                <li><a href="company.html#page4">Cl/Bl</a></li>
+                                <li><a href="company.html#page5">스포츠</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>지속가능경영</span>
+                            <ul class="sub">
+                                <li><a href="product.html#page1">[ESG스토리]</a></li>
+                                <li><a href="product.html#page2">ESG추진방향</a></li>
+                                <li><a href="product.html#page3">ESG추진체계</a></li>
+                                <li><a href="product.html#page4">이해관계자 참여</a></li>
+                                <li><a href="product.html#page5">지속경영자료실</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>경영정보</span>
+                            <ul class="sub">
+                                <li><a href="opreation.html#page1">지배구조</a></li>
+                                <li><a href="opreation.html#page2">주주총회</a></li>
+                                <li><a href="opreation.html#page3">정관</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <li>
+                                <span>재무정보</span>
+                                <ul class="sub">
+                                    <li><a href="midea.html#page1">재무하이라이트</a></li>
+                                    <li><a href="midea.html#page2">신용등급</a></li>
+                                </ul>
+                            </li>
+                        <li>
+                            <span>주식정보</span>
+                            <ul class="sub">
+                                <li><a href="stock.html#page1">주주현황</a></li>
+                                <li><a href="stock.html#page2">주주환원</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <p id="tnb">
+                    <a href="">로그인</a>
+                    <a href="">사이트맵</a>
+                    <a href="">오시는길</a>
+                </p>
+            </div>
+        </header>
+        <div id="content">
+            <div class="content_wrap">
+                <section class="page" id="page1">
+                    <figure class="sub_ban">
+                        <img src="./img/image01.png" alt="주주현황">
+                        <div class="tit_box">
+                            <h2 class="sub_tit" style="padding-left: 210px;">주주현황</h2>
+                        </div>
+                    </figure>
+                    <div class="bread_box">
+                        <div class="bread_wrap">
+                            <ul class="bread">
+                                <li class="item1">
+                                    <a href="index" class="home">HOME</a>
+                                </li>
+                                <li class="item2">주주현황</li>
+                                <li class="item3">
+                                    <select name="sel" id="sel1" class="sel">
+                                        <option value="stock.html#page1" selected>주주현황</option>
+                                        <option value="stock.html#page2">주주환원</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page_con">
+                        <div class="page_wrap" style="padding-top: 50px;">
+                            <img src="./img/state1.png" alt="철학" style=" width: 900px;">
+                        </div>
+                        <div class="table-type-nor">
+                            <ul>
+                                <li>
+                                    <span class="cate"><span class="cate-th">지원기관</span>Citibank ADR</span>
+                                    <span class="rel"><span class="th">종류</span>보통주</span>
+                                    <span class="rel"><span class="th">지분율</span><span class="right first">6.70%</span></span>
+                                    <span class="rel"><span class="th">주식수</span><span class="right second">14,653,598</span></span>
+                                </li>
+                                <li>
+                                    <span class="cate">국민연금</span>
+                                    <span><span class="th">종류</span>보통주</span>
+                                    <span><span class="th">지분율</span><span class="right first">9.63%</span></span>
+                                    <span><span class="th">주식수</span><span class="right second">21,076,493</span></span>
+                                </li>
+                                <li>
+                                    <span class="cate">SK텔레콤</span>
+                                    <span><span class="th">종류</span>보통주</span>
+                                    <span><span class="th">지분율</span><span class="right first">0.57%</span></span>
+                                    <span><span class="th">주식수</span><span class="right second">1,250,992</span></span>
+                                </li>
+                                <li>
+                                    <span class="cate">SK㈜</span>
+                                    <span><span class="th">종류</span>보통주</span>
+                                    <span><span class="th">지분율</span><span class="right first">30.01%</span></span>
+                                    <span><span class="th">주식수</span><span class="right second">65,668,397</span></span>
+                                </li>
+                                <li>
+                                    <span class="cate">기타</span>
+                                    <span><span class="th">종류</span>보통주</span>
+                                    <span><span class="th">지분율</span><span class="right first">53.09%</span></span>
+                                    <span><span class="th">주식수</span><span class="right second">116,183,664</span></span>
+                                </li>
+                                <li class="sum">
+                                    <span class="cate">합계</span>
+                                    <span></span>
+                                    <span><span class="th">지분율</span><span class="right first">100.00%</span></span>
+                                    <span><span class="th">주식수</span><span class="right second">218,833,144</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="page" id="page2">
+                    <figure class="sub_ban">
+                        <img src="./img/image01.png" alt="주주환원">
+                        <div class="tit_box">
+                            <h2 class="sub_tit" style="color: #1a1a1a; text-shadow: none; padding-left: 210px;">주주환원 </h2>
+                        </div>
+                    </figure>
+                    <div class="bread_box">
+                        <div class="bread_wrap">
+                            <ul class="bread">
+                                <li class="item1">
+                                    <a href="index" class="home">HOME</a>
+                                </li>
+                                <li class="item2">주주환원</li>
+                                <li class="item3">
+                                    <select name="sel" id="sel2" class="sel">
+                                        <option value="stock.html#page1">주주현황</option>
+                                        <option value="stock.html#page2" selected>주주환원</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page_con">
+                        <div class="page_wrap">
+                        <div class="part part-01">
+                            <h2 style="margin-top: 50px;">배당 정책</h2>
+                            <p class="desc-nor-b">SK텔레콤은 주주가치 제고를 위해 사업 실적, 투자 계획, 재무 현황 및 전망 등을 종합적으로 고려하여 배당을 결정하고 있습니다. <br>이와 관련하여 당사는 2021년 8월 11일, 중장기 배당정책 계획을 아래와 같이 공시한 바 있습니다.</p>
+                            <p class="desc-nor-b"><span class="fw-bold">[FY2021~FY2023 배당정책]</span> <br>EBITDA-CapEx의 30~40% 내에서 배당총액 결정 (별도 실적 기준)</p>
+                            <p class="desc-nor-b">상기와 같이 중장기적으로 안정적인 배당을 유지하며, 주주가치와 기업가치 제고를 위해 지속 노력하겠습니다. <br>또한 차년도에 지급할 예상 배당정보는 컨퍼런스콜 등을 통해 지속적으로 제공하며 시장과 소통하겠습니다.</p>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <script>
+                $(document).ready(function(){
+                    $(".sel").change(function(){
+                        location.href = this.value;
+                    });
+                });    
+            </script>
+        </div>
+        <footer id="ft">
+            <div class="ft_wrap">
+                <nav class="fnb">
+                    <a href="">사이트맵</a>
+                    <a href="">윤리경영</a>
+                    <a href="">사외내방신청</a>
+                    <a href="">협력사신문고</a>
+                    <a href="">공정위 4대 실천 사항</a>
+                    <a href="">보안신고센터</a>
+                    <a href="">개인정보처리방침</a>
+                </nav>
+                <nav class="sub">
+                    <ul>
+                        <li class="sns1">
+                            <a href="" title="페이스북"><i class="xi-facebook"></i></a>
+                        </li>
+                        <li class="sns2">
+                            <a href="" title="유튜브"><i class="xi-youtube-play"></i></a>
+                        </li>
+                        <li class="sns3">
+                            <a href="" title="네이버 포스트"><i class="xi-naver"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright">Copyright © SKtelecom All rights reserved. 대표번호 : 031-1234-1111</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
