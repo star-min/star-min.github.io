@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/meta/favicon.ico">
+    <link rel="apple-touch-icon" href="./img/meta/favicon.ico">
+    <!-- 검색(메타) 정보 -->
+    <meta name="url" content="https://www.genesis.com/">
+    <meta name="title" content="제네시스">
+    <meta name="description" content="제네시스, G60, G70, G80, G90, GV60, GV70, GV80">
+    <meta name="keywords" content="제네시스, G60, G70, G80, G90, GV60, GV70, GV80, 자동차, 현대차, 현대자동차, GENESIS">
+    <!-- 오픈 그래프 -->
+    <meta property="og:url" content="https://www.genesis.com/">
+    <meta property="og:title" content="제네시스">
+    <meta property="og:description" content="제네시스, G60, G70, G80, G90, GV60, GV70, GV80">
+    <meta property="og:image" content="./img/meta.logo.png">
+    <!-- 기본 플러그인 연결 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 웹 폰트/폰트 모듈 연결 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <!-- 웹 아이콘 연결 -->
+    <!-- XEIcon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 스타일 초기화 모듈 연결 -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+        /* content */
+        #content .grid_box {width: 1400px; margin: 0 auto;}
+        #vs {width: 100%; overflow: hidden; position: relative;}
+        .img_box{width: 600%;}
+        .img_box li{float:left; width: 16.66667%; position: relative;}
+        .img_box li a{display: block;}
+        .img_box li a img{display: block; width: 100%; height: auto;}
+        .img_box .tit_box { position: absolute; top: 80px; left: 260px; color: #fff; text-shadow: 1px 1px 1px #000; padding-left: 50px;} 
+        .tit_box {clear:both; margin-top: 60px;}
+        .col_com {clear:both; margin-bottom: 30px;}
+        .vs_tit {clear:both; font-size: 90px; margin-bottom: 20px;}
+        .vs_com {float:left; font-size: 20px;}
+        .btn_group {position: absolute; bottom: 0; margin-left: 100px;}
+        .btn_group button { display:block; width: 40px; height: 80px; float:left; background-color:rgba(0,0,0,0.0); border:none; outline: none; color:#fff; cursor: pointer; }
+        .grid_box {clear:both; width: 100%; margin: auto; overflow: hidden; position: relative;}
+        .grid_wrap {width: 200%; margin: auto;} 
+        .grid_wrap li{position: absolute; float:left; height: 16.66667vw; background-position: center center; background-size: 70%; background-repeat: no-repeat; position: relative; cursor: pointer;}
+        .grid_wrap li:hover {background-color: rgb(57, 56, 56);}
+        .grid_wrap li.item1 {background-image: url(./img/content_imgbox/g70-desktop-630x240-ko.webp);}
+        .grid_wrap li.item2 {background-image: url(./img/content_imgbox/g80ev-desktop-630x240-ko.webp);}
+        .grid_wrap li.item3 {background-image: url(./img/content_imgbox/g80-desktop-630x240-ko.webp);}
+        .grid_wrap li.item4 {background-image: url(./img/content_imgbox/g90-desktop-630x240-ko.webp);}
+        .grid_wrap li.item5 {background-image: url(./img/content_imgbox/gv60-desktop-630x240-ko.webp);}
+        .grid_wrap li.item6 {background-image: url(./img/content_imgbox/gv70ev-desktop-630x240-ko.webp);}
+        .grid_wrap li.item7 {background-image: url(./img/content_imgbox/gv70-desktop-630x240-ko.webp);}
+        .grid_wrap li.item8 {background-image: url(./img/content_imgbox/gv80-desktop-630x240-ko.webp);}
+        .grid_wrap a {display:block; margin-top: 16px; margin-left: 16px; text-shadow: 1px 1px 1px;}
+        .grd_btn_group {position: relative; bottom: 10vw; width: 100%; margin-bottom: 30px;}
+        .grd_btn_group button {display: block; float:left; border: none; width: 80px; height: 80px; background-color: rgba(0, 0, 0, 0); cursor: pointer;}
+        #grd_l {float: left; margin-left: 8px;}
+        #grd_r {float: right; margin-right: 8px;}
+        .col1 {width: 8.33333%;}
+        .col2 {width: 16.66666%;}
+        .col3 {width: 10.49%; padding-left: 1%; padding-right: 1%;}
+        .col4 {width: 33.33333%;}
+        .col5 {width: 41.66666%;}
+        .col6 {width: 50%;}
+    </style>
+    <title>제네시스(GENESIS)</title>
+</head>    
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo">
+                    <img src="./img/images/logo.png" alt="Home">
+                </a>
+                <nav id="gnb">
+                    <ul>
+                        <li>
+                            <span>모델</span>
+                            <ul class="sub">
+                                <li><a href="model.html#page1">ALL</a></li>
+                                <li><a href="model.html#page2">SEDAN</a></li>
+                                <li><a href="model.html#page3">SUV</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>구매</span>
+                            <ul class="sub">
+                                <li><a href="buy.html#page1">구매 프로그램</a></li>
+                                <li><a href="buy.html#page2">전기차 구매가이드</a></li>
+                                <li><a href="buy.html#page3">제네시스 스펙트럼</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>체험</span>
+                            <ul class="sub">
+                                <li><a href="experience.html#page1">스페이스</a></li>
+                                <li><a href="experience.html#page2">시승신청</a></li>
+                                <li><a href="experience.html#page3">전시장 찾기</a></li>
+                                <li><a href="experience.html#page4">드라이빙 익스피리언스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>멤버스</span>
+                            <ul class="sub">
+                                <li><a href="members.html#page1">제네시스 멤버십</a></li>
+                                <li><a href="members.html#page2">제네시스 커넥티드 서비스</a></li>
+                                <li><a href="members.html#page3">디지털 서비스</a></li>
+                                <li><a href="members.html#page4">차량관리 서비스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>제네시스</span>
+                            <ul class="sub">
+                                <li><a href="genesis.html#page1">브랜드</a></li>
+                                <li><a href="genesis.html#page2">콘셉트카</a></li>
+                                <li><a href="genesis.html#page3">모터쇼</a></li>
+                                <li><a href="genesis.html#page4">로드트립</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <p id="tnb">
+                    <a href="">고객센터</a>
+                    <a href="">마이 페이지</a>
+                    <a href="">오시는길</a>
+                </p>
+            </div>
+        </header>
+        <div id="content">
+            <div id="vs">
+                <ul class="img_box">
+                    <li>
+                        <a href="">
+                            <img src="./img/benner/genesis-main-keyvisual-electrified-g80-main-hero-desktop-2560x900-kr.jpg"
+                                alt="G80 EV" class="pic">
+                            <div class="tit_box">
+                                <p class="vs_com">ELECTRIFIED</p>
+                                <h2 class="vs_tit">G80</h2>
+                                <p class="vs_com">전기차 그 이상의 시작</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/benner/genesis-main-keyvisual-electrified-gv70-main-hero-01-desktop-2560x900.jpg"
+                                alt="GV70 EV" class="pic">
+                            <div class="tit_box">
+                                <p class="vs_com">ELECTRIFIED</p>
+                                <h2 class="vs_tit">GV70</h2>
+                                <p class="vs_com">또 다른 감동을 충전하는 시간</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/benner/genesis-main-keyvisual-futuring-genesis-pc-2560x900-kr.jpg"
+                                alt="futuring" class="pic">
+                            <div class="tit_box">
+                                <p class="vs_com">미래를 향한 대담한 비전</p>
+                                <h2 class="vs_tit">FUTURING</h2>
+                                <h2 class="vs_tit">GENESIS</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/benner/genesis-main-keyvisual-g90-main-hero-01-desktop-2560x900-ko.jpg"
+                                alt="G90" class="pic">
+                            <div class="tit_box">
+                                <p class="vs_com">GENESIS</p>
+                                <h2 class="vs_tit">G90</h2>
+                                <p class="vs_com">한국자동차기자협회 2022 올해의 차 수상</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/benner/genesis-main-keyvisual-gv60-main-hero-02-desktop-2560x900-kr.jpg"
+                                alt="GV60" class="pic">
+                            <div class="tit_box">
+                                <p class="vs_com">GENESIS</p>
+                                <h2 class="vs_tit">GV60</h2>
+                                <p class="vs_com">당신과의 교감을 위해</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/benner/genesis-main-keyvisual-gv70-22my-main-hero-desktop-2560x900.jpg"
+                                alt="GV70" class="pic">
+                            <div class="tit_box">
+                                <p class="vs_com">GENESIS</p>
+                                <h2 class="vs_tit">GV70</h2>
+                                <p class="vs_com">2022년형 출시</p>
+                            </div>
+                        </a>
+                    </li>                 
+                </ul>
+                <div class="btn_group">
+                    <button class="prev_btn" id="vs_l"><i class="xi-arrow-left"></i></button>
+                    <button class="next_btn" id="vs_r"><i class="xi-arrow-right"></i></button>
+                </div>
+            <script>
+                    $(document).ready(function(){
+                    wd = $(window).width();
+                    var intv = setInterval(function(){
+                        ani1();
+                    }, 3000);
+                    function ani1(){
+                        $(".img_box").not(":animated").animate({"margin-left":-wd+"px"}, 800, function(){
+                            $(".img_box li").eq(0).appendTo($(".img_box"));
+                            $(".img_box").css("margin-left","0px");
+                        });
+                    }
+                    function ani2(){
+                        $(".img_box").css("margin-left",-wd+"px");
+                        $(".img_box li:last-child").prependTo($(".img_box"));
+                        $(".img_box").not(":animated").animate({"margin-left":"0px"}, 800);
+                    }
+                    $(".btn_group .next_btn").click(function(){
+                        clearInterval(intv);
+                        ani1();
+                        intv = setInterval(function(){ ani1(); }, 5000);
+                    });
+                    $(".btn_group .prev_btn").click(function(){
+                        clearInterval(intv);
+                        ani2();
+                        intv = setInterval(function(){ ani1(); }, 5000);
+                    });
+
+
+
+                    function ani3(){
+                        $(".grid_wrap").not(":animated").animate({"margin-left":-25+"%"}, 400, function(){
+                            $(".grid_wrap li").eq(0).appendTo($(".grid_wrap"));
+                            $(".grid_wrap").css("margin-left","0px");
+                        });
+                    }
+                    function ani4(){
+                        $(".grid_wrap").css("margin-left",-25+"%");
+                        $(".grid_wrap li:last-child").prependTo($(".grid_wrap"));
+                        $(".grid_wrap").not(":animated").animate({"margin-left":"0px"}, 400);
+                    }
+                    $(".grd_btn_group .grd_next_btn").click(function(){
+                        clearInterval(intv);
+                        ani3();
+                    });
+                    $(".grd_btn_group .grd_prev_btn").click(function(){
+                        clearInterval(intv);
+                        ani4();
+                    });
+                });
+            </script>
+            </div>
+            <div class="grid_box">
+                <ul class="grid_wrap">
+                    <li class="col3 item1">
+                        <a href="">
+                            <p class="col_com">GENESIS</p>
+                            <h3 class="col_tit">G70</h3>
+                            <span class="arrow"></span>
+                    </a>
+                    </li>
+                    <li class="col3 item2">
+                        <a href="">
+                            <p class="col_com">ELECTRIFIED</p>
+                            <h3 class="col_tit">G80</h3>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li class="col3 item3">
+                        <a href="">
+                            <p class="col_com">GENESIS</p>
+                            <h3 class="col_tit">G80</h3>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li class="col3 item4">
+                        <a href="">
+                            <p class="col_com">GENESIS</p>
+                            <h3 class="col_tit">G90</h3>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li class="col3 item5">
+                        <a href="">
+                            <p class="col_com">GENESIS</p>
+                            <h3 class="col_tit">GV60</h3>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li class="col3 item6">
+                        <a href="">
+                            <p class="col_com">ELECTRIFIED</p>
+                            <h3 class="col_tit">GV70</h3>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li class="col3 item7">
+                        <a href="">
+                            <p class="col_com">GENESIS</p>
+                            <h3 class="col_tit">GV70</h3>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li class="col3 item8">
+                        <a href="">
+                            <p class="col_com">GENESIS</p>
+                            <h3 class="col_tit">GV80</h3>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="grd_btn_group">
+                    <button class="grd_prev_btn" id="grd_l"><i class="xi-angle-left"></i></button>
+                    <button class="grd_next_btn" id="grd_r"><i class="xi-angle-right"></i></button>
+                </div>
+
+            </div>
+        </div>
+        <footer id="ft">
+            <div class="ft_wrap">
+                <nav class="fnb">
+                    <a href="">사이트맵</a>
+                    <a href="">이용약관</a>
+                    <a href="">개인정보 처리방침</a>
+                    <a href="">저작권 안내</a>
+                    <a href="">보증안내</a>
+                    <a href="">자동차 교환 및 환불 중재 규정 안내</a>
+                    <a href="">하자 재발 통보 안내</a>
+                </nav>
+                <nav class="snb">
+                    <ul>
+                        <li class="sns1">
+                            <a href="" title="페이스북"><i class="xi-facebook xi-2x"></i></a>
+                        </li>
+                        <li class="sns2">
+                            <a href="" title="인스타그램"><i class="xi-instagram xi-2x"></i></a>
+                        </li>
+                        <li class="sns3">
+                            <a href="" title="유튜브"><i class="xi-youtube-play xi-2x"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright">© Copyright 2022 Hyundai Motor Company. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
