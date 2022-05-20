@@ -1,0 +1,1295 @@
+<html lang="ko"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+	
+
+
+
+
+
+
+
+<title>나를 설레게 하는 도시, 속초</title>
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+	
+
+<link rel="stylesheet" href="/page/common/css/fonts.css">
+<link rel="stylesheet" href="/page/common/css/common.css?ver=1.1">
+<link rel="stylesheet" href="/page/common/css/common_style.css">
+<link rel="stylesheet" href="/page/common/css/print.css" media="print">
+<link rel="stylesheet" href="/page/common/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/page/common/css/tour.css">
+
+	
+
+
+
+
+
+
+
+<script src="/page/common/js/jquery-1.12.2.min.js"></script>
+<script src="/page/common/js/jquery.easing.1.3.min.js"></script>
+<script src="/page/common/js/jquery-ui.min.js"></script>
+<!--[if lt IE 9]>
+<script src="/page/common/js/html5shiv.js"></script>
+<![endif]-->
+<script src="/page/common/js/jquery.bxslider.js"></script>
+<script src="/page/common/js/common.js"></script>
+<script src="/page/common/js/puble_common.js"></script>
+<script src="/page/common/js/jquery.cookie.js"></script>
+<script src="/page/common/js/date.js"></script>
+<script src="/page/common/js/util.js"></script>
+<script src="/page/common/js/utillity.js"></script>
+<script src="/page/common/js/jquery-dateFormat.min.js"></script>
+
+
+
+<script src="/page/common/js/slick.min.js"></script>
+<script src="/page/common/js/tour.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+	var pageUrl  = '/tour';
+	var pageTitle = '메인';
+	if ('/tour') {
+		$.ajax({
+			  type : 'POST'
+			, url  : '/egf/insertPageHit'
+			, data :{
+				  'pageUrl'  : pageUrl
+				, 'pageTitle' : pageTitle
+			}
+			, dataType:'json'
+		});
+	}
+});
+</script>
+	
+	<link rel="stylesheet" href="/page/portal/css/app.css?ver=20220120">
+	<link rel="stylesheet" href="/page/common/css/chamcode.css">
+	
+	
+		
+			<link rel="stylesheet" href="/page/portal/css/index.css?ver=20220120">
+		
+		
+	
+	
+	
+	
+		
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        var context = 'tour';
+        var reConnTime = '0';
+        var connCode = 'CNSCTR01';
+        if (!$.cookie("conn_item_deny_" + connCode)) {
+            $.ajax({
+                type: 'POST'
+                , url: '/egf/insertConnItem'
+                , data: {
+                    'context': context
+                    , 'reConnTime': reConnTime
+                    , 'connCode': connCode
+                }
+                , dataType: 'json'
+            });
+        }
+
+        var popCode = 'PUSCTR01';
+        if(popCode != "") {
+            var popupList = new Array();
+            $.ajax({
+                cache: false,
+                url: "/egf/bp/popup/article/callPopupList",
+                data: {
+                    'popCode': popCode
+                },
+                dataType: "JSON",
+                success: function (data, textStatus, jqXHR) {
+                    popupList = (data.popupList);
+                    setPopup(popupList);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log("fail");
+                }
+            });
+        }
+
+        $("#themaCode").change(function () {
+            var fValue = $(this).val();
+            $("#division").val("전체").attr("selected", "selected");
+            $(this).attr("selected", "selected");
+            if (fValue == '') {
+                var html = "<option value='' selected>전체</option>";
+                var selector = $("#division");
+                selector.html(html);
+                document.controlForm.beforeThemaCode.value = '';
+                setMarker('', '');
+            } else {
+                $.ajax({
+                    cache: false,
+                    url: "/tour/plan/commonList.do",
+                    data: {themaCode: this.value},
+                    dataType: "JSON",
+                    success: function (data, textStatus, jqXHR) {
+                        if (data.result == 'fail') {
+                            alert("통신에 실패했습니다.");
+                        } else if (data.result == 'success') {
+                            var html = "<option value='' selected>선택하세요</option>";
+                            var selector = $("#division");
+                            var commonList = data.data;
+                            for (var i = 0; i < commonList.length; i++) {
+                                html += "<option value='" + commonList[i].value + "'> " + commonList[i].division + "</option>";
+                            }
+
+                            selector.html(html);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                    }
+                });
+            }
+        });
+
+        $("#seasonSelect dd").click(function () {
+            $("#seasonSelect > dd").removeClass("active");
+            $(this).addClass("active");
+            document.tourSearchForm.season.value = $(this).data('value');
+        });
+
+        $("#likingSelect dd").click(function () {
+            $("#likingSelect > dd").removeClass("active");
+            $(this).addClass("active");
+            document.tourSearchForm.likingNum.value = $(this).data('value');
+        });
+
+        $("#partySelect dd").click(function () {
+            $("#partySelect > dd").removeClass("active");
+            $(this).addClass("active");
+            document.tourSearchForm.party.value = $(this).data('value');
+        });
+    });
+
+    function setPopup(popupList) {
+        for (var i = 0; i < popupList.length; i++) {
+            if (!$.cookie('popup_deny_' + popupList[i].popItemSeq)) {
+                var title = popupList[i].title;
+                var top = popupList[i].positiony;
+                var left = popupList[i].positionx;
+                var width = popupList[i].width;
+                var height = popupList[i].height;
+                var type = popupList[i].type;
+                var url = popupList[i].url;
+                var popWindowType = popupList[i].popWindowType;
+
+                if (top == 0 && left == 0) {
+                    top = (screen.height - height) / 2;
+                    left = (screen.width - width) / 2;
+                }
+                // 윈도우 팝업
+                if (popWindowType == 'Y') {
+                    window.open('/egf/bp/popup/article/view.do?popItemSeq=' + popupList[i].popItemSeq, title, 'width=' + width + ',height=' + (height + 30) + ',top=' + top + ',left=' + left);
+                }
+                // 레이어 팝업
+                else if (popWindowType == 'N') {
+                    var style = 'position: absolute; top: ' + top + 'px; left : ' + left + 'px; width : ' + width + 'px; height : ' + height + 'px; z-index: 99999;'
+                    $('#contents').append('<iframe src="/egf/bp/popup/article/view.do?popItemSeq=' + popupList[i].popItemSeq + '" style="' + style + '" id="popup_frame_' + popupList[i].popItemSeq + '" title="' + title + '"></iframe>');
+                }
+            }
+        }
+    }
+
+    function goContents() {
+        var varForm = document.tourSearchForm;
+        varForm.tourSearch.value = true;
+        if (varForm.likingNum.value == "2") {
+            varForm.allDataF.value = "Y";
+            varForm.action = "/tour/culture";
+        } else {
+            varForm.action = "/tour/destination";
+        }
+        varForm.submit();
+    }
+
+    function popup(aTag) {
+        var $aTag = $(aTag);
+        var url = $aTag.attr('href');
+        var seq = $aTag.data('seq');
+        if (!url) {
+            return;
+        } else {
+            url = '/egf/bp/popup-zone/article/view.do?popupZoneSeq=' + seq;
+        }
+        var top = $aTag.data('top');
+        var left = $aTag.data('left');
+        var width = $aTag.data('width');
+        var height = $aTag.data('height');
+        var target = $aTag.attr('target');
+        var condition = '';
+
+        if (width > 0 && height > 0) {
+            if (top == 0 && left == 0) {
+                top = (screen.height - height) / 2;
+                left = (screen.width - width) / 2;
+            }
+            condition = 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left;
+        }
+
+        if (!condition) {
+            window.open(url, target);
+        } else {
+            window.open(url, target, condition);
+        }
+    }
+
+    function goSearch() {
+        var f = document.indexSearchForm;
+        var keyword = f.searchKeyword.value;
+        f.action = "/tour/search?searchCondition=all&searchKeyword=" + keyword;
+        f.submit();
+
+    }
+
+</script>
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body id="main">
+	<a href="#contents" class="skip">본문 바로가기</a>
+	
+
+
+
+
+
+
+
+<header id="header" class="">
+	<div class="inner">
+		<h1><a href="/tour"><img src="/page/portal/imgs/logo.png" alt="그곳.속초"></a></h1>
+           
+		<nav id="gnb" class="clf active">
+			
+				
+					
+						
+						
+						
+							<div>
+						
+					
+					
+					<h2 class=""><a href="/tour/travel">
+						추천여행
+					</a></h2>
+						<div>
+							<p class="hide-on-medium hide-on-small"><em>추천여행</em> 재미있고 다양한 속초를 이야기로 만나보세요.</p>
+							<ul>
+								
+									
+										<li>
+											<a href="/tourSearch" target="_blank" title="새 창 이동">
+												맞춤형 속초여행
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/travel/travel_story">
+												이야기로 보는 속초
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/travel/travel_festival">
+												축제 및 행사
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/travel/travel_map">
+												지도로 떠나는 속초
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/travel/travel_chart">
+												차트로 보는 속초
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/travel/currently">
+												이달의 속초
+											</a>
+										</li>
+									
+								
+							</ul>
+							
+								
+								
+							
+						</div>
+					</div>
+				
+			
+				
+					
+						
+							<div class="style1">
+						
+						
+						
+					
+					
+					<h2 class=""><a href="/tour/destination">
+						관광지
+					</a></h2>
+						<div>
+							<p class="hide-on-medium hide-on-small"><em>관광지</em> 속초의 구석구석 숨어있는 관광지를 만나보세요.</p>
+							<ul>
+								
+									
+										<li>
+											<a href="/tour/destination/nature">
+												자연
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/destination/attraction">
+												볼거리
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/destination/experience">
+												체험
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/destination/facility">
+												시설
+											</a>
+										</li>
+									
+								
+							</ul>
+							
+								
+									<div class="wrap clf">
+						                <figure class="hide-on-medium hide-on-small">
+						                    <a href="/tour/destination?cid=163485&amp;mode=read"><img src="/page/portal/imgs/bg_nav2_1.jpg" alt="설악산 벚꽃터널"></a>
+						                    <figcaption>
+						                        <h3><a href="/tour/destination?cid=163485&amp;mode=read">설악산 <em>벚꽃터널</em></a><a href="/tour/destination/nature">더보기</a></h3>
+						                        <p>
+						                            <a href="/tour/destination?cid=163485&amp;mode=read">
+						                                검은 아스팔트에 내린 꽃피는<br>
+						                                봄바람
+						                            </a>
+						                        </p>
+						                    </figcaption>
+						                </figure>
+						                <figure class="hide-on-medium hide-on-small">
+						                    <a href="/tour/destination?cid=165565&amp;mode=read"><img src="/page/portal/imgs/bg_nav2_2.jpg" alt="달마봉"></a>
+						                    <figcaption>
+						                        <h3><a href="/tour/destination?cid=165565&amp;mode=read"><em>달마봉</em></a><a href="/tour/destination/nature">더보기</a></h3>
+						                        <p>
+						                            <a href="/tour/destination?cid=165565&amp;mode=read">
+						                                아름다운 생명력을 가진 꽃과<br>
+						                                식물들을 만나보세요.
+						                            </a>
+						                        </p>
+						                    </figcaption>
+						                </figure>
+						            </div>
+								
+								
+							
+						</div>
+					</div>
+							<div>
+					<h2 class=""><a href="/tour/culture">
+						문화
+					</a></h2>
+						<div>
+							<p class="hide-on-medium hide-on-small"><em>문화</em> 속초의 아름다운 문화를 만나보세요.</p>
+							<ul>
+										<li>
+											<a href="/tour/culture/museum">
+												박물관
+											</a>
+										</li>
+										<li>
+											<a href="/tour/culture/gallery">
+												전시/미술관
+											</a>
+										</li>
+										<li>
+											<a href="/tour/culture/culturalHeritage">
+												문화/문화재
+											</a>
+										</li>
+										<li>
+											<a href="/tour/culture/security">
+												유적/안보
+											</a>
+										</li>
+										<li>
+											<a href="/tour/culture/culEtc">
+												기타
+											</a>
+										</li>
+										<li>
+											<a href="/tour/culture/100th_store">
+												백년가게
+											</a>
+										</li>
+										<li>
+											<a href="/tour/culture/master">
+												속초명장
+											</a>
+										</li>
+							</ul>
+						</div>
+					</div>
+							<div class="style1">
+					<h2 class=""><a href="/tour/housenfood">
+						숙박/음식점
+					</a></h2>
+						<div>
+							<p class="hide-on-medium hide-on-small"><em>숙박/음식점</em> 속초의 구석구석 숨어있는 관광지를 만나보세요.</p>
+							<ul>
+<li>
+											<a href="/tour/housenfood/special">
+												음식
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/housenfood/food">
+												모범음식점
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/housenfood/goodPrice">
+												착한가격업소
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/housenfood/saferestaurant">
+												안심식당
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/housenfood/lodge">
+												숙박
+											</a>
+										</li>
+									
+								
+							</ul>
+							
+								
+								
+									<div class="wrap clf">
+						                <figure class="hide-on-medium hide-on-small">
+						                    <a href="/tour/destination/nature"><img src="/page/portal/imgs/bg_nav4_1.jpg" alt="속초의 온천지구"></a>
+						                    <figcaption>
+						                        <h3><a href="/tour/destination/nature">속초의 <em>온천지구</em></a><a href="/tour/destination/nature">더보기</a></h3>
+						                        <p>
+						                            <a href="/tour/destination/nature">
+						                                자연발생적으로 용출된 따뚯한<br>
+						                                온천수를 만나보세요
+						                            </a>
+						                        </p>
+						                    </figcaption>
+						                </figure>
+						                <figure class="hide-on-medium hide-on-small">
+						                    <a href="/tour/guide/guide_guide"><img src="/page/portal/imgs/bg_nav4_2.jpg" alt="속초 관광안내소"></a>
+						                    <figcaption>
+						                        <h3><a href="/tour/guide/guide_guide" "="">속초<em class="weirdo">관광안내소</em></a><a href="/tour/guide/guide_guide">더보기</a></h3>
+						                        <p>
+						                            <a href="/tour/guide/guide_guide" "="">
+						                                속초 여행을 위한 관광안내제공
+						                            </a>
+						                        </p>
+						                    </figcaption>
+						                </figure>
+						            </div>
+								
+							
+						</div>
+					</div>
+				
+			
+				
+					
+						
+						
+							<div class="style2">
+						
+						
+					
+					
+					<h2 class=""><a href="/tour/course">
+						코스로 보는 속초
+					</a></h2>
+						<div>
+							<p class="hide-on-medium hide-on-small"><em>코스로 보는 속초</em> 다양한 코스로 만나보는 속초의 명소</p>
+							<ul>
+								
+									
+										<li>
+											<a href="/tour/course/course_healing">
+												힐링코스
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/course/course_couple">
+												연인 · 친구코스
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/course/course_day">
+												당일코스
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/course/course_2day">
+												1박2일코스
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/course/course_3day">
+												2박3일코스
+											</a>
+										</li>
+									
+								
+									
+								
+									
+								
+							</ul>
+							
+								
+								
+							
+						</div>
+					</div>
+				
+			
+				
+					
+						
+						
+						
+							<div>
+						
+					
+					
+					<h2 class=""><a href="/tour/guide">
+						여행길잡이
+					</a></h2>
+						<div>
+							<p class="hide-on-medium hide-on-small"><em>여행길잡이</em> 속초 여행 Talk! Talk!</p>
+							<ul>
+								
+									
+										<li>
+											<a href="/tour/guide/guide_news">
+												속초관광소식
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/guide/guide_sns">
+												관광 SNS
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/guide/guide_map">
+												속초지도
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/guide/guide_guide">
+												관광안내
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/guide/guide_traffic">
+												교통정보
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/guide/guide_picture">
+												관광사진작품집
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/guide/guide_promotion">
+												홍보물 신청
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="http://www.kctg.or.kr/index.do" target="_blank" title="새 창 이동">
+												문화관광해설사
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/guide/flygangwon">
+												플라이강원
+											</a>
+										</li>
+									
+								
+									
+										<li>
+											<a href="/tour/guide/touristTaxi">
+												외국인 관광택시
+											</a>
+										</li>
+									
+								
+									
+								
+							</ul>
+							
+								
+								
+							
+						</div>
+					</div>
+				
+			
+		</nav>
+        <div id="menus" class="clf">
+            <ul class="lang">
+                <li><a href="/en">ENGLISH</a></li>
+                <li><a href="/ja">JAPANES</a></li>
+                <li><a href="/ch">CHINESE</a></li>
+                <li><a href="/ru">RUSSIAN</a></li>
+            </ul>
+            <button class="btn-sns hide-on-large hide-on-laptop hide-on-medium"><span class="sr-only">공유하기</span></button>
+            <div class="sns clf">
+                <a class="instagram" href="https://www.instagram.com/sokchositour/" target="_blank" title="새창으로 이동"><span class="sr-only">인스타그램으로 공유하기</span></a>
+                <a class="facebook" href="https://www.facebook.com/sokchotour/" target="_blank" title="새창으로 이동"><span class="sr-only">페이스북으로 공유하기</span></a>
+                <a class="blog" href="https://blog.naver.com/sokchositour" target="_blank" title="새창으로 이동"><span class="sr-only">블로그로 공유하기</span></a>
+                <a class="cityhall" href="https://www.sokcho.go.kr" target="_blank" title="새창으로 이동"><span class="sr-only">속초시청 홈페이지 바로가기</span></a>
+            </div>
+            <a class="btn-search" href="/tour/search" target="_blank"><span class="sr-only">검색페이지로 이동</span></a>
+            <button id="btn-gnb" class=""><span class="sr-only">전체 메뉴 열기</span></button>
+        </div>
+    </div>
+</header>
+	<main id="contents">
+<section id="visual">
+    <div class="slick-wrap">
+        <div class="inner">
+            <h2 style="display: block;"><img src="/page/portal/imgs/txt_visual.png" alt="또 다른 세계 그곳,속초"></h2>
+            <div class=" dots"><ul class="slick-dots" style="display: block;"><li class="" aria-hidden="true"><button type="button" data-role="none" role="button" tabindex="0">1번 보기</button></li><li aria-hidden="true" class=""><button type="button" data-role="none" role="button" tabindex="0">2번 보기</button></li><li aria-hidden="true" class=""><button type="button" data-role="none" role="button" tabindex="0">3번 보기</button></li><li aria-hidden="true" class=""><button type="button" data-role="none" role="button" tabindex="0">4번 보기</button></li><li aria-hidden="false" class="slick-active"><button type="button" data-role="none" role="button" tabindex="0">5번 보기</button></li><li aria-hidden="true" class=""><button type="button" data-role="none" role="button" tabindex="0">6번 보기</button></li><li aria-hidden="true" class=""><button type="button" data-role="none" role="button" tabindex="0">7번 보기</button></li><li aria-hidden="true" class=""><button type="button" data-role="none" role="button" tabindex="0">8번 보기</button></li><li aria-hidden="true" class=""><button type="button" data-role="none" role="button" tabindex="0">9번 보기</button></li></ul></div>
+            <div class="control hide-on-medium hide-on-small clf" id="contents">
+                <button class="prev slick-arrow" style="display: inline-block;"><img src="/page/portal/imgs/ico_arrow9.png" alt="이전 보기"></button>
+                <button class="pause"><img src="/page/portal/imgs/ico_pause1.png" alt="일시정지"></button>
+                <button class="play"><img src="/page/portal/imgs/ico_play.png" alt="자동 재생"></button>
+                <button class="next slick-arrow" style="display: inline-block;"><img class="flip-90" src="/page/portal/imgs/ico_arrow9.png" alt="다음 보기"></button>
+            </div>
+        </div>
+        <figure class="slick slick-initialized slick-slider slick-dotted">
+                <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 20878px; transform: translate3d(-9490px, 0px, 0px);"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20191018125420.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20201028145125.jpg" alt="엑스포공원" class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20201028145125.jpg"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20220504134926.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503111346.jpg" alt="속초아이 대관람차" class="slick-slide" data-slick-index="0" aria-hidden="true" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503111346.jpg"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20220504134936.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503111632.jpg" alt="대포항 야경" class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503111632.jpg"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20220504134948.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503111856.jpg" alt="청초호 호수공원" class="slick-slide" data-slick-index="2" aria-hidden="true" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503111856.jpg"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20220504135002.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503112012.jpg" alt="영랑호수윗길" class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503112012.jpg"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20220504135010.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503112059.jpg" alt="동명항 등대" class="slick-slide slick-current slick-active" data-slick-index="4" aria-hidden="false" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503112059.jpg"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20220504135019.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503112145.jpg" alt="설악동 벚꽃터널" class="slick-slide" data-slick-index="5" aria-hidden="true" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503112145.jpg"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20210820165413.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20210819095923.jpg" alt="아바이마을 갯배" class="slick-slide" data-slick-index="6" aria-hidden="true" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20210819095923.jpg"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20191018125459.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20201028145135.jpg" alt="영금정" class="slick-slide" data-slick-index="7" aria-hidden="true" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20201028145135.jpg"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20191018125420.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20201028145125.jpg" alt="엑스포공원" class="slick-slide" data-slick-index="8" aria-hidden="true" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20201028145125.jpg"><img ft-320-src="/upload/popupzone/PPSCTR01/popupzone_m_PPSCTR01_20220504134926.jpg" ft-768-src="/upload/popupzone/PPSCTR01/" ft-1024-src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503111346.jpg" alt="속초아이 대관람차" class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" style="width: 1898px;" src="/upload/popupzone/PPSCTR01/popupzone_PPSCTR01_20220503111346.jpg"></div></div>
+        </figure>
+    </div>
+
+    <div class="searchs">
+		<a href="https://apkpure.com/kr/infodio/emgram.kr.co.infodio" target="_blank" title="새 창 이동" class="open btn-type01 v5">인포디오 플레이스토어</a>
+        <button class="btn-plan noto-s btn-type01 v1">나에게 딱 맞는 속초여행 계속하기</button>
+        <div class="plan-wrap clf">
+            <div>
+                <p class="txt">
+                    <em>속초, <b>누구와</b> 갈까?</em> 속초! 언제, 누구와 무엇을 하시겠습니까?
+                </p>
+                <form name="tourSearchForm" action="">
+                    <input type="hidden" name="season" value="#봄">
+                    <input type="hidden" name="likingNum" value="5">
+                    <input type="hidden" name="party" value="#친구">
+                    <input type="hidden" name="tourSearch">
+                    <input type="hidden" name="allDataF" value="">
+                    <dl class="clf" id="seasonSelect">
+                        <dt>언제?</dt>
+                        <dd class="active" data-value="#봄">봄</dd>
+                        <dd data-value="#여름">여름</dd>
+                        <dd data-value="#가을">가을</dd>
+                        <dd data-value="#겨울">겨울</dd>
+                    </dl>
+                    <dl class="clf" id="likingSelect">
+                        <dt>무엇을?</dt>
+                        <dd class="active" data-value="5">체험</dd>
+                        <dd data-value="2">문화관광</dd>
+                        <dd data-value="3">볼거리</dd>
+                        <dd data-value="4">자연관광</dd>
+                        <dd data-value="1">기타시설</dd>
+                    </dl>
+                    <dl class="clf" id="partySelect">
+                        <dt>누구와?</dt>
+                        <dd data-value="#부모">부모님과</dd>
+                        <dd class="active" data-value="#친구">친구와</dd>
+                        <dd data-value="#연인">연인과</dd>
+                        <dd data-value="#혼자">혼자</dd>
+                        <dd data-value="#아이">아이와</dd>
+                    </dl>
+                    <button type="button" onclick="goContents();" id="tourSearchSubmitButton" class="btn-submit"><span>검색<br>하기</span></button>
+                </form>
+            </div>
+            <div>
+                <p class="txt">
+                    <em>속초, <b>지도로</b> 보기</em> 속초여행을 지도로 만나보세요~
+                </p>
+                <form action="/tour/travel/travel_map">
+                    <fieldset>
+                        <label for="themaCode">1차 분류별</label>
+                        <select name="themaCode" id="themaCode">
+                            <option value="" selected="selected">선택하세요</option>
+                            <option value="Sights">관광지</option>
+                            <option value="Food">음식점</option>
+                            <option value="Lodge">숙박</option>
+                            <option value="Etc">기타</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <label for="division">2차 분류별</label>
+                        <select name="division" id="division">
+                        </select>
+                    </fieldset>
+                    <button class="btn-submit"><span>지도<br>검색하기</span></button>
+                </form>
+            </div>
+            <button class="btn-close">닫기</button>
+        </div>
+
+        <a href="/tour/course/road" class="staroad btn-type01 v2">속초 길자리</a>
+		<a href="https://apps.apple.com/kr/app/infodio/id1162003953?l" target="_blank" title="새 창 이동" class="open btn-type01 v6">인포디오 앱스토어</a>
+        <button class="btn-keyword btn-type01 v3">키워드로 찾아가는 속초</button>
+        <div class="keyword-wrap">
+            <form name="indexSearchForm" id="indexSearchForm" action="/tour/search">
+                <input type="hidden" name="searchCondition" value="all">
+                <fieldset>
+                    <h3><span class="hide-on-large hide-on-laptop"><b>키워드로 찾아가는</b> 속초</span><img class="hide-on-medium hide-on-small" src="/page/portal/imgs/txt_keyword2.png" alt="키워드로 찾아가는 속초">
+                    </h3>
+                    <a class="hide-on-laptop hide-on-medium hide-on-small " href="/tour/destination?cid=447&amp;mode=read">
+                        <span>속초해변/해수욕장</span>
+                    </a>
+                    <a class="hide-on-laptop hide-on-medium hide-on-small " href="/tour/destination?cid=229&amp;mode=read">
+                        <span>권금성</span>
+                    </a>
+                    <a class="hide-on-laptop hide-on-medium hide-on-small spot" href="/tour/destination?cid=927&amp;mode=read">
+                        <span>속초항</span>
+                    </a>
+                    <a class="hide-on-laptop hide-on-medium hide-on-small " href="/tour/destination?cid=782&amp;mode=read">
+                        <span>엑스포타워</span>
+                    </a>
+                    <a class="hide-on-laptop hide-on-medium hide-on-small " href="/tour/destination?cid=258097&amp;mode=read">
+                        <span>상도문 돌담마을</span>
+                    </a>
+                    <a class="hide-on-laptop hide-on-medium hide-on-small " href="/tour/destination?cid=33&amp;mode=read">
+                        <span>척산족욕공원</span>
+                    </a>
+                    <a class="hide-on-laptop hide-on-medium hide-on-small " href="/tour/destination?cid=55&amp;mode=read">
+                        <span>설악산자생식물원</span>
+                    </a>
+                    <a class="hide-on-laptop hide-on-medium hide-on-small " href="/tour/destination?cid=8359&amp;mode=read">
+                        <span>속초관광수산시장</span>
+                    </a>
+                    <a class="hide-on-laptop hide-on-medium hide-on-small " href="/tour/destination?cid=978&amp;mode=read">
+                        <span>청호해변</span>
+                    </a>
+                    <a class="hide-on-laptop hide-on-medium hide-on-small " href="/tour/destination?cid=452&amp;mode=read">
+                        <span>청초호</span>
+                    </a>
+                    <div class="binder">
+                        <label for="search-keyword2" class="hidden_txt">검색</label>
+                        <input type="search" name="searchKeyword" id="search-keyword2" placeholder="검색어를 입력해주세요">
+                        <button type="submit"><span class="sr-only">검색하기</span></button>
+                    </div>
+                </fieldset>
+            </form>
+            <button class="btn-close">닫기</button>
+        </div>
+        <a href="/tour/course/open_tourist" class="open btn-type01 v4">열린관광지</a>		
+    </div>
+</section>
+<section id="links">
+    <div class="inner clf">
+        <a href="/tour/guide/guide_news">속초관광소식</a>
+        <a href="/tour/guide/guide_promotion">관광홍보물 신청</a>
+        <a href="/tour/travel/currently">이달의 속초</a>
+        <a href="/tour/guide/guide_traffic">교통정보</a>
+        <a href="http://www.kctg.or.kr/index.do" target="_blank">문화관광해설사</a>
+        <a href="/tour/guide/guide_map" target="_blank">속초지도</a>
+    </div>
+</section>
+<section id="notify">
+    <div class="slick-wrap">
+        <div class="control clf">
+            <button class="prev"><img src="/page/portal/imgs/ico_arrow15.png" alt="이전보기"></button>
+                <div class="center-box">
+                    <p><em>1</em> / 0</p>
+                    <button class="pause"><img src="/page/portal/imgs/ico_pause2.png" alt="일시정지"></button>
+                    <button class="play"><img src="/page/portal/imgs/ico_play.png" alt="자동 재생"></button>
+                </div>	
+            <button class="next"><img class="flip-x" src="/page/portal/imgs/ico_arrow15.png" alt="다음 보기"></button>
+        </div>
+    </div>
+</section>
+<section id="event">
+    <div class="inner">
+        <h2 class="noto-s">추천! <em>속초 관광지</em></h2>
+        <p>속초의 아름다운 관광지를 만나보세요</p>
+        <div class="slick-binder">
+            <div class="slick-wrap">
+                <button class="prev slick-arrow" style="display: block;"><img src="/page/portal/imgs/ico_arrow11.png" alt="이전 관광지 보기"></button>
+                <button class="next slick-arrow" style="display: block;"><img class="flip-x" src="/page/portal/imgs/ico_arrow11.png" alt="다음 관광지 보기"></button>
+                <div class="slick slick-initialized slick-slider">
+                	
+                		<div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 7040px; transform: translate3d(-1320px, 0px, 0px);"><figure class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140229.jpg" alt="속초시립박물관">
+	                        <figcaption>
+	                            <h3><a href="/tour/culture/museum?cid=681&amp;mode=read" target="_self" tabindex="-1">속초시립박물관</a></h3>
+	                            <p>
+	                                <a href="/tour/culture/museum?cid=681&amp;mode=read" target="_self" tabindex="-1">
+	                                    속초시립박물관은 향토문화와 실향민 문화가 어우러진 독특한 문화공간이다. 이북5도가옥과 속초역사(驛舍),실향민 생활상과 숙박체험, 문화학교프로그램등 다채로운 행사를 진행한다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140236.jpg" alt="상도문 돌담마을">
+	                        <figcaption>
+	                            <h3><a href="/tour/destination/experience?cid=258097&amp;mode=read" target="_self" tabindex="-1">상도문 돌담마을</a></h3>
+	                            <p>
+	                                <a href="/tour/destination/experience?cid=258097&amp;mode=read" target="_self" tabindex="-1">
+	                                    상도문 돌담마을은 설악산 자락에 위치한 전통마을로 미로처럼 펼쳐진 옛 돌담길과 돌담길에 얽힌 돌담갤러리에서 다양한 작품들을 만날 수 있다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140244.jpg" alt="영금정">
+	                        <figcaption>
+	                            <h3><a href="/tour/culture/security?cid=262&amp;mode=read" target="_self" tabindex="-1">영금정</a></h3>
+	                            <p>
+	                                <a href="/tour/culture/security?cid=262&amp;mode=read" target="_self" tabindex="-1">
+	                                    영금정은 파도가 부딪치면 신묘한 소리가 들리는데 '거문고' 소리와 같다고 해서 붙여진 이름이다. 영금정 해돋이 정자, 영금정 정자전망대, 거문고 포토존, 등대전망대에서 드넓은 동해와 속초 시내를 관람 할수 있다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140140.jpg" alt="바다향기로">
+	                        <figcaption>
+	                            <h3><a href="/tour/destination/nature?cid=258155&amp;mode=read" target="_self" tabindex="0">바다향기로</a></h3>
+	                            <p>
+	                                <a href="/tour/destination/nature?cid=258155&amp;mode=read" target="_self" tabindex="0">
+	                                    65년동안 감춰온 천혜의 비경을 세상에 드러낸 속초 외옹치 바다향기로.
+총 길이 890m, 4개의 코스로 시원한 바닷바람을 맞으며 대나무명상길, 하늘 데크길, 안보체험길, 암석관찰길에서 동해안의 비경을 감상하는것도 속초여행의 색다른 경험이다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140147.jpg" alt="아바이마을">
+	                        <figcaption>
+	                            <h3><a href="/tour/culture/culturalHeritage?cid=258096&amp;mode=read" target="_self" tabindex="0">아바이마을</a></h3>
+	                            <p>
+	                                <a href="/tour/culture/culturalHeritage?cid=258096&amp;mode=read" target="_self" tabindex="0">
+	                                    한국전쟁당시 고향으로 돌아가지 못한 피난민들이 정착하여 만든 마을로, 속초만의 독특한 문화인 실향민 문화를 느낄 수 있으며, 아바이순대, 함흥냉면등 북한음식을 즐길 수 있다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030161128.jpg" alt="설악산 자생식물원">
+	                        <figcaption>
+	                            <h3><a href="/tour/destination/nature?cid=55&amp;mode=read" target="_self" tabindex="0">설악산 자생식물원</a></h3>
+	                            <p>
+	                                <a href="/tour/destination/nature?cid=55&amp;mode=read" target="_self" tabindex="0">
+	                                    설악산 멸종 희귀식물 및 고산지대 식물을 위주로 조성되어있다. 각양각색의 야생화와 아름다운 수변경관을 감상할 수 있는 수생식물 및 설악산 희귀식물을 관람할 수 있는 암석원, 걷기체험이 가능한 미로원등이 있다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191104204925.jpg" alt="영랑호">
+	                        <figcaption>
+	                            <h3><a href="/tour/destination/nature?cid=451&amp;mode=read" target="_self" tabindex="-1">영랑호</a></h3>
+	                            <p>
+	                                <a href="/tour/destination/nature?cid=451&amp;mode=read" target="_self" tabindex="-1">
+	                                    영랑호에는 범의 형상인 범바위, 생태습지공원, 카누체험이 가능한 카누경기장등 둘레길을 따라 벚꽃과 연산홍,신록,갈대 등 자연을 즐기기 좋은 곳이며 사진찍기 명소이다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140211.jpg" alt="청초호">
+	                        <figcaption>
+	                            <h3><a href="/tour/destination/nature?cid=452&amp;mode=read" target="_self" tabindex="-1">청초호</a></h3>
+	                            <p>
+	                                <a href="/tour/destination/nature?cid=452&amp;mode=read" target="_self" tabindex="-1">
+	                                    청초호는 청초호 호수공원을 따라 청초정, 철새도래지, 엑스포상징탑 등 설악,금강대교와 조화를 이루어 아름다운 자연과 야경이 예쁜 호수로 많은 관광객들이 찾는 핫플레이스다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide" data-slick-index="5" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140217.jpg" alt="속초해변">
+	                        <figcaption>
+	                            <h3><a href="/tour/destination/nature?cid=447&amp;mode=read" target="_self" tabindex="-1">속초해변</a></h3>
+	                            <p>
+	                                <a href="/tour/destination/nature?cid=447&amp;mode=read" target="_self" tabindex="-1">
+	                                    시내와 가장 가까운 해변으로 다양한 포토존과 버스킹 및 축제가 열리고 있으며, 해변송림은 힐링하기 좋은 장소로 바다가 일상이 되는 해변이다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide" data-slick-index="6" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140223.jpg" alt="속초관광수산시장">
+	                        <figcaption>
+	                            <h3><a href="/tour/destination/attraction?cid=8359&amp;mode=read" target="_self" tabindex="-1">속초관광수산시장</a></h3>
+	                            <p>
+	                                <a href="/tour/destination/attraction?cid=8359&amp;mode=read" target="_self" tabindex="-1">
+	                                    대한민국 최고의 속초 닭강정, 동해바다 최고의 맛 생선, 바다를 한입에 먹을수 있는 물회, 해산물을 활용한 각종 간식 등 속초의 미식을 맛볼수 있는 최고의 시장이다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide" data-slick-index="7" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140229.jpg" alt="속초시립박물관">
+	                        <figcaption>
+	                            <h3><a href="/tour/culture/museum?cid=681&amp;mode=read" target="_self" tabindex="-1">속초시립박물관</a></h3>
+	                            <p>
+	                                <a href="/tour/culture/museum?cid=681&amp;mode=read" target="_self" tabindex="-1">
+	                                    속초시립박물관은 향토문화와 실향민 문화가 어우러진 독특한 문화공간이다. 이북5도가옥과 속초역사(驛舍),실향민 생활상과 숙박체험, 문화학교프로그램등 다채로운 행사를 진행한다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide" data-slick-index="8" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140236.jpg" alt="상도문 돌담마을">
+	                        <figcaption>
+	                            <h3><a href="/tour/destination/experience?cid=258097&amp;mode=read" target="_self" tabindex="-1">상도문 돌담마을</a></h3>
+	                            <p>
+	                                <a href="/tour/destination/experience?cid=258097&amp;mode=read" target="_self" tabindex="-1">
+	                                    상도문 돌담마을은 설악산 자락에 위치한 전통마을로 미로처럼 펼쳐진 옛 돌담길과 돌담길에 얽힌 돌담갤러리에서 다양한 작품들을 만날 수 있다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide" data-slick-index="9" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140244.jpg" alt="영금정">
+	                        <figcaption>
+	                            <h3><a href="/tour/culture/security?cid=262&amp;mode=read" target="_self" tabindex="-1">영금정</a></h3>
+	                            <p>
+	                                <a href="/tour/culture/security?cid=262&amp;mode=read" target="_self" tabindex="-1">
+	                                    영금정은 파도가 부딪치면 신묘한 소리가 들리는데 '거문고' 소리와 같다고 해서 붙여진 이름이다. 영금정 해돋이 정자, 영금정 정자전망대, 거문고 포토존, 등대전망대에서 드넓은 동해와 속초 시내를 관람 할수 있다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140140.jpg" alt="바다향기로">
+	                        <figcaption>
+	                            <h3><a href="/tour/destination/nature?cid=258155&amp;mode=read" target="_self" tabindex="-1">바다향기로</a></h3>
+	                            <p>
+	                                <a href="/tour/destination/nature?cid=258155&amp;mode=read" target="_self" tabindex="-1">
+	                                    65년동안 감춰온 천혜의 비경을 세상에 드러낸 속초 외옹치 바다향기로.
+총 길이 890m, 4개의 코스로 시원한 바닷바람을 맞으며 대나무명상길, 하늘 데크길, 안보체험길, 암석관찰길에서 동해안의 비경을 감상하는것도 속초여행의 색다른 경험이다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030140147.jpg" alt="아바이마을">
+	                        <figcaption>
+	                            <h3><a href="/tour/culture/culturalHeritage?cid=258096&amp;mode=read" target="_self" tabindex="-1">아바이마을</a></h3>
+	                            <p>
+	                                <a href="/tour/culture/culturalHeritage?cid=258096&amp;mode=read" target="_self" tabindex="-1">
+	                                    한국전쟁당시 고향으로 돌아가지 못한 피난민들이 정착하여 만든 마을로, 속초만의 독특한 문화인 실향민 문화를 느낄 수 있으며, 아바이순대, 함흥냉면등 북한음식을 즐길 수 있다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure><figure class="slick-slide slick-cloned" data-slick-index="12" aria-hidden="true" style="width: 360px;">
+	                        <img src="/upload/banner/BNSCTR02/banner_BNSCTR02_20191030161128.jpg" alt="설악산 자생식물원">
+	                        <figcaption>
+	                            <h3><a href="/tour/destination/nature?cid=55&amp;mode=read" target="_self" tabindex="-1">설악산 자생식물원</a></h3>
+	                            <p>
+	                                <a href="/tour/destination/nature?cid=55&amp;mode=read" target="_self" tabindex="-1">
+	                                    설악산 멸종 희귀식물 및 고산지대 식물을 위주로 조성되어있다. 각양각색의 야생화와 아름다운 수변경관을 감상할 수 있는 수생식물 및 설악산 희귀식물을 관람할 수 있는 암석원, 걷기체험이 가능한 미로원등이 있다.
+	                                </a>
+	                            </p>
+	                        </figcaption>
+	                    </figure></div></div>
+                	
+                		
+                	
+                		
+                	
+                		
+                	
+                		
+                	
+                		
+                	
+                		
+                	
+                		
+                	
+                		
+                	
+                		
+                	
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="course">
+    <div class="inner">
+        <h2 class="noto-s"><img src="/page/portal/imgs/txt_map1.png" alt="추천">속초 <em>여행코스</em></h2>
+        <p>속초의 맛과 멋을 따라 떠나는 속초감성여행</p>
+        <div class="slick-binder">
+            <div class="slick-wrap">
+                <button class="prev slick-arrow" style="display: block;"><span class="sr-only">이전 여행코스 보기</span></button>
+                <button class="next slick-arrow" style="display: block;"><span class="sr-only">다음 여행코스 보기</span></button>
+                <div class="slick slick-initialized slick-slider">
+                	
+                		<div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 11543px; transform: translate3d(-1649px, 0px, 0px);"><article class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 1649px;">
+							<header>
+								<h3 class="noto-s"><a href="/tour/course/course_3day" target="_self" tabindex="-1">속초 2박 3일 코스</a></h3>
+								<img src="/page/portal/imgs/ico_map2_1.png" alt="">
+								<p class="hide-on-small">
+									실향민문화촌이 재현한 이북의 가옥들과 옛 속초의 모습들, 맑은 바다와 어우러진  배낚시처럼 속초의 시야를 넓혀주는 다양한 체험들과 구석구석 숨어있는 맛집들로 여행의 즐거움을 더해보세요!
+								</p>
+							</header>
+							<figure>
+								<!--a href="/tour/course/course_3day" target="_self"-->
+									<img ft-320-src="/upload/popupzone/PPSCTR07/popupzone_m_PPSCTR07_20191104200931.jpg" ft-768-src="/upload/popupzone/PPSCTR07/" ft-1024-src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200931.jpg" alt="실향민문화촌이 재현한 이북의 가옥들과 옛 속초의 모습들, 맑은 바다와 어우러진  배낚시처럼 속초의 시야를 넓혀주는 다양한 체험들과 구석구석 숨어있는 맛집들로 여행의 즐거움을 더해보세요!" src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200931.jpg">
+								<!--/a-->
+							</figure>
+						</article><article class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 1649px;">
+							<header>
+								<h3 class="noto-s"><a href="/tour/course/course_healing" target="_self" tabindex="0">속초의 경치를 느끼며<br>힐링 할 수 있는 여행</a></h3>
+								<img src="/page/portal/imgs/ico_map2_1.png" alt="">
+								<p class="hide-on-small">
+									웅장한 산의 지형을 보고 있으면 기개가 절로 느껴지고, 끝없이 펼져지는 바다를 보면 마음의 안정을 찾을거에요. 일상에서 지친 마음을 풀기에 딱 좋은 속초의 가볼만한 곳들을 한번 훑어보세요.
+								</p>
+							</header>
+							<figure>
+								<!--a href="/tour/course/course_healing" target="_self"-->
+									<img ft-320-src="/upload/popupzone/PPSCTR07/popupzone_m_PPSCTR07_20191104200810.jpg" ft-768-src="/upload/popupzone/PPSCTR07/" ft-1024-src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200810.jpg" alt="웅장한 산의 지형을 보고 있으면 기개가 절로 느껴지고, 끝없이 펼져지는 바다를 보면 마음의 안정을 찾을거에요. 일상에서 지친 마음을 풀기에 딱 좋은 속초의 가볼만한 곳들을 한번 훑어보세요." src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200810.jpg">
+								<!--/a-->
+							</figure>
+						</article><article class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 1649px;">
+							<header>
+								<h3 class="noto-s"><a href="/tour/course/course_couple" target="_self" tabindex="-1">연인 및 친구들과<br>즐길 수 있는 속초 여행</a></h3>
+								<img src="/page/portal/imgs/ico_map2_1.png" alt="">
+								<p class="hide-on-small">
+									여러분의 연인, 친구들과의 추억이 담긴 곳은 어딘가요? 속촉에서의 하루는 평생 잊지 못할 거에요. 속초의 바다와 산, 많은 즐길거리를 통해, 함께 즐기고 추억을 쌓을 곳을 훑어보세요.
+								</p>
+							</header>
+							<figure>
+								<!--a href="/tour/course/course_couple" target="_self"-->
+									<img ft-320-src="/upload/popupzone/PPSCTR07/popupzone_m_PPSCTR07_20191104200827.jpg" ft-768-src="/upload/popupzone/PPSCTR07/" ft-1024-src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200827.jpg" alt="여러분의 연인, 친구들과의 추억이 담긴 곳은 어딘가요? 속촉에서의 하루는 평생 잊지 못할 거에요. 속초의 바다와 산, 많은 즐길거리를 통해, 함께 즐기고 추억을 쌓을 곳을 훑어보세요." src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200827.jpg">
+								<!--/a-->
+							</figure>
+						</article><article class="slick-slide" data-slick-index="2" aria-hidden="true" style="width: 1649px;">
+							<header>
+								<h3 class="noto-s"><a href="/tour/course/course_day" target="_blank" tabindex="-1">속초 당일도 괜찮아!!<br>한눈에 보는 당일코스</a></h3>
+								<img src="/page/portal/imgs/ico_map2_1.png" alt="">
+								<p class="hide-on-small">
+									어디론가 떠나고 싶을때! 하루동안 만나는 속초와 함께 지친 일상에서 벗어나는 시간을 가져보세요.찬연한 바다의 일렁이는 빛이 소란한 마음을 잠재웁니다. 아름다운 자연, 곳곳의 먹거리와 함께 속초의 자유로움을 만끽하세요!
+								</p>
+							</header>
+							<figure>
+								<!--a href="/tour/course/course_day" target="_blank"-->
+									<img ft-320-src="/upload/popupzone/PPSCTR07/popupzone_m_PPSCTR07_20191104200845.jpg" ft-768-src="/upload/popupzone/PPSCTR07/" ft-1024-src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200845.jpg" alt="어디론가 떠나고 싶을때! 하루동안 만나는 속초와 함께 지친 일상에서 벗어나는 시간을 가져보세요.찬연한 바다의 일렁이는 빛이 소란한 마음을 잠재웁니다. 아름다운 자연, 곳곳의 먹거리와 함께 속초의 자유로움을 만끽하세요!" src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200845.jpg">
+								<!--/a-->
+							</figure>
+						</article><article class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 1649px;">
+							<header>
+								<h3 class="noto-s"><a href="/tour/course/course_2day" target="_blank" tabindex="-1">속초 1박 2일 코스</a></h3>
+								<img src="/page/portal/imgs/ico_map2_1.png" alt="">
+								<p class="hide-on-small">
+									바쁜 일상을 보낸 후 주말을 즐기기 위한 1박2일! 밤바다와 수려한 야경을 보며 힐링할 수 있는 속초에서 지친 마음을 달래보세요. 지평선 너머 끝없이 펼져진 바다의 파도소리, 산새들이 지저귀는 산림 속의 자연의 향기를 느껴보세요.
+								</p>
+							</header>
+							<figure>
+								<!--a href="/tour/course/course_2day" target="_blank"-->
+									<img ft-320-src="/upload/popupzone/PPSCTR07/popupzone_m_PPSCTR07_20191104200900.jpg" ft-768-src="/upload/popupzone/PPSCTR07/" ft-1024-src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200900.jpg" alt="바쁜 일상을 보낸 후 주말을 즐기기 위한 1박2일! 밤바다와 수려한 야경을 보며 힐링할 수 잇는 속초에서 지친 마음을 달래보세요. 지평선 너머 끝없이 펼져진 바다의 파도소리, 산새들이 지저귀는 산림 속의 자연의 향기를 느껴보세요." src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200900.jpg">
+								<!--/a-->
+							</figure>
+						</article><article class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 1649px;">
+							<header>
+								<h3 class="noto-s"><a href="/tour/course/course_3day" target="_self" tabindex="-1">속초 2박 3일 코스</a></h3>
+								<img src="/page/portal/imgs/ico_map2_1.png" alt="">
+								<p class="hide-on-small">
+									실향민문화촌이 재현한 이북의 가옥들과 옛 속초의 모습들, 맑은 바다와 어우러진  배낚시처럼 속초의 시야를 넓혀주는 다양한 체험들과 구석구석 숨어있는 맛집들로 여행의 즐거움을 더해보세요!
+								</p>
+							</header>
+							<figure>
+								<!--a href="/tour/course/course_3day" target="_self"-->
+									<img ft-320-src="/upload/popupzone/PPSCTR07/popupzone_m_PPSCTR07_20191104200931.jpg" ft-768-src="/upload/popupzone/PPSCTR07/" ft-1024-src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200931.jpg" alt="실향민문화촌이 재현한 이북의 가옥들과 옛 속초의 모습들, 맑은 바다와 어우러진  배낚시처럼 속초의 시야를 넓혀주는 다양한 체험들과 구석구석 숨어있는 맛집들로 여행의 즐거움을 더해보세요!" src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200931.jpg">
+								<!--/a-->
+							</figure>
+						</article><article class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" style="width: 1649px;">
+							<header>
+								<h3 class="noto-s"><a href="/tour/course/course_healing" target="_self" tabindex="-1">속초의 경치를 느끼며<br>힐링 할 수 있는 여행</a></h3>
+								<img src="/page/portal/imgs/ico_map2_1.png" alt="">
+								<p class="hide-on-small">
+									웅장한 산의 지형을 보고 있으면 기개가 절로 느껴지고, 끝없이 펼져지는 바다를 보면 마음의 안정을 찾을거에요. 일상에서 지친 마음을 풀기에 딱 좋은 속초의 가볼만한 곳들을 한번 훑어보세요.
+								</p>
+							</header>
+							<figure>
+								<!--a href="/tour/course/course_healing" target="_self"-->
+									<img ft-320-src="/upload/popupzone/PPSCTR07/popupzone_m_PPSCTR07_20191104200810.jpg" ft-768-src="/upload/popupzone/PPSCTR07/" ft-1024-src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200810.jpg" alt="웅장한 산의 지형을 보고 있으면 기개가 절로 느껴지고, 끝없이 펼져지는 바다를 보면 마음의 안정을 찾을거에요. 일상에서 지친 마음을 풀기에 딱 좋은 속초의 가볼만한 곳들을 한번 훑어보세요." src="/upload/popupzone/PPSCTR07/popupzone_PPSCTR07_20191104200810.jpg">
+								<!--/a-->
+							</figure>
+						</article></div></div>
+                	
+                		
+                	
+                		
+                	
+                		
+                	
+                		
+                	
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+	</main>
+    
+	
+
+
+
+
+
+
+<footer id="footer">
+    <div class="inner">
+        <div class="wrap">
+            <figure><img src="/page/portal/imgs/logo_footer.png" alt="SOKCHO 속 초 시"></figure>
+            <ul>
+                <li><a href="http://www.sokcho.go.kr/portal/help/privacy">개인정보처리방침</a></li>
+                <li><a href="http://www.sokcho.go.kr/portal/help/privacy">저작권보호정책</a></li>
+                <li><a href="http://www.sokcho.go.kr/portal/help/privacy">홈페이지 이용 약관</a></li>
+                <li><a href="http://www.sokcho.go.kr/portal/help/viewer" target="_blank" title="새창에서 열립니다.">뷰어다운로드</a></li>
+                <li><a href="https://www.data.go.kr/">공공데이터</a></li>
+            </ul>
+        </div>
+        <address>
+            (24826) 강원도 속초시 중앙로 183
+        </address>
+        <p>
+            전화 : 033-639-2144<br>
+            이메일 : sokchotour@korea.kr<br>
+            본 웹사이트는 이메일 주소가 무단 수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의하여 처벌됨을 유념하시기 바랍니다.<br>
+            COPYRIGHT ⓒ SOKCHOTOUR.COM ALL RIGHTS RESERVED
+        </p>
+    </div>
+</footer>
+
+<script src="/page/common/js/svg4everybody.min.js"></script>
+<script src="/page/common/js/foto.min.js"></script>
+<script src="/page/common/js/lib.js"></script>
+<script src="/page/portal/js/app.js"></script>
+
+	<script src="/page/portal/js/index.js"></script>
+
+			
+
+</body></html>
