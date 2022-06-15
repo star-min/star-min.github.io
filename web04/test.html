@@ -1,0 +1,773 @@
+<body class="main">
+	<div id="wrap" class="bannerOn">
+
+				<ul class="skipNav">
+			<li><a href="#container">본문 바로가기</a></li>
+		</ul>
+		<!-- <div class="topBanner">
+			<div style="min-height:100px;background: #000;">
+				<img src="/resource/images/img_top_banner.jpg" alt="">
+			</div>
+			<button type="button" class="btnClose" onclick="topBannerClose('topBannerChk');"><span>닫기</span></button>
+			<label class="inputChk"><input type="checkbox" name="topBannerChk"> <span>오늘 하루 열지 않음</span></label>
+		</div> -->
+
+		<header id="header" onmouseleave="subMenu('close');" class="">
+			<div class="inner">
+				<h1 class="logo"><a href="/"><img src="/resource/images/img_logo.png" alt="하나이비인후과"></a></h1>
+				<div class="lang">
+					<button type="button" class="btnLang" onclick="langList(this);">KOR</button>
+					<div class="langList">
+						<span><a href="/eng.html">ENG</a></span>
+						<!--
+						<span><a href="#">RUS</a></span>
+						<span><a href="#">JPN</a></span>
+						<span><a href="#">CHN</a></span>
+						<span><a href="#">MNG</a></span> -->
+					</div>
+				</div>
+				<button type="button" class="btnMenu" onclick="menu();"><span>MENU</span></button>
+			</div>
+			<nav id="gnb">
+				<div class="login">
+											<span class="sign"><a href="#" onclick="layerOpen('loginLayer'); return false;">로그인</a></span>
+						<span><a href="/member/join.html">회원가입</a></span>
+									</div>
+				<div class="list">
+					<ul>
+						<li class=""><a href="/intro/intro01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">병원소개</a>
+							<div class="subDepth">
+								<ul>
+									<li class=""><a href="/intro/intro01.html">하나 이야기</a></li>
+									<li class=""><a href="/intro/intro02.html">의료진 소개</a></li>
+									<li class=""><a href="/intro/intro03.html">병원소식</a></li>
+									<li class=""><a href="http://hanaent.woobi.co.kr" target="_blank">둘러보기(VR)</a></li>
+									<li class=""><a href="/intro/intro07.html">안전수술 시스템</a></li>
+									<li class=""><a href="/intro/intro11.html">진료협력센터</a></li>
+									<li class=""><a href="/intro/intro08.html">건강정보</a></li>
+									<li class=""><a href="/intro/intro06.html">채용정보</a></li>
+									<li class=""><a href="/intro/intro05.html">고객의 소리</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class=""><a href="/info/info01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">진료안내</a>
+							<div class="subDepth">
+								<ul>
+									<li class=""><a href="/info/info01.html">진료 일정</a></li>
+									<li class=""><a href="/info/info02.html">외래진료안내</a></li>
+									<li class=""><a href="/info/info03.html">입·퇴원안내</a></li>
+									<li class=""><a href="/info/info04.html">오시는 길</a></li>
+									<li class=""><a href="/info/info05.html">온라인 예약</a></li>
+									<li class=""><a href="/info/info06.html">자주 묻는 질문</a></li>
+									<li class=""><a href="/info/info07.html">온라인 상담</a></li>
+									<li class=""><a href="/info/info08.html">치료사례</a></li>
+									<li class=""><a href="/info/info09.html">서류발급</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class=""><a href="/nose/nose01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">코 질환 센터</a>
+							<div class="subDepth">
+								<ul>
+									<li class=""><a href="/nose/nose01.html">센터 소개</a></li>
+									<li class=""><a href="/nose/nose02.html?type=A&amp;sub_tp=0">축농증</a></li>
+									<li class=""><a href="/nose/nose03.html?type=A&amp;sub_tp=1">비중격만곡증</a></li>
+									<li class=""><a href="/nose/nose04.html?type=A&amp;sub_tp=2">알레르기 비염</a></li>
+									<li class=""><a href="/nose/nose05.html?type=A&amp;sub_tp=3">만성 비염</a></li>
+									<li class=""><a href="/nose/nose06.html?type=A&amp;sub_tp=4">코 물혹</a></li>
+									<li class=""><a href="/nose/nose07.html?type=A&amp;sub_tp=5">후각장애</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class=""><a href="/neck/neck01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">목 질환 센터</a>
+							<div class="subDepth">
+								<ul>
+									<li class=""><a href="/neck/neck01.html">센터 소개</a></li>
+									<li class=""><a href="/neck/neck02.html?type=B&amp;sub_tp=0">편도</a></li>
+									<li class=""><a href="/neck/neck03.html?type=B&amp;sub_tp=2">목의 혹</a></li>
+									<li class=""><a href="/neck/neck04.html?type=B&amp;sub_tp=3">갑상선</a></li>
+									<li class=""><a href="/neck/neck05.html?type=B&amp;sub_tp=4">침샘</a></li>
+									<li class=""><a href="/neck/neck06.html?type=B&amp;sub_tp=5">악성 질환</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class=""><a href="/ear/ear01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">귀 질환 센터</a>
+							<div class="subDepth">
+								<ul>
+									<li class=""><a href="/ear/ear01.html">센터 소개</a></li>
+									<li class=""><a href="/ear/ear02.html?type=C&amp;sub_tp=0">어지럼증</a></li>
+									<li class=""><a href="/ear/ear03.html?type=C&amp;sub_tp=1">만성 중이염</a></li>
+									<li class=""><a href="/ear/ear04.html?type=C&amp;sub_tp=2">소아 중이염</a></li>
+									<li class=""><a href="/ear/ear05.html?type=C&amp;sub_tp=3">난청</a></li>
+									<li class=""><a href="/ear/ear06.html?type=C&amp;sub_tp=4">보청기</a></li>
+									<li class=""><a href="/ear/ear07.html?type=C&amp;sub_tp=5">이명</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class=""><a href="/snoring/snoring01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">수면 센터</a>
+							<div class="subDepth">
+								<ul>
+									<li class=""><a href="/snoring/snoring01.html">센터 소개</a></li>
+									<li class=""><a href="/snoring/snoring02.html?type=E">진단과정</a></li>
+									<li class=""><a href="/snoring/snoring03.html?type=E">수면검사</a></li>
+									<li class=""><a href="/snoring/snoring04.html?type=E">수술치료</a></li>
+									<li class=""><a href="/snoring/snoring05.html?type=E">비수술치료</a></li>
+								</ul>
+							</div>
+						</li>
+						<!-- <li class=""><a href="/voice/voice01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">목소리 클리닉</a>
+							<div class="subDepth">
+								<ul>
+									<li class=""><a href="/voice/voice01.html">클리닉 소개</a></li>
+									<li class=""><a href="/voice/voice02.html?type=F">성대질환 종류</a></li>
+									<li class=""><a href="/voice/voice03.html?type=F">음성정밀검사</a></li>
+									<li class=""><a href="/voice/voice04.html?type=F">음성치료</a></li>
+									<li class=""><a href="/voice/voice05.html?type=F">보톡스치료</a></li>
+									<li class=""><a href="/voice/voice06.html?type=F">수술치료</a></li>
+								</ul>
+							</div>
+						</li> -->
+						<li class=""><a href="/nerve/nerve01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">신경과</a>
+							<div class="subDepth">
+								<ul>
+									<li class=""><a href="/nerve/nerve01.html">신경과 소개</a></li>
+									<li class=""><a href="#" onclick="alert('준비중입니다.');">수면장애·불면증</a></li>
+									<li class=""><a href="#" onclick="alert('준비중입니다.');">어지럼증</a></li>
+									<li class=""><a href="#" onclick="alert('준비중입니다.');">두통</a></li>
+									<li class=""><a href="#" onclick="alert('준비중입니다.');">치매초기진단</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<!-- AceCounter Log Gathering Script V.7.5.2017020801 -->
+			<script language="javascript">
+				var _AceGID=(function(){var Inf=['gtp17.acecounter.com','8080','AH5A33617532576','AW','0','NaPm,Ncisy','ALL','0']; var _CI=(!_AceGID)?[]:_AceGID.val;var _N=0;var _T=new Image(0,0);if(_CI.join('.').indexOf(Inf[3])<0){ _T.src =( location.protocol=="https:"?"https://"+Inf[0]:"http://"+Inf[0]+":"+Inf[1]) +'/?cookie'; _CI.push(Inf);  _N=_CI.length; } return {o: _N,val:_CI}; })();
+				var _AceCounter=(function(){var G=_AceGID;var _sc=document.createElement('script');var _sm=document.getElementsByTagName('script')[0];if(G.o!=0){var _A=G.val[G.o-1];var _G=(_A[0]).substr(0,_A[0].indexOf('.'));var _C=(_A[7]!='0')?(_A[2]):_A[3];var _U=(_A[5]).replace(/\,/g,'_');_sc.src=(location.protocol.indexOf('http')==0?location.protocol:'http:')+'//cr.acecounter.com/Web/AceCounter_'+_C+'.js?gc='+_A[2]+'&py='+_A[4]+'&gd='+_G+'&gp='+_A[1]+'&up='+_U+'&rd='+(new Date().getTime());_sm.parentNode.insertBefore(_sc,_sm);return _sc.src;}})();
+			</script>
+			<noscript><img src='http://gtp17.acecounter.com:8080/?uid=AH5A33617532576&je=n&' border='0' width='0' height='0' alt=''></noscript>
+			<!-- AceCounter Log Gathering Script End -->
+
+			<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+			<script type="text/javascript">
+			if(!wcs_add) var wcs_add = {};
+			wcs_add["wa"] = "44a1621a02ff88";
+			wcs_do();
+			</script>
+
+		</header>
+		<div id="container" tabindex="0">
+
+			<div class="mainSlide">
+
+				<div class="slide swiper-container-horizontal">
+					<ul class="swiper-wrapper" style="transform: translate3d(-17920px, 0px, 0px); transition-duration: 500ms;"><li class="swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev" style="background-image: url(&quot;/resource/images/main/img_mainslide1_11.jpg&quot;); width: 2560px;" data-swiper-slide-index="5">
+							<a href="/intro/intro01.html#link2"><img src="/resource/images/main/img-mainslide1_11_mo.jpg" alt="외래 240만명, 수술 6만명의 선택"></a>
+						</li>
+						<li class="swiper-slide swiper-slide-duplicate-active" style="background-image: url(&quot;/resource/images/main/img_mainslide1_3.jpg&quot;); width: 2560px;" data-swiper-slide-index="0">
+							<a href="http://www.hanaent.co.kr/intro/intro03.html?jb_code=10&amp;jb_idx=5319"><img src="/resource/images/main/img_mainslide1_3_mo.jpg" alt="보건복지부지정 이비인후과전문병원"></a>
+						</li>
+						<li class="swiper-slide" style="background-image: url(&quot;/resource/images/main/img_mainslide1_6.jpg&quot;); width: 2560px;" data-swiper-slide-index="1">
+							<a href="/intro/intro01.html#link1"><img src="/resource/images/main/img_mainslide1_6_mo.jpg" alt="3주기 의료기관평가인증 획득"></a>
+						</li>
+						<li class="swiper-slide" style="background-image: url(&quot;/resource/images/main/img_mainslide1_71.jpg&quot;); width: 2560px;" data-swiper-slide-index="2">
+							<a href="/intro/intro01.html#link1"><img src="/resource/images/main/img_mainslide1_71_mo.jpg" alt="최우수등급"></a>
+						</li>
+						<!-- <li class="swiper-slide" style="background-image:url(/resource/images/main/img_mainslide1_5.jpg);">
+							<a href="http://hanaent.woobi.co.kr/vr/" target="_blank"><img src="/resource/images/main/img_mainslide1_5_mo.jpg" alt="병원둘러보기"></a>
+						</li> -->
+						<li class="swiper-slide" style="background-image: url(&quot;/resource/images/main/img_mainslide1_2.jpg&quot;); width: 2560px;" data-swiper-slide-index="3">
+							<a href="/intro/intro01.html#link3"><img src="/resource/images/main/img_mainslide1_2_mo.jpg" alt="안전진료 시스템"></a>
+						</li>
+						<li class="swiper-slide" style="background-image: url(&quot;/resource/images/main/img_mainslide1_4.jpg&quot;); width: 2560px;" data-swiper-slide-index="4">
+							<a href="/intro/intro07.html"><img src="/resource/images/main/img_mainslide1_4_mo.jpg" alt=" 전신마취 없는 코수술 안심수술관리시스템"></a>
+						</li>
+						<li class="swiper-slide swiper-slide-prev swiper-slide-duplicate-next" style="background-image: url(&quot;/resource/images/main/img_mainslide1_11.jpg&quot;); width: 2560px;" data-swiper-slide-index="5">
+							<a href="/intro/intro01.html#link2"><img src="/resource/images/main/img-mainslide1_11_mo.jpg" alt="외래 240만명, 수술 6만명의 선택"></a>
+						</li>
+					<li class="swiper-slide swiper-slide-duplicate swiper-slide-active" style="background-image: url(&quot;/resource/images/main/img_mainslide1_3.jpg&quot;); width: 2560px;" data-swiper-slide-index="0">
+							<a href="http://www.hanaent.co.kr/intro/intro03.html?jb_code=10&amp;jb_idx=5319"><img src="/resource/images/main/img_mainslide1_3_mo.jpg" alt="보건복지부지정 이비인후과전문병원"></a>
+						</li></ul>
+				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+				<div class="slidePage swiper-pagination-clickable swiper-pagination-bullets"><a href="#" class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1">1</a><a href="#" class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2">2</a><a href="#" class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3">3</a><a href="#" class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4">4</a><a href="#" class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5">5</a><a href="#" class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6">6</a></div>
+				<!--p class="slideNum"><span class="activeNum">01</span>/<span class="totalNum">04</span></p-->
+
+			</div>
+			<script>
+				mainSlide();
+			</script>
+
+			<div class="bgCon">
+				<section class="section">
+					<div class="mainFirst">
+						<div class="box">
+							<p class="txt">
+								<strong>처음 오셨나요?</strong>
+								코, 목, 귀 질환 증상에 따른 알맞은 치료로<br> 빠른 회복을 돕겠습니다.
+							</p>
+							<nav class="link">
+								<span><a href="/intro/intro02.html">의료진 소개</a></span>
+								<span><a href="/info/info02.html" onclick="gtag('event', '하나이비인후과병원 초진안내', { 'event_category': '하나이비인후과병원 초진안내' });">초진안내</a></span>
+								<span><a href="/info/info05.html" onclick="gtag('event', '하나이비인후과병원 온라인예약', { 'event_category': '하나이비인후과병원 온라인예약' });">온라인예약</a></span>
+								<span><a href="/info/info07.html" onclick="gtag('event', '하나이비인후과병원 온라인상담', { 'event_category': '하나이비인후과병원 온라인상담' });">온라인 상담</a></span>
+								<a class="guide-btn" href="/intro/intro08.html?jb_code=20&amp;jb_idx=5238">
+									<img src="/resource/images/main/main-guide-btn.png" alt="">
+								</a>
+							</nav>
+						</div>
+					</div>
+					<div class="mainTime">
+						<div class="box">
+							<!-- <h3 class="title">진료 시간 안내</h3> -->
+							<p class="phone"><span class="ico">연락처</span><a href="tel:0269251111" id="mobile_script" onclick="gtag('event', '하나이비인후과병원 전화상담', { 'event_category': '하나이비인후과병원 전화상담' });">02.6925.1111</a></p>
+							<script type="text/javascript">
+								$('#mobile_script').click(function(){
+									_TRK_PI = "ODR";
+									_TRK_OA = "1";
+									_TRK_OE = "1";
+								});
+							</script>
+							<ul class="time">
+								<li>
+									<span class="cont">
+										<span class="tit word2">평일</span> 09:00 ~ 18:00
+										<b class="sub">(접수마감:오전 12:00/오후 5:30)</b>
+									</span>
+								</li>
+								<li>
+									<span class="cont">
+										<span class="tit">점심시간</span> 12:30 ~ 14:00
+									</span>
+								</li>
+								<li>
+									<span class="cont">
+										<span class="tit word3">토요일</span> 09:00 ~ 13:30
+										<b class="sub">(접수마감:오후 1:00/ 현장 상황에 따라 조기 마감 가능)</b>
+									</span>
+								</li>
+								<li>
+									<span class="cont">
+										일요일, 공휴일 휴진
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="section">
+				<section class="mainMap">
+					<div class="box">
+						<h3 class="title">찾아오시는 길</h3>
+						<p class="txt">병원으로 오시는 길을 안내해드립니다.</p>
+						<ul class="link">
+							<li class="bus"><a href="/info/info04.html#shuttleInfo">셔틀버스</a></li>
+							<li class="bus"><a href="/info/info04.html#busInfo">대중교통</a></li>
+							<li class="parking"><a href="/info/info04_01.html">주차안내</a></li>
+							<li class="map"><a href="/info/info04.html">약도문자</a></li>
+						</ul>
+					</div>
+				</section>
+				<section class="mainNotice">
+					<div class="box">
+						<h3 class="title">공지사항</h3>
+						<ul class="list">
+							
+							<li>
+								<a href="/intro/intro03.html?jb_code=10&amp;jb_idx=6051">6월 일/공휴일 코로나 검사가 중단됩니다.</a>	
+							    <span class="date">2022.06</span>
+							</li>
+				
+							<li>
+								<a href="/intro/intro03.html?jb_code=10&amp;jb_idx=6048">홍콩 출국용 코로나 검사&amp;진단서 발행 가능</a>	
+							    <span class="date">2022.06</span>
+							</li>
+				
+							<li>
+								<a href="/intro/intro03.html?jb_code=10&amp;jb_idx=5786">*코로나 검사 안내(당일발급, 시간, 비용)</a>	
+							    <span class="date">2022.04</span>
+							</li>
+				
+							<li>
+								<a href="/intro/intro03.html?jb_code=10&amp;jb_idx=5957">영문 코로나 회복증명서 발급 안내</a>	
+							    <span class="date">2022.04</span>
+							</li>
+										</ul>
+					</div>
+				</section>
+				<section class="mainAfter">
+					<div class="box">
+						<h3 class="title">치료사례</h3>
+						<ul class="list">
+							<li><a href="/info/info08.html?jb_type=A&amp;jb_code=30">축농증/물혹 수술후기</a></li>
+							<li><a href="/info/info08.html?jb_type=A&amp;jb_code=30">비중격만곡증 수술후기</a></li>
+							<li><a href="/info/info08.html?jb_type=B&amp;jb_code=30">코골이 수술후기</a></li>
+							<li><a href="/info/info08.html?jb_type=B&amp;jb_code=30">편도 수술후기</a></li>
+						</ul>
+					</div>
+				</section>
+			</div>
+			<hr>
+			<section class="section botInfo">
+				<h3 class="title">하나이비인후과병원 건강 정보</h3>
+				<ul class="list">
+					
+							<li>
+								<a href="/intro/intro08.html?jb_code=20&amp;jb_idx=6030" class="box">
+									 <span class="img"><img src="http://www.hanaent.co.kr/bbs/files//jb_20/16534396996177.jpg" class="block"></span> 
+									<span class="cont">
+										<strong class="tit">의사가 말해주는 편도결석의 이야기</strong>
+										<span class="txt"></span>
+										<span class="opt">
+											<span class="writer">목 | 성인편도</span>
+											<span class="date">2022.05</span>
+										</span>
+									</span>
+								</a>
+
+							</li>
+				
+							<li>
+								<a href="/intro/intro08.html?jb_code=20&amp;jb_idx=6014" class="box">
+									 <span class="img"><img src="http://www.hanaent.co.kr/bbs/files//jb_20/16521420889437.jpg" class="block"></span> 
+									<span class="cont">
+										<strong class="tit">코로나 후유증의 진실을 알려 드립니다. (f</strong>
+										<span class="txt"></span>
+										<span class="opt">
+											<span class="writer">기타</span>
+											<span class="date">2022.05</span>
+										</span>
+									</span>
+								</a>
+
+							</li>
+				
+							<li>
+								<a href="/intro/intro08.html?jb_code=20&amp;jb_idx=5784" class="box">
+									 <span class="img"><img src="http://www.hanaent.co.kr/bbs/files//jb_20/16405943192131.png" class="block"></span> 
+									<span class="cont">
+										<strong class="tit">특발성 안면마비(벨 마비)란 무엇인가요?</strong>
+										<span class="txt"></span>
+										<span class="opt">
+											<span class="writer">귀 | 어지럼증</span>
+											<span class="date">2021.12</span>
+										</span>
+									</span>
+								</a>
+
+							</li>
+				
+							<li>
+								<a href="/intro/intro08.html?jb_code=20&amp;jb_idx=5743" class="box">
+									 <span class="img"><img src="http://www.hanaent.co.kr/bbs/files//jb_20/16381683665970.png" class="block"></span> 
+									<span class="cont">
+										<strong class="tit">코로나 영문음성확인서, 집에서 받아볼 수 </strong>
+										<span class="txt"></span>
+										<span class="opt">
+											<span class="writer">기타</span>
+											<span class="date">2021.11</span>
+										</span>
+									</span>
+								</a>
+
+							</li>
+								</ul>
+			</section>
+		</div>
+				<footer id="footer">
+			<div class="footSns">
+				<div class="inner">
+					<h4 class="tit">하나이비인후과병원 SNS</h4>
+					<p class="link">
+						<a href="https://www.youtube.com/user/hanaent" class="link5" target="_blank">유튜브</a>
+						<a href="https://tv.naver.com/hanaent" class="link1" target="_blank">네이버TV</a>
+						<a href="http://post.naver.com/hanaent6925" class="link2" target="_blank">포스트</a>
+						<a href="http://blog.naver.com/alacysoxht" class="link4" target="_blank">블로그</a>
+						<a href="https://audioclip.naver.com/channels/687" class="link3" target="_blank">오디오클립</a>
+						<a href="https://www.facebook.com/HANAENTHOSPITAL/" class="link6" target="_blank">페이스북</a>
+					</p>
+				</div>
+			</div>
+			<nav class="footLink">
+				<div class="inner">
+					<span><a href="#" onclick="layerAgree('terms');">이용약관</a></span>
+					<span><a href="#" onclick="layerAgree('privacy');">개인정보처리방침</a></span>
+					<span><a href="#" onclick="layerAgree('rights');">환자의 권리와 의무</a></span><br class="mobShow">
+					<span><a href="../nonpay.html">비급여안내</a></span>
+					<!-- <span><a href="#">사이트맵</a></span> -->
+
+					<p class="net"><a href="http://www.hanaentnetwork.co.kr/" target="_blank">하나이비인후과네트워크 <span>바로가기</span></a></p>
+				</div>
+			</nav>
+			<div class="footInfo">
+				<div class="inner">
+					<b>하나이비인후과병원</b>
+					<span>06225 서울특별시 강남구 역삼로 245 하나이비인후과병원</span><br>
+					<span>대표자 : 이상덕 외 1명</span><span>사업자등록번호 : 220-96-00024</span><span>대표전화 : 02-6925-1111</span><br>
+					<small class="copy">COPYRIGHT© 2015 HANA ENT HOSPITAL. ALL RIGHT RESERVED.</small>
+				</div>
+			</div>
+		</footer>
+		<div class="fixBtn">
+			<a href="tel:0269251111" onclick="gtag('event', '하나이비인후과병원 전화상담', {'event_category': '하나이비인후과병원 전화상담'}); ">
+				<img src="/resource/images/main/btn-calling.png" alt="">
+			</a>
+			<a href="https://api.happytalk.io/api/kakao/chat_open?yid=%40%ED%95%98%EB%82%98%EC%9D%B4%EB%B9%84%EC%9D%B8%ED%9B%84%EA%B3%BC%EB%B3%91%EC%9B%90&amp;site_id=5000000105&amp;category_id=62945&amp;division_id=62946" onclick="gtag('event', '하나이비인후과병원 카톡상담', {'event_category': '하나이비인후과병원 카톡상담'}); " target="_blank" class=""><img src="//happytalk.io/assets/main/img/btn-chat-kakao.png"></a>
+			<button type="button" class="btnTop" onclick="$('html, body').animate({scrollTop: 0}, 300);">TOP</button>
+		</div>
+		<!-- LOGGER(TM) TRACKING SCRIPT V.40 FOR logger.co.kr / 49180 : COMBINE TYPE / DO NOT ALTER THIS SCRIPT. -->
+		<script type="text/javascript">var _TRK_LID = "49180";var _L_TD = "ssl.logger.co.kr";var _TRK_CDMN = ".hanaent.co.kr";</script>
+		<script type="text/javascript">var _CDN_DOMAIN = location.protocol == "https:" ? "https://fs.bizspring.net" : "http://fs.bizspring.net";
+		(function (b, s) { var f = b.getElementsByTagName(s)[0], j = b.createElement(s); j.async = true; j.src = "//fs.bizspring.net/fsn/bstrk.1.js"; f.parentNode.insertBefore(j, f); })(document, "script");
+		</script>
+		<noscript><img alt="Logger Script" width="1" height="1" src="http://ssl.logger.co.kr/tracker.1.tsp?u=49180&amp;js=N"/></noscript>
+		<!-- END OF LOGGER TRACKING SCRIPT -->
+
+		<!-- Mirae Log Analysis Script Ver 1.0   -->
+		<script type="text/javascript">
+			var mi_adkey = "pktih";
+			var mi_is_defender = "";
+			var mi_dt=new Date(),mi_y=mi_dt.getFullYear(),mi_m=mi_dt.getMonth()+1,mi_d=mi_dt.getDate(),mi_h=mi_dt.getHours();
+			var mi_date=""+mi_y+(mi_m<=9?"0":"")+mi_m+(mi_d<=9?"0":"")+mi_d+(mi_h<=9?"0":"")+mi_h;
+			var mi_script = "<scr"+"ipt "+"type='text/javascr"+"ipt' src='//log1.toup.net/mirae_log.js?t="+mi_date+"' charset='utf-8' async='true'></scr"+"ipt>";
+			document.writeln(mi_script);
+		</script><script type="text/javascript" src="//log1.toup.net/mirae_log.js?t=2022061421" charset="utf-8" async="true"></script>
+
+		<!-- Mirae Log Analysis Script END  -->
+
+<!-- NAVER SCRIPT -->
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if (!wcs_add) var wcs_add={};
+wcs_add["wa"] = "s_16dca42e2b7b";
+if (!_nasa) var _nasa={};
+wcs.inflow("hanaent.co.kr");
+wcs_do(_nasa);
+</script>
+<!-- NAVER SCRIPT END -->
+
+<div class="layerPop" id="loginLayer">
+	<section class="memLayer">
+		<script type="text/javascript" src="/js/jquery.validate.js"></script>
+		<script type="text/javascript" src="/js/mem/mem_login2.js"></script>
+		<script type="text/javascript">
+		window.fbAsyncInit = function() {
+			FB.init({
+			appId      : '2035042190041348',
+			xfbml      : true,
+			version    : 'v2.12'
+			});
+		};
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+		<h2 class="title">로그인</h2>
+		<form action="/member/proc/login_proc.html" method="post" id="loginForm" name="loginForm" class="panel" novalidate="novalidate" autocomplete="off">
+			<input type="hidden" id="mode" name="mode" value="LOGIN">
+			<input type="hidden" id="re_url" name="re_url" value="">
+			<fieldset class="loginField">
+				<legend>로그인</legend>
+				<label for="m_id" class="inputLabel">아이디</label>
+				<input type="text" class="inputTxt" placeholder="아이디를 입력해 주세요." id="m_id" name="m_id">
+				<label for="m_pwd" class="inputLabel">비밀번호</label>
+				<input type="password" class="inputTxt" placeholder="비밀번호를 입력해 주세요." id="m_pwd" name="m_pwd">
+
+				<div class="loginOpt">
+					<label class="inputChk"><input type="checkbox" name="idsave" value="saveOk"> <span>로그인 유지</span></label>
+					<a href="/member/idpw.html" class="btnFind" onclick="layerFind('findLayer'); return false;"><span>아이디 / 비밀번호 찾기</span></a>
+				</div>
+
+				<div class="loginLink">
+					<button type="submit" onclick="sendit()" class="btnConfirm"><span>로그인</span></button>
+					<a href="javascript:loginNaver();" class="btnNaver">로그인</a>
+			<script>
+			function loginNaver(){
+				var win = window.open('https://nid.naver.com/oauth2.0/authorize?client_id=zBb4wT0YH81CxK5ArpIr&response_type=code&redirect_uri=http%3A%2F%2Fhanaent.co.kr%2Fmember%2Fproc%2Flogin_proc.html%3Fmode%3Dnaver&state=a0a40b9de430d24b66862d7d7058c796', '네이버 아이디로 로그인','width=320, height=480, toolbar=no, location=no');
+				var timer = setInterval(function() {
+					if(win.closed) {
+						window.location.reload();
+						clearInterval(timer);
+					}
+				}, 500);
+			}
+			</script>
+								<a href="#" id="kakao_login" class="btnKakao">카카오톡 로그인</a>
+					<a href="/member/join.html" id="mem_register" class="btnJoin"><span>회원가입</span></a>
+				</div>
+			</fieldset>
+		</form>
+		<button type="button" onclick="layerClose('loginLayer');" class="btnClose"><span>로그인 창 닫기</span></button>
+		<script>
+			window.onload = function() {
+		
+				if (getCookie("id")) { // getCookie함수로 id라는 이름의 쿠키를 불러와서 있을경우
+					document.loginForm.m_id.value = getCookie("id"); //input 이름이 id인곳에 getCookie("id")값을 넣어줌
+					document.loginForm.idsave.checked = true; // 체크는 체크됨으로
+				}
+		
+			}
+		
+			function setCookie(name, value, expiredays) //쿠키 저장함수
+			{
+				var todayDate = new Date();
+				todayDate.setDate(todayDate.getDate() + expiredays);
+				document.cookie = name + "=" + escape(value) + "; path=/; expires="
+						+ todayDate.toGMTString() + ";"
+			}
+		
+			function getCookie(Name) { // 쿠키 불러오는 함수
+				var search = Name + "=";
+				if (document.cookie.length > 0) { // if there are any cookies
+					offset = document.cookie.indexOf(search);
+					if (offset != -1) { // if cookie exists
+						offset += search.length; // set index of beginning of value
+						end = document.cookie.indexOf(";", offset); // set index of end of cookie value
+						if (end == -1)
+							end = document.cookie.length;
+						return unescape(document.cookie.substring(offset, end));
+					}
+				}
+			}
+		
+			function sendit() {
+				var frm = document.loginForm;
+				/*if (!frm.m_id.value) { //아이디를 입력하지 않으면.
+					alert("아이디를 입력 해주세요");
+					frm.m_id.focus();
+					return;
+				}*/
+				
+		
+				if (document.loginForm.idsave.checked == true) { // 아이디 저장을 체크 하였을때
+					setCookie("id", document.loginForm.m_id.value, 7); //쿠키이름을 id로 아이디입력필드값을 7일동안 저장
+				} else { // 아이디 저장을 체크 하지 않았을때
+					setCookie("id", document.loginForm.m_id.value, 0); //날짜를 0으로 저장하여 쿠키삭제
+				}
+		
+				document.loginForm.submit(); //유효성 검사가 통과되면 서버로 전송.
+		
+			}
+		</script>
+		<form name="r_form" id="r_form" method="post">
+			<input type="hidden" name="re_url" id="mode" value="">
+			<input type="hidden" name="mode" id="mode" value="kakao">
+			<input type="hidden" name="mb_id" id="r_id">
+			<input type="hidden" name="u" value="M">
+			<input type="hidden" name="mb_name" id="r_name">
+			<input type="hidden" name="mb_email" id="r_email">
+		</form>
+		<script type="text/javascript">
+		function facebooklogin() {
+			FB.login(function(response) {
+					FB.api('/me', function(user) {
+						location.href= "./proc/login_proc.html?mode=facebook&mb_id="+user.id+"&mb_name="+user.name+"&mb_email="+user.email;
+					});
+			}, {scope:'public_profile,email'});
+		}
+
+		function showObj(obj) {
+			var str = "";
+			for(key in obj) {
+				str += key+"="+obj[key]+"\n";
+			}
+
+			alert(str);
+			return;
+		}
+		</script>
+		<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				Kakao.init("abadf155cd7700e72a4788c2789641ad");
+				function getKakaotalkUserProfile(){
+					Kakao.API.request({
+						url: '/v1/user/me',
+						success: function(res) {
+						//	 alert(JSON.stringify(res)); 
+						// var r_name = $("#r_name").val(res.properties.nickname);	
+							if(res.properties.nickname) {
+								$("#r_name").val(res.properties.nickname);
+							}
+							$("#r_id").val(res.id);
+						//	$("#r_email").val(res.kaccount_email);
+							$("#r_form").attr("action","/member/proc/login_proc.html");
+							$("#r_form").submit();
+						},
+						fail: function(error) {
+							console.log(error);
+						}
+					});
+				}
+				//function createKakaotalkLogin(){
+					$("#kakao_login").click(function(){
+						Kakao.Auth.login({
+							persistAccessToken: true,
+							persistRefreshToken: true,
+							success: function(authObj) {
+								getKakaotalkUserProfile();
+							},
+							fail: function(err) {
+								alert(err);
+								console.log(err);
+							}
+						});
+					});
+					//$("#kakao-logged-group").prepend(loginBtn)
+				//}
+				if(Kakao.Auth.getRefreshToken()!=undefined&&Kakao.Auth.getRefreshToken().replace(/ /gi,"")!=""){
+					//getKakaotalkUserProfile();
+				}else{
+					//createKakaotalkLogin();
+				}
+
+			});
+		</script>
+	</section>
+</div><div class="layerPop" id="findLayer">
+	<div class="memLayer">
+		<script type="text/javascript" src="/js/jquery.validate.js"></script>
+		<script type="text/javascript" src="/js/jquery.alphanumeric.js"></script>
+		<script type="text/javascript" src="/js/admin/common.js"></script>
+		<script type="text/javascript" src="/js/mem/mem_find.js"></script>
+		<h2 class="title">아이디/비밀번호 찾기</h2>
+		<fieldset class="loginField">
+			<legend>아이디 찾기</legend>
+			<form action="?" method="post" name="find-id-form" id="find-id-form" novalidate="" autocomplete="off">
+				<label for="mb_name" class="inputLabel">아이디 찾기</label>
+				<input type="text" class="inputTxt" id="mb_name" name="mb_name" placeholder="가입하신 이름을 입력하세요.">
+				<input type="text" class="inputTxt" id="mb_email" name="mb_email" placeholder="가입하신 이메일을 입력하세요.">
+				<button type="submit" id="id_find" class="btnConfirm"><span>아이디 찾기</span></button>
+			</form>
+			<form action="?" method="post" name="find-pw-form" id="find-pw-form" novalidate="" autocomplete="off">
+				<label for="mb_id" class="inputLabel">비밀번호 찾기</label>
+				<input type="text" class="inputTxt" id="mb_id" name="mb_id" placeholder="가입하신 아이디을 입력하세요.">
+				<input type="text" class="inputTxt" id="mb_email" name="mb_email" placeholder="가입하신 이메일을 입력하세요.">
+				<button type="submit" id="pwd_find" class="btnConfirm"><span>비밀번호 찾기</span></button>
+			</form>
+		</fieldset>
+		<button type="button" onclick="layerClose('findLayer');" class="btnClose"><span>아이디/비밀번호 찾기 창 닫기</span></button>
+	</div>
+</div>		<style>
+/*.pop_img { width:px; height:px;}*/
+.notiPop {position:fixed;top:50%;left:50%;z-index:1000;background:#fff;box-shadow:2px 2px 3px 3px rgba(0,0,0,.2);}
+	
+
+.slideNotiPop {transform:translate(-50%, -50%);-webkit-transform:translate(-50%, -50%);}
+.notiPop .popCont {min-height:300px;}
+.notiPop .popCont img {width: 100%;}
+.notiPop .slide {position:relative;overflow:hidden;}
+.notiPop .popBot {position:relative;padding:5px;background:#000;color:#fff;font-size:13px;}
+.notiPop .popBot input {vertical-align:middle;}
+.notiPop .popBot a {position:absolute;top:4px;right:8px;color:#fff;}
+.notiPop .slidePage {position:absolute;right:0;bottom:10px;left:0;text-align:center;}
+.notiPop .slidePage a {display:inline-block;width:15px;height:15px;margin: 0 3px;border-radius:50%;background:rgba(0,0,0, .4);font: 0/0 a;}
+.notiPop .slidePage [class*="active"] {background: #000;}
+.notiPop .slidePage .bx-pager-item {display: inline-block;}
+</style>
+<script type="text/javascript">
+function getCookie( name ) {
+	var nameOfCookie = name + "=";
+	var x = 0;
+	while ( x <= document.cookie.length )
+	{
+		var y = (x+nameOfCookie.length);
+		if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+			if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+				endOfCookie = document.cookie.length;
+			return unescape( document.cookie.substring( y, endOfCookie ) );
+		}
+		x = document.cookie.indexOf( " ", x ) + 1;
+		if ( x == 0 )
+		break;
+	}
+	return;
+}
+function setCookie( name, value, expiredays ) {
+	var todayDate = new Date();
+	todayDate = new Date(parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000);  
+	if ( todayDate > new Date() ) {
+		expiredays = expiredays - 1;
+	}
+	todayDate.setDate( todayDate.getDate() + expiredays );
+	document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+function closeWin(name, day) {
+	var chk = document.getElementsByName(name)[0].checked;
+
+	if(chk == true) setCookie(name, 'done' , day);
+
+	document.getElementById(name).style.display = 'none';
+}
+
+var popSlideOn = false;
+var popStr = '';
+function slidePopSet(idx, text, day) {
+	if(popStr.length > 0 && popSlideOn == false) {
+		var slideLayerLayout = '<div id="divpop_'+idx+'" class="notiPop slideNotiPop"><div class="popCont slide"><ul class="swiper-wrapper"></ul><div class="slidePage"></div></div><div class="popBot"><label class="inputChk"><input name="divpop_'+idx+'" type="checkbox"> <span>이 창을 '+ text +' 열지 않습니다.</span></label><a href="javascript:closeWin(\'divpop_'+idx+'\', '+day+');">[닫기]</a></div></div>';
+		$('body').append(slideLayerLayout);
+		popSlideOn = true;
+
+		$('.notiPop .swiper-wrapper').append(popStr);
+
+		if(osVer !== 'ie8') {
+			new Swiper('.notiPop .slide', {
+				auto: true,
+				loop: true,
+				speed: 500,
+				autoplay: { delay: 3000 },
+				pagination: {
+					el: '.notiPop .slidePage',
+					clickable: true,
+					renderBullet: function (index, className) {
+						return '<a href="#" class="' + className + '">' + (index + 1) + '</a>';
+					}
+				}
+			});
+		} else {
+			$('.notiPop ul').bxSlider({
+				auto: true,
+				speed: 500,
+				pause: 3000,
+				controls: false,
+				pager: true,
+				pagerSelector: '.notiPop .slidePage'
+			});
+		}
+	}
+}
+$(function() {
+	$(".notiPop").draggable();
+});
+</script>
+
+			<div id="divpop_177" class="notiPop ui-draggable" style="top: 172px; left: 1400px; overflow: hidden; display: none;">
+			<div class="popCont"><a href="http://hanaent.co.kr/intro/intro03.html?jb_code=10&amp;jb_idx=6051&amp;search_key=&amp;search_keyword=&amp;page=&amp;dep1=&amp;dep2="><img src="http://www.hanaent.co.kr/popup/upfile/16551658462024.jpg" alt="팝업"></a></div>
+			<div class="popBot">
+				<label class="inputChk"><input name="divpop_177" type="checkbox"> <span>이 창을 하루동안 열지 않습니다.</span></label>
+				<a href="javascript:closeWin('divpop_177', 177);">[닫기]</a>
+			</div>
+		</div>
+	
+			<script>
+			slidePopSet('177', '하루동안', '1');
+		</script>
+		<script>
+		if ( getCookie('divpop_177') == 'done') {
+			document.getElementById('divpop_177').style.display = 'none';
+		}
+	</script>
+		
+	
+	</div>
+
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body>
