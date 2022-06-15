@@ -54,14 +54,17 @@ a { text-decoration: none; color: #333; }
     /* 여기서부터 메뉴 */
 #gnb .list { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto;}
 #gnb .list > ul > li:first-child { border-left: 1px solid #ddd;}   /* 선을 그었음 */
-#gnb .list > ul > li { float: left; width: 14.28%; height: 100%; box-sizing: border-box;} /* float-left로 옆으로 정렬시키고 각 와이드 14퍼만큼 박싱해서 정렬*/
+#gnb .list > ul > li { float: left; width: 14.28%; height: 100%; box-sizing: border-box;} /* float-left로 옆으로 정렬시키고 각 와이드 14퍼만큼 박싱해서 정렬 / 메뉴가 줄어들으시면 이곳을 수정하시면 됩니다.*/
 li { list-style: none;} /* 한번더 초기화 */
 #gnb .list > ul > li > a { display: block; background: #fbfbfb; border-right: 1px solid #ddd; text-align: center;
     color: #000; font-size: 18px; font-weight: 400; line-height: 70px;}     /* 메인메뉴와 서브메뉴를 나누는 구간 */
 
+#sub-menu { opacity: 0; visibility: hidden; transition: all 0.15s ease-in; margin: 0 auto; background-color: #fff;}	/* 서브메뉴를 숨기는 */
+#main-menu:hover #sub-menu { opacity: 1; visibility: visible;}		/* 서브메뉴를 보이게하는 */
+
 #gnb .subDepth { display: block !important;}        /* !important를 사용해 다음에 오는 스타일에 영향을 받지않도록 설정했다 */
-#gnb .subDepth { height: 0; overflow: hidden; transition: all .3s; box-sizing: border-box;}     /* 서브메뉴를 숨기고 on/off 함수를 사용하여 볼수있도록 했다 */
-#gnb .subDepth > ul { height: 100%; padding: 10px 0 0; border-right: 1px solid #ddd;}
+#gnb .subDepth { height: 0;  transition: all .3s; box-sizing: border-box;}    /* ;서브메뉴를 숨기고 on/off 함수를 사용하여 볼수있도록 했다*/
+#gnb .subDepth > ul { padding: 10px 0 0; border-right: 1px solid #ddd;}
 #gnb .subDepth li > a { display: block;  margin: 10px 0; padding: 0 30px; color: #666; font-size: 16px;} /* 서브메뉴의 크기를 조정 */
 
 a { color: inherit; text-decoration: none;}
@@ -70,154 +73,92 @@ a { color: inherit; text-decoration: none;}
 #gnb:after { content: ""; position: absolute; top: 0; right: 0; left: 0; height: 70px; background: #fbfbfb;}
 
 </style>
-<!-- <script>
-function deviceChk() {
-	var winW = $(window).width();
-	var state = '';
-	(winW <= 1023) ? state = 'mo': state = 'pc';
-	return state;
-}
-function menu() {
-	var wrap = $('html, body');
-	wrap.toggleClass('menuOn');
-}
-function subMenu(state, obj) {
-if(deviceChk() === 'pc') {
-    var head = $('#header');
-    (state === 'open') ? head.addClass('subOpen') : head.removeClass('subOpen');
-} else {
-    if(event.type === 'click') {
-        event.preventDefault();
-    } else {
-        return false;
-    }
-    var menu = $(obj);
-    if(menu.parent().hasClass('open')) {
-        menu.next().slideUp(300).parent().removeClass('open');
-    } else {
-        menu.next().slideDown(300).parent().addClass('open')
-        .siblings().removeClass('open')
-        .find('.subDepth').slideUp(300);
-    }
-}
-}
-function layerOpen(ele) {
-	var layer = $('#'+ele);
-	layer.show();
-}
-function layerClose(ele) {
-	var layer = $('#'+ele);
-	layer.hide();
-}
-function layerFind(ele) {
-	layerClose('loginLayer');
-	layerOpen(ele);
-}
-
-</script> -->
-    <title>Document</title>
+    <title>판교예스yes의원</title>
 </head>
 <body>
     <div id="m.wrap">
-        <header id="header" onmouseleave="subMenu('close');" class="">
+        <header id="header" onmouseleave="" class="">
 			<div class="inner">
-				<h1 class="logo"><a href="/"><img src="/resource/images/img_logo.png" alt="하나이비인후과"></a></h1>
-				<button type="button" class="btnMenu" onclick="menu();"><span>MENU</span></button>
+				<h1 class="logo"><a href="/"><img src="./images/logo.png" alt="판교예스yes의원"></a></h1>
+				<button type="button" class="btnMenu"><span>MENU</span></button>
 			</div>
 			<nav id="gnb">
 				<div class="login">
-					<span class="sign"><a href="#" onclick="layerOpen('loginLayer'); return false;">로그인</a></span>
+					<span class="sign"><a href="#">로그인</a></span>
 						<span><a href="/member/join.html">회원가입</a></span>
 				</div>
-				<div class="list">
-					<ul>
-						<li class=""><a href="/intro/intro01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">병원소개</a>
+				<div class="list" >
+					<ul id="main-menu" >
+						<li class=""><a href="./intro/intro.html#page1">본원 소개</a>
 							<div class="subDepth">
-								<ul>
-									<li class=""><a href="/intro/intro01.html">하나 이야기</a></li>
-									<li class=""><a href="/intro/intro02.html">의료진 소개</a></li>
-									<li class=""><a href="/intro/intro03.html">병원소식</a></li>
-									<li class=""><a href="http://hanaent.woobi.co.kr" target="_blank">둘러보기(VR)</a></li>
-									<li class=""><a href="/intro/intro07.html">안전수술 시스템</a></li>
-									<li class=""><a href="/intro/intro11.html">진료협력센터</a></li>
-									<li class=""><a href="/intro/intro08.html">건강정보</a></li>
-									<li class=""><a href="/intro/intro06.html">채용정보</a></li>
-									<li class=""><a href="/intro/intro05.html">고객의 소리</a></li>
+								<ul id="sub-menu" style="border-left:  1px solid #ddd;">
+									<li class=""><a href="./intro/intro.html#page1">인사말</a></li>
+									<li class=""><a href="./intro/intro.html#page2">진료안내</a></li>
+									<li class=""><a href="./intro/intro.html#page3">오시는길</a></li>
+									<li class=""><a href="./intro/intro.html#page4">의료진소개</a></li>
+									<li class=""><a href="./intro/intro.html#page5">약력</a></li>
 								</ul>
 							</div>
 						</li>
-						<li class=""><a href="/info/info01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">진료안내</a>
+						<li class=""><a href="./menu1/menu1.html"">진료 과목</a>
 							<div class="subDepth">
-								<ul>
-									<li class=""><a href="/info/info01.html">진료 일정</a></li>
-									<li class=""><a href="/info/info02.html">외래진료안내</a></li>
-									<li class=""><a href="/info/info03.html">입·퇴원안내</a></li>
-									<li class=""><a href="/info/info04.html">오시는 길</a></li>
-									<li class=""><a href="/info/info05.html">온라인 예약</a></li>
-									<li class=""><a href="/info/info06.html">자주 묻는 질문</a></li>
-									<li class=""><a href="/info/info07.html">온라인 상담</a></li>
-									<li class=""><a href="/info/info08.html">치료사례</a></li>
-									<li class=""><a href="/info/info09.html">서류발급</a></li>
+								<ul id="sub-menu">
+									<li class=""><a href="./menu1/menu1.html#page1">내과</a></li>
+									<li class=""><a href="./menu1/menu1.html#page2">정형외과/통증의학과</a></li>
+									<li class=""><a href="./menu1/menu1.html#page3">피부과</a></li>
+									<li class=""><a href="./menu1/menu1.html#page4">비뇨기과</a></li>
 								</ul>
 							</div>
 						</li>
-						<li class=""><a href="/nose/nose01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">코 질환 센터</a>
+						<li class=""><a href="./menu2/menu2.html#page1">비수술 통증치료</a>
 							<div class="subDepth">
-								<ul>
-									<li class=""><a href="/nose/nose01.html">센터 소개</a></li>
-									<li class=""><a href="/nose/nose02.html?type=A&amp;sub_tp=0">축농증</a></li>
-									<li class=""><a href="/nose/nose03.html?type=A&amp;sub_tp=1">비중격만곡증</a></li>
-									<li class=""><a href="/nose/nose04.html?type=A&amp;sub_tp=2">알레르기 비염</a></li>
-									<li class=""><a href="/nose/nose05.html?type=A&amp;sub_tp=3">만성 비염</a></li>
-									<li class=""><a href="/nose/nose06.html?type=A&amp;sub_tp=4">코 물혹</a></li>
-									<li class=""><a href="/nose/nose07.html?type=A&amp;sub_tp=5">후각장애</a></li>
+								<ul id="sub-menu">
+									<li class=""><a href="./menu2/menu2.html#page1">카이로프랙틱</a></li>
+									<li class=""><a href="./menu2/menu2.html#page2">인대간화주사</a></li>
+									<li class=""><a href="./menu2/menu2.html#page3">신경자극치료</a></li>
+									<li class=""><a href="./menu2/menu2.html#page4">체외 충격파</a></li>
 								</ul>
 							</div>
 						</li>
-						<li class=""><a href="/neck/neck01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">목 질환 센터</a>
+						<li class=""><a href="./menu3/menu3.html#page1">도수 치료</a>
 							<div class="subDepth">
-								<ul>
-									<li class=""><a href="/neck/neck01.html">센터 소개</a></li>
-									<li class=""><a href="/neck/neck02.html?type=B&amp;sub_tp=0">편도</a></li>
-									<li class=""><a href="/neck/neck03.html?type=B&amp;sub_tp=2">목의 혹</a></li>
-									<li class=""><a href="/neck/neck04.html?type=B&amp;sub_tp=3">갑상선</a></li>
-									<li class=""><a href="/neck/neck05.html?type=B&amp;sub_tp=4">침샘</a></li>
-									<li class=""><a href="/neck/neck06.html?type=B&amp;sub_tp=5">악성 질환</a></li>
+								<ul id="sub-menu">
+									<li class=""><a href="./menu3/menu3.html#page1">비수술 통증치료</a></li>
+									<li class=""><a href="./menu3/menu3.html#page2">카이로프랙틱</a></li>
+									<li class=""><a href="./menu3/menu3.html#page3">인대강화주사</a></li>
+									<li class=""><a href="./menu3/menu3.html#page4">신경자극치료</a></li>
+									<li class=""><a href="./menu3/menu3.html#page5">체외 충격파</a></li>
 								</ul>
 							</div>
 						</li>
-						<li class=""><a href="/ear/ear01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">귀 질환 센터</a>
+						<li class=""><a href="./menu4/menu4.html#page1">초음파 치료</a>
 							<div class="subDepth">
-								<ul>
-									<li class=""><a href="/ear/ear01.html">센터 소개</a></li>
-									<li class=""><a href="/ear/ear02.html?type=C&amp;sub_tp=0">어지럼증</a></li>
-									<li class=""><a href="/ear/ear03.html?type=C&amp;sub_tp=1">만성 중이염</a></li>
-									<li class=""><a href="/ear/ear04.html?type=C&amp;sub_tp=2">소아 중이염</a></li>
-									<li class=""><a href="/ear/ear05.html?type=C&amp;sub_tp=3">난청</a></li>
-									<li class=""><a href="/ear/ear06.html?type=C&amp;sub_tp=4">보청기</a></li>
-									<li class=""><a href="/ear/ear07.html?type=C&amp;sub_tp=5">이명</a></li>
+								<ul id="sub-menu">
+									<li class=""><a href="./menu4/menu4.html#page1">비수술 통증치료</a></li>
+									<li class=""><a href="./menu4/menu4.html#page2">카이로프랙틱</a></li>
+									<li class=""><a href="./menu4/menu4.html#page3">인대강화주사</a></li>
+									<li class=""><a href="./menu4/menu4.html#page4">신경자극치료</a></li>
+									<li class=""><a href="./menu4/menu4.html#page5">체외 충격파</a></li>
 								</ul>
 							</div>
 						</li>
-						<li class=""><a href="/snoring/snoring01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">수면 센터</a>
+						<li class=""><a href="./menu5/menu5.html#page1">탈모 치료</a>
 							<div class="subDepth">
-								<ul>
-									<li class=""><a href="/snoring/snoring01.html">센터 소개</a></li>
-									<li class=""><a href="/snoring/snoring02.html?type=E">진단과정</a></li>
-									<li class=""><a href="/snoring/snoring03.html?type=E">수면검사</a></li>
-									<li class=""><a href="/snoring/snoring04.html?type=E">수술치료</a></li>
-									<li class=""><a href="/snoring/snoring05.html?type=E">비수술치료</a></li>
+								<ul id="sub-menu">
+									<li class=""><a href="./menu5/menu5.html#page1">비수술 통증치료</a></li>
+									<li class=""><a href="./menu5/menu5.html#page2">카이로프랙틱</a></li>
+									<li class=""><a href="./menu5/menu5.html#page3">인대강화주사</a></li>
+									<li class=""><a href="./menu5/menu5.html#page4">신경자극치료</a></li>
+									<li class=""><a href="./menu5/menu5.html#page5">체외 충격파</a></li>
 								</ul>
 							</div>
 						</li>
-						<li class=""><a href="/nerve/nerve01.html" onmouseenter="subMenu('open', this);" onclick="subMenu('open', this);">신경과</a>
+						<li class=""><a href="./board/service.html">안내 및 후기</a>
 							<div class="subDepth">
-								<ul>
-									<li class=""><a href="/nerve/nerve01.html">신경과 소개</a></li>
-									<li class=""><a href="#" onclick="alert('준비중입니다.');">수면장애·불면증</a></li>
-									<li class=""><a href="#" onclick="alert('준비중입니다.');">어지럼증</a></li>
-									<li class=""><a href="#" onclick="alert('준비중입니다.');">두통</a></li>
-									<li class=""><a href="#" onclick="alert('준비중입니다.');">치매초기진단</a></li>
+								<ul id="sub-menu">
+									<li class=""><a href="./board/service.html">안내</a></li>
+									<li class=""><a href="./board/review.html">치료후기</a></li>
+									<li class=""><a href="./board/qna.html">QNA(임시)</a></li>
 								</ul>
 							</div>
 						</li>
