@@ -17,8 +17,6 @@
     <!-- jquery 임포트 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="./js/swiper.min.js"></script>
 
 <style>
 /* 초기화 */
@@ -45,23 +43,21 @@ hr { border: 0; border-top: 1px solid #ddd;}	/* 선을 긋는데 이용했습니
 
 
 #container { outline: none; position: relative;  min-height: 900px; padding: 70px 0 0;}
-.mainSlide { position: relative;}
-.swiper-container-horizontal { overflow: hidden;}
-.swiper-wrapper { position: relative; display: -webkit-box; display: -webkit-flex; display: flex;}
-
-.mainSlide .swiper-slide {  height: 500px; background-position: 50%; background-size: cover;}
-.swiper-wrapper .swiper-slide { flex-shrink: 0;}
-.mainSlide .swiper-slide a { display: block; height: 100%; color: #fff;}
-.mainSlide .swiper-slide img { display: none; width: 100%;}
-
-.mainSlide .slidePage { position: absolute; bottom: 30px; left: 50%; display: table; width: 900px; transform: translateX(-50%);}
-.mainSlide .slidePage a { display: table-cell; height: 2px; font: 0/0 a; background: rgba(255, 255, 255, 0.2);}
+#vs {width: 100%; overflow: hidden;}
+.img_box { width: 400%;}
+.img_box li { float: left; width: 25%; position: relative; height: 300px;}
+.img_box li a {display: block;}
+.img_box li a img { display: block; width: 100%; height: 100%;}
+.img_box .tit_box { position: absolute; top: 50px; left: 50px; color: #fff; 
+	text-shadow: 1px 1px 1px #000; padding-left: 40px;} 
+.vs_tit { font-size:43px; line-height: 1.6; font-family: 'jalnan' }
+.vs_com { font-size: 20px; padding-top: 40px;  font-family: 'GangwonEdu'}
 /*이 위로 슬라이더*/
 
 .bgCon { background: #f6f6fa;}
 .main .section { max-width: 1400px; padding: 60px 0;}
 .mainFirst { float: left; width: 68%;}
-.mainFirst .box { margin-right: 40px; padding: 40px 35% 50px 60px; background: #fff url(./images/lolomain_img.jpg) no-repeat 100% 100%; border: 1px solid #1f75b0;}
+.mainFirst .box { margin-right: 40px; padding: 40px 35% 50px 60px; background: #fff url(./images/main/bg_main2.jpg) no-repeat 100% 100%; border: 1px solid #1f75b0;}
 .mainFirst .txt { color: #000; font-size: 22px; font-weight: 400; line-height: 1.4;}
 .mainFirst .txt strong { display: block; margin: 10px 0 0; color: #1f75b0; font-size: 44px; font-weight: 500; letter-spacing: -2px;}	/*첫 박스의 스트롱 텍스트 규격 입니다.*/
 
@@ -94,7 +90,7 @@ hr { border: 0; border-top: 1px solid #ddd;}	/* 선을 긋는데 이용했습니
 .mainMap .txt { font-size: 16px;}
 .mainMap .link { margin: 40px 0 0;}
 .mainMap .link li { float: left; width: 50%;}
-.mainMap .link li a { display: block;  margin: 1px 0 0 1px; line-height: 110px; text-align: center; color: #fff; background: #1f75b0;}
+.mainMap .link li a { display: block;  margin: 1px 0 0 1px; line-height: 110px; text-align: center; color: #fff; background: #333;}
 .mainMap .link li a:before { content: ""; display: inline-block; width: 40px; height: 38px; margin-left: -20px; vertical-align: -10px;}
 .mainMap .link li.bus a:before { background: url(./images/main/icon_bus.png) no-repeat 50%;}
 .mainMap .link li.parking a:before { background: url(./images/main/icon_parking.png) no-repeat 50%;}
@@ -110,7 +106,7 @@ hr { border: 0; border-top: 1px solid #ddd;}	/* 선을 긋는데 이용했습니
 .mainNotice .list li .date { position: absolute; top: 15px; right: 25px; color: #999;}
 
 .mainAfter { float: left; width: 25.5%;}
-.mainAfter .box {  height: 430px; margin-right: 40px; padding: 0 40px; background: url(./images/main/bg_main2.jpg) no-repeat 50%; text-align: center; color: #fff;}
+.mainAfter .box {  height: 430px; margin-right: 40px; padding: 0 40px; background: url(./images/main/bg_main3.jpg) no-repeat 50%; text-align: center; color: #fff;} /*사진 여기서 바꿀수 있습니다*/
 .mainAfter .title { padding: 50px 0; font-size: 30px;}
 .mainAfter .list { border-bottom: 1px solid #90939a;}
 .mainAfter .list li { padding: 17px 0; border-top: 1px solid #90939a; font-size: 16px;}
@@ -137,81 +133,97 @@ hr { border: 0; border-top: 1px solid #ddd;}	/* 선을 긋는데 이용했습니
     <div id="mwrap">
 		<header id="header" class="header" name="header" ></header>
 		<div id="container" tabindex="0">
-
-			<div class="mainSlide">
-
-				<div class="slide swiper-container-horizontal">
-					<ul class="swiper-wrapper" style="transform: translate3d(-12800px, 0px, 0px); transition-duration: 500ms;">
-						<li class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" style="background-image: url(&quot;./images/main/img_mainslide1_11.jpg&quot;); width: 2560px;" data-swiper-slide-index="5">
-							<a href=""><img src="./images/main/img-mainslide1_11_mo.jpg" alt="외래 240만명, 수술 6만명의 선택"></a>
-						</li>
-						<li class="swiper-slide" style="background-image: url(&quot;./images/main/img_mainslide1_3.jpg&quot;); width: 2560px;" data-swiper-slide-index="0">
-							<a href=""><img src="./images/main/img_mainslide1_3_mo.jpg" alt="보건복지부지정 이비인후과전문병원"></a>
-						</li>
-						<li class="swiper-slide" style="background-image: url(&quot;./images/main/img_mainslide1_6.jpg&quot;); width: 2560px;" data-swiper-slide-index="1">
-							<a href=""><img src="./images/main/img_mainslide1_6_mo.jpg" alt="3주기 의료기관평가인증 획득"></a>
-						</li>
-						<li class="swiper-slide" style="background-image: url(&quot;./images/main/img_mainslide1_71.jpg&quot;); width: 2560px;" data-swiper-slide-index="2">
-							<a href=""><img src="./images/main/img_mainslide1_71_mo.jpg" alt="최우수등급"></a>
-						</li>
-						<li class="swiper-slide swiper-slide-prev" style="background-image: url(&quot;./images/main/img_mainslide1_2.jpg&quot;); width: 2560px;" data-swiper-slide-index="3">
-							<a href=""><img src="./images/main/img_mainslide1_2_mo.jpg" alt="안전진료 시스템"></a>
-						</li>
-						<li class="swiper-slide swiper-slide-active" style="background-image: url(&quot;./images/main/img_mainslide1_4.jpg&quot;); width: 2560px;" data-swiper-slide-index="4">
-							<a href=""><img src="./images/main/img_mainslide1_4_mo.jpg" alt=" 전신마취 없는 코수술 안심수술관리시스템"></a>
-						</li>
-						<li class="swiper-slide swiper-slide-next" style="background-image: url(&quot;./images/main/img_mainslide1_11.jpg&quot;); width: 2560px;" data-swiper-slide-index="5">
-							<a href=""><img src="./images/main/img-mainslide1_11_mo.jpg" alt="외래 240만명, 수술 6만명의 선택"></a>
-						</li>
-					<li class="swiper-slide swiper-slide-duplicate" style="background-image: url(&quot;./images/main/img_mainslide1_3.jpg&quot;); width: 2560px;" data-swiper-slide-index="0">
-							<a href=""><img src="./images/main/img_mainslide1_3_mo.jpg" alt="보건복지부지정 이비인후과전문병원"></a>
-						</li></ul>
-				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-
-				<div class="slidePage swiper-pagination-clickable swiper-pagination-bullets">
-					<a href="#" class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1">1</a>
-					<a href="#" class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2">2</a>
-					<a href="#" class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3">3</a>
-					<a href="#" class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4">4</a>
-					<a href="#" class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 5">5</a>
-					<a href="#" class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6">6</a>
-				</div>
-
-			</div>
-			<script>
-				mainSlide();
-			</script>
-
+			<figure id="vs">
+                <ul class="img_box">
+                    <li>
+                        <a href="vision.html">
+                            <img src="./images/main/main10.jpg " alt="안전진료 시스템" class="pic">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">인생을 바꾸는</h2><!-- vs_tit, vs_com은 슬라이드화면에 글씨를 쓰는 칸입니다 프로젝트02 에서 사용하던것과 동일합니다 -->
+                                <p class="vs_com">도수치료 가족과 함께...</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="esgpopel.html">
+                            <img src="./images/main/main11.jpg " alt="전문병원" class="pic">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">첫째는 안전 둘째는 친절</h2>
+                                <p class="vs_com">최고의 의원 과 함께 남은 인생을..</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ai.html">
+                            <img src="./images/main/main12.jpg" style="max-width: 100%; height: auto;" alt="전신마취" class="pic">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">환절기마다 다시찾게되는..</h2>
+                                <p class="vs_com">판교예스의원 !</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="service.html">
+                            <img src="./images/main/main13.jpg" alt="인증기관" class="pic">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">떠나자..</h2>
+                                <p class="vs_com">도수치료받고 건강해진 몸으로..!</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <script>
+                    $(document).ready(function(){
+                        wd = $(window).width();
+                        var intv = setInterval(function(){
+                            ani1();
+                        }, 3000);
+                        function ani1(){
+                            $(".img_box").not(":animated").animate({"margin-left":-wd+"px"}, 600, function(){
+                                $(".img_box li").eq(0).appendTo($(".img_box"));
+                                $(".img_box").css("margin-left","0px");
+                            });
+                        }
+                        function ani2(){
+                            $(".img_box").css("margin-left",-wd+"px");
+                            $(".img_box li:last-child").prependTo($(".img_box"));
+                            $(".img_box").not(":animated").animate({"margin-left":"0px"}, 600);
+                        }
+                        $(".btn_group .next_btn").click(function(){
+                            clearInterval(intv);
+                            ani1();
+                            intv = setInterval(function(){ ani1(); }, 5000);
+                        });
+                        $(".btn_group .prev_btn").click(function(){
+                            clearInterval(intv);
+                            ani2();
+                            intv = setInterval(function(){ ani1(); }, 5000);
+                        });
+                    });    
+                </script>
+            </figure>
 			<div class="bgCon">
 				<section class="section">
 					<div class="mainFirst">
 						<div class="box">
 							<p class="txt">
-								<strong>처음 오셨나요?</strong>
-								코, 목, 귀 질환 증상에 따른 알맞은 치료로<br> 빠른 회복을 돕겠습니다.
+								<strong>도수치료의 혁신</strong>
+								결림, 담, 탈모 등 증상에 따른 알맞은 치료로<br> 무병장수를 돕겠습니다..
 							</p>
 							<nav class="link">
-								<span><a href="/intro/intro02.html">의료진 소개</a></span>
-								<span><a href="/info/info02.html" onclick="gtag('event', '하나이비인후과병원 초진안내', { 'event_category': '하나이비인후과병원 초진안내' });">초진안내</a></span>
-								<span><a href="/info/info05.html" onclick="gtag('event', '하나이비인후과병원 온라인예약', { 'event_category': '하나이비인후과병원 온라인예약' });">온라인예약</a></span>
-								<span><a href="/info/info07.html" onclick="gtag('event', '하나이비인후과병원 온라인상담', { 'event_category': '하나이비인후과병원 온라인상담' });">온라인 상담</a></span>
-								<a class="guide-btn" href="/intro/intro08.html?jb_code=20&amp;jb_idx=5238">
-									<img src="/resource/images/main/main-guide-btn.png" alt="">
+								<span><a href="">의료진 소개</a></span>
+								<span><a href="">도수치료 안내</a></span>
+								<span><a href="">온라인예약</a></span>
+								<span><a href="">탈모 상담</a></span>
+								<a class="guide-btn" href="">
+									<img src="./images/main/main-guide-btn.png" alt="">
 								</a>
 							</nav>
 						</div>
 					</div>
 					<div class="mainTime">
 						<div class="box">
-							<!-- <h3 class="title">진료 시간 안내</h3> -->
-							<p class="phone"><span class="ico">연락처</span><a href="tel:0269251111" id="mobile_script" onclick="gtag('event', '하나이비인후과병원 전화상담', { 'event_category': '하나이비인후과병원 전화상담' });">02.6925.1111</a></p>
-							<script type="text/javascript">
-								$('#mobile_script').click(function(){
-									_TRK_PI = "ODR";
-									_TRK_OA = "1";
-									_TRK_OE = "1";
-								});
-							</script>
+							<p class="phone"><span class="ico">연락처</span>02.1004.8282</p>
 							<ul class="time">
 								<li>
 									<span class="cont">
@@ -240,17 +252,16 @@ hr { border: 0; border-top: 1px solid #ddd;}	/* 선을 긋는데 이용했습니
 					</div>
 				</section>
 			</div>
-
 			<div class="section">
 				<section class="mainMap">
 					<div class="box">
 						<h3 class="title">찾아오시는 길</h3>
 						<p class="txt">병원으로 오시는 길을 안내해드립니다.</p>
 						<ul class="link">
-							<li class="bus"><a href="/info/info04.html#shuttleInfo">셔틀버스</a></li>
-							<li class="bus"><a href="/info/info04.html#busInfo">대중교통</a></li>
-							<li class="parking"><a href="/info/info04_01.html">주차안내</a></li>
-							<li class="map"><a href="/info/info04.html">약도문자</a></li>
+							<li class="bus"><a href="">셔틀버스</a></li>
+							<li class="bus"><a href="">대중교통</a></li>
+							<li class="parking"><a href="">주차안내</a></li>
+							<li class="map"><a href="">약도</a></li>
 						</ul>
 					</div>
 				</section>
@@ -258,106 +269,94 @@ hr { border: 0; border-top: 1px solid #ddd;}	/* 선을 긋는데 이용했습니
 					<div class="box">
 						<h3 class="title">공지사항</h3>
 						<ul class="list">
-							
 							<li>
-								<a href="/intro/intro03.html?jb_code=10&amp;jb_idx=6051">6월 일/공휴일 코로나 검사가 중단됩니다.</a>	
+								<a href="">6월 환절기 시기엔 특히 건강 조심하세요.</a>	
 							    <span class="date">2022.06</span>
 							</li>
-				
 							<li>
-								<a href="/intro/intro03.html?jb_code=10&amp;jb_idx=6048">홍콩 출국용 코로나 검사&amp;진단서 발행 가능</a>	
+								<a href="">피로는 전부 간 때문 입니다.</a>	
 							    <span class="date">2022.06</span>
 							</li>
-				
 							<li>
-								<a href="/intro/intro03.html?jb_code=10&amp;jb_idx=5786">*코로나 검사 안내(당일발급, 시간, 비용)</a>	
+								<a href="">일본이 부러워하고 중국이 경악한!! 한국인만의 특별한..</a>	
 							    <span class="date">2022.04</span>
 							</li>
-				
 							<li>
-								<a href="/intro/intro03.html?jb_code=10&amp;jb_idx=5957">영문 코로나 회복증명서 발급 안내</a>	
+								<a href="">코로나가 끝나면 일본여행을 가고싶습니다...</a>	
 							    <span class="date">2022.04</span>
 							</li>
-										</ul>
+						</ul>
 					</div>
 				</section>
 				<section class="mainAfter">
 					<div class="box">
-						<h3 class="title">치료사례</h3>
+						<h3 class="title">치료후기</h3>
 						<ul class="list">
-							<li><a href="/info/info08.html?jb_type=A&amp;jb_code=30">축농증/물혹 수술후기</a></li>
-							<li><a href="/info/info08.html?jb_type=A&amp;jb_code=30">비중격만곡증 수술후기</a></li>
-							<li><a href="/info/info08.html?jb_type=B&amp;jb_code=30">코골이 수술후기</a></li>
-							<li><a href="/info/info08.html?jb_type=B&amp;jb_code=30">편도 수술후기</a></li>
+							<li><a href="">독감 주사 후기</a></li>
+							<li><a href="">비수술 통증 치료후기</a></li>
+							<li><a href="">도수 치료 후기</a></li>
+							<li><a href="">탈모 치료 후기</a></li>
 						</ul>
 					</div>
 				</section>
 			</div>
 			<hr>
 			<section class="section botInfo">
-				<h3 class="title">하나이비인후과병원 건강 정보</h3>
+				<h3 class="title">판교 예스Yes!의원 건강 정보</h3>
 				<ul class="list">
-					
-							<li>
-								<a href="/intro/intro08.html?jb_code=20&amp;jb_idx=6030" class="box">
-									 <span class="img"><img src="http://www.hanaent.co.kr/bbs/files//jb_20/16534396996177.jpg" class="block"></span> 
-									<span class="cont">
-										<strong class="tit">의사가 말해주는 편도결석의 이야기</strong>
-										<span class="txt"></span>
-										<span class="opt">
-											<span class="writer">목 | 성인편도</span>
-											<span class="date">2022.05</span>
-										</span>
-									</span>
-								</a>
-
-							</li>
-				
-							<li>
-								<a href="/intro/intro08.html?jb_code=20&amp;jb_idx=6014" class="box">
-									 <span class="img"><img src="http://www.hanaent.co.kr/bbs/files//jb_20/16521420889437.jpg" class="block"></span> 
-									<span class="cont">
-										<strong class="tit">코로나 후유증의 진실을 알려 드립니다. (f</strong>
-										<span class="txt"></span>
-										<span class="opt">
-											<span class="writer">기타</span>
-											<span class="date">2022.05</span>
-										</span>
-									</span>
-								</a>
-
-							</li>
-				
-							<li>
-								<a href="/intro/intro08.html?jb_code=20&amp;jb_idx=5784" class="box">
-									 <span class="img"><img src="http://www.hanaent.co.kr/bbs/files//jb_20/16405943192131.png" class="block"></span> 
-									<span class="cont">
-										<strong class="tit">특발성 안면마비(벨 마비)란 무엇인가요?</strong>
-										<span class="txt"></span>
-										<span class="opt">
-											<span class="writer">귀 | 어지럼증</span>
-											<span class="date">2021.12</span>
-										</span>
-									</span>
-								</a>
-
-							</li>
-				
-							<li>
-								<a href="/intro/intro08.html?jb_code=20&amp;jb_idx=5743" class="box">
-									 <span class="img"><img src="http://www.hanaent.co.kr/bbs/files//jb_20/16381683665970.png" class="block"></span> 
-									<span class="cont">
-										<strong class="tit">코로나 영문음성확인서, 집에서 받아볼 수 </strong>
-										<span class="txt"></span>
-										<span class="opt">
-											<span class="writer">기타</span>
-											<span class="date">2021.11</span>
-										</span>
-									</span>
-								</a>
-
-							</li>
-								</ul>
+				<li>
+					<a href="" class="box">
+							<span class="img"><img src="./images/main/info01.jpg" class="block"></span> 
+						<span class="cont">
+							<strong class="tit">의사가 말해주는 탈모 유전에 관한 이야기</strong>
+							<span class="txt"></span>
+							<span class="opt">
+								<span class="writer">두피 | 탈모</span>
+								<span class="date">2022.06</span>
+							</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="box">
+							<span class="img"><img src="./images/main/info02.jpg" class="block"></span> 
+						<span class="cont">
+							<strong class="tit">무리한 다이어트의 진실을 알려 드립니다. (f</strong>
+							<span class="txt"></span>
+							<span class="opt">
+								<span class="writer">두피 | 탈모</span>
+								<span class="date">2022.06</span>
+							</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="box">
+							<span class="img"><img src="./images/main/info03.jpg" class="block"></span> 
+						<span class="cont">
+							<strong class="tit">유전성 탈모란 무엇인가요?</strong>
+							<span class="txt"></span>
+							<span class="opt">
+								<span class="writer">두피 | 탈모</span>
+								<span class="date">2022.06</span>
+							</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="box">
+							<span class="img"><img src="./images/main/info04.jpg" class="block"></span> 
+						<span class="cont">
+							<strong class="tit">탈모 증명서, 집에서 받아볼 수 </strong>
+							<span class="txt"></span>
+							<span class="opt">
+								<span class="writer">두피 | 탈모</span>
+								<span class="date">2022.06</span>
+							</span>
+						</span>
+					</a>
+				</li>
+			</ul>
 			</section>
 		</div>
     </div>
