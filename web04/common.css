@@ -76,13 +76,13 @@ a { color: inherit; text-decoration: none;}
 .bgCon { background: #f6f6fa;}
 .main .section { max-width: 1400px; padding: 60px 0;}
 .mainFirst { float: left; width: 68%;}
-.mainFirst .box { margin-right: 40px; padding: 40px 35% 50px 60px; background: #fff url(./images/main/bg_main2.jpg) no-repeat 100% 100%; border: 1px solid #1f75b0;}
+.mainFirst .box { margin-right: 40px; padding: 40px 35% 50px 60px; background: #fff url(./images/main/bg_main2.jpg) no-repeat 100% 100%; border: 1px solid forestgreen;}
 .mainFirst .txt { color: #000; font-size: 22px; font-weight: 400; line-height: 1.4;}
-.mainFirst .txt strong { display: block; margin: 10px 0 0; color: #1f75b0; font-size: 44px; font-weight: 500; letter-spacing: -2px;}	/*첫 박스의 스트롱 텍스트 규격 입니다.*/
+.mainFirst .txt strong { display: block; margin: 10px 0 0; color: forestgreen; font-size: 44px; font-weight: 500; letter-spacing: -2px;}	/*첫 박스의 스트롱 텍스트 규격 입니다.*/
 
 .mainFirst .link { position: relative; margin: 20px 0 0;}
 .mainFirst .link span { float: left; width: 50%;}
-.mainFirst .link a:not(.guide-btn) { display: block; margin: 5px; background: #fff; border: 1px solid #ddd; color: #1f75b0;
+.mainFirst .link a:not(.guide-btn) { display: block; margin: 5px; background: #fff; border: 1px solid #ddd; color: forestgreen;
     font-size: 22px; font-weight: bold;text-align: center; line-height: 82px; transition: all .3s;}
 .mainFirst .link a.guide-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
 .mainTime { float: right; width: 32%; text-align: center;}
@@ -98,7 +98,7 @@ a { color: inherit; text-decoration: none;}
 .mainTime .time .tit.word2 { letter-spacing: 35px;}
 .mainTime .time .sub { display: block; font-size: 14px; color: #666; font-weight: 500;}
 .mainTime .time li { padding: 12px 0 13px; border-top: 1px solid #ddd; text-align: center; color: #000; font-weight: 400; line-height: 1.4;}
-.mainTime .time .tit { display: inline-block; width: 90px; color: #1f75b0; white-space: nowrap;} /* 평일, 점심시간, 토요일 의 규격입니다. */
+.mainTime .time .tit { display: inline-block; width: 90px; color: forestgreen; white-space: nowrap;} /* 평일, 점심시간, 토요일 의 규격입니다. */
 .mainTime .time .tit.word3 { letter-spacing: 8px;} /* 토요일의 규격입니다. */
 
 .section { margin: 0 auto;  padding: 80px 0;} /* 섹션의 크기를 잡아줍니다 넒게 퍼진다면 이부분또는 이아래를 수정하시면됩니다. */
@@ -109,7 +109,7 @@ a { color: inherit; text-decoration: none;}
 .mainMap .txt { font-size: 16px;}
 .mainMap .link { margin: 40px 0 0;}
 .mainMap .link li { float: left; width: 50%;}
-.mainMap .link li a { display: block;  margin: 1px 0 0 1px; line-height: 110px; text-align: center; color: #fff; background: #333;}
+.mainMap .link li a { display: block;  margin: 1px 0 0 1px; line-height: 110px; text-align: center; color: #fff; background: forestgreen;}
 .mainMap .link li a:before { content: ""; display: inline-block; width: 40px; height: 38px; margin-left: -20px; vertical-align: -10px;}
 .mainMap .link li.bus a:before { background: url(./images/main/icon_bus.png) no-repeat 50%;}
 .mainMap .link li.parking a:before { background: url(./images/main/icon_parking.png) no-repeat 50%;}
