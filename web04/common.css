@@ -175,3 +175,51 @@ a { color: inherit; text-decoration: none;}
 #footer .footInfo .inner b { display: block; margin: 0 0 10px; font-size: 18px; color: #000;}
 #footer .footInfo .inner span { display: inline-block; margin-right: 15px; color: #666;}
 #footer .footInfo .copy { display: block; margin: 15px 0 0; font-size: 14px; color: #444;}
+
+/* agree */
+content {padding-top: 80px; text-align:center; }  /*헤더와 콘텐츠 영역이 겹쳐서 구현되지 않고, 해당 페이지의 주제목을 가운데로 올 수 있도록 함.*/
+.subtit {padding-bottom: 20px; } /*서브 제목이 좀 더 크게 보이도록 하기*/
+.container-fluid {padding-top: 80px; text-align:center; margin-left:100px ;} /*콘텐츠 영역을 가운데로 보일 수 있도록 함.*/
+ /*버튼 위치 및 사이즈 조절*/
+.btn {background-color: rgb(163, 186, 230); padding-left: 20px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px; margin-top: 20px; font-size: 15px;}
+.checkbox{float: right; margin-right: 90px; margin-top: 10px;} /*동의문구와 체크박스 위치 조정*/
+.btn:hover{color: #ececec;} /*마우스를 버튼에 올리면 색상이 바뀜*/
+
+/* join */
+.title{font-size: 30px; padding-bottom: 20px;}  /*페이지 제목 글씨 크기*/
+.container-fluid {padding-top: 150px; text-align:center; margin-left:180px ;  } /*콘텐츠 영역을 가운데로 보일 수 있도록 함.*/
+.table { margin-left: 50px; margin-top: 20px;  border-collapse: collapse; border-spacing: 0;   } /*회원가입 입력란과 페이지 주제의 간격조절 및 회면에서 나타나는 위치 조절*/
+.tbody tr td { border-collapse : collapse; border-spacing : 2px; padding-left: 100px; padding-right: 200px;} /*회원정보 입력란 위치 조절*/
+.table tbody tr{height: 72px; padding: 40px 20px; box-sizing: border-box; background: #fff; border: 1px solid #ddd; border-left: 0; border-right: 0; width: 100px solid#ddd;} /*회원정보 입력란 항목 사이 공백 조절 및 라인생성*/
+.form{width: 380px; height: 30px; } /*각 항목 입력 input태그 사이즈 조절*/
+.form2{width: 50px; height: 15px; border-top: 0;} /*이메일 수신 여부 태그 사이즈 조절*/
+.necessary {float:left; padding-top: 25px;} /*각 항목 이름 정렬*/
+.necessary2{float:left; margin-left: 100px;} /*이벤트 수신여부 항목 이름 정렬*/
+input:focus{background-color: rgba(185, 206, 250, 0.582);  }   /*항목의 입력란 중 선택된 항목의 입력란 색상 변화*/
+.joinbtn {margin-top: 30px; margin-left: 40px; margin-right: 35px; padding-top: 5px; padding-bottom: 5px; padding-left: 25px; padding-right: 25px; background-color: rgb(163, 186, 230); font-size: 18px;}/*버튼 색상 및 크기와 위치 설정*/  
+.joinbtn:hover{color: #ececec;} /*마우스를 버튼에 올리면 색상이 바뀜*/
+
+/* login */
+.container-fluid {padding-top: 180px; text-align:center; } /*콘텐츠 영역을 가운데로 보일 수 있도록 함.*/
+.title { text-align:center; margin: 30px; font-size: 30px; margin-left:20px; padding-bottom: 50px;}/*로그인 글씨를 크게 보일 수 있도록 조정함.*/
+.indata {font-size: 20px;} /*아이디와 비밀번호 입력창 위치를 잡아주기 위함*/
+.btn_frame a {text-decoration: none;}
+.btn_frame {padding-left: 10px; box-sizing: border-box;}
+ul{list-style: none;}
+.form_wrap tr td{ border-collapse: collapse; border-spacing: 0;} 
+input:focus{background-color: rgba(65, 108, 163, 0.384);}
+.btn {background-color: rgb(163, 186, 230); padding-left: 20px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px;}   
+.btn:hover{color: #ececec;} /*마우스를 버튼에 올리면 색상이 바뀜*/
+
+/* mypage */
+.subtitle {padding-bottom: 20px; font-size: 30px; margin-left: 50px;} /*페이지 제목 위치 및 사이즈*/
+.container-fluid {padding-top: 150px; text-align:center; margin-left:100px ;  } /*콘텐츠 영역을 가운데로 보일 수 있도록 함.*/
+.table { margin-top: 20px;  border-collapse: collapse; margin-left: 430px; padding-left: 100px;} /*입력란 위치*/
+.tbody tr td {padding-bottom: 10px; padding-top: 7px;  border-collapse : collapse; border-spacing : 0; padding-left: 10px; }
+.table tbody tr{height: 72px;  border: 1px solid #ddd; border-left: 0; border-right: 0; } /*각 항목 구분 라인 및 양 옆 라인제거*/
+.table tbody tr:first-child{border-top: 0;} /* 첫번째 칸 윗줄 제거*/       
+.tbody tr td input{width: 300px; height: 30px;  border: 1px solid #ddd;} /*input태그 라인색상 설정*/
+input:focus{background-color: rgba(185, 206, 250, 0.582); } /*선택된 입력란에 색상변화*/
+.btn_wrap{margin-left: 50px;} /*버튼위치*/  
+.btn {margin-top: 30px;  padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; background-color: rgb(163, 186, 230); }/*맨 아래 버튼 색상 및 위치 설정*/  
+.btn:hover{color: #ececec;} /*마우스를 버튼에 올리면 색상이 바뀜*/
