@@ -1,0 +1,225 @@
+@charset "UTF-8";
+/* 초기화 */
+* { margin: 0; padding: 0;}
+ul { list-style: none; } 
+a { text-decoration: none; color: #333; }
+html, body { height: 100%;}
+h1, h2, h3, h4, h5 { font-weight: 500;}
+
+.clear, .section:after, .tabMenu ul:after, .btnWrap:after, .boardThumb ul, .boardBtn:after, #header .inner:after, #gnb .list > ul:after,				/* 페이지 전체의 규격을 맞추기위해 div들은 다넣었습니다 */
+ .mainFirst .link:after, .mainMap .link:after,.imgClumn:after { content: ""; display: block; clear: both;}
+
+ .mainNotice .list li a, .botInfo .list .tit {
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+
+hr { border: 0; border-top: 1px solid #ddd;}	/* 선을 긋는데 이용했습니다 */
+
+.align, #header .logo:after, #gnb .login:after, #footer .footSns:after, .chkTitList .wrapBlueLine .box:after {
+    content: ""; display: inline-block; height: 100%; vertical-align: middle;}
+
+#header { position: relative; background: #fff;}
+#header .inner { position: relative; max-width: 1400px; margin: 0 auto;}
+#header .logo { height: 100px; font: 0/0 a;}
+#header .logo a { display: inline-block; vertical-align: middle;}
+#header .logo img { height: 52px; border: 0; vertical-align: top;}
+
+#gnb { position: absolute; z-index: 100; top: 100px; left: 0; width: 100%; background: #fff;
+    border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+
+    /* 여기서부터 로그인 */
+#gnb .login { position: absolute; z-index: 2; top: -75px; right: 50%; height: 46px; margin-right: -700px;
+    padding: 0 20px; border: 2px solid #eee; border-radius: 46px;}
+#gnb .login .sign:before { content: ""; display: inline-block; width: 15px; height: 18px; margin-right: 10px;
+    background: url(./images/icon_login.png) no-repeat; vertical-align: -3px;}
+#gnb .login a { color: #000; font-size: 14px; font-weight: 500;}
+#gnb .login span:last-child { position: relative; margin-left: 10px; padding-left: 12px;}
+#gnb .login span:last-child:before { content: ""; position: absolute; top: 8px; left: 0; height: 16px;
+    border-left: 1px solid #ddd;}
+#gnb .login a { color: #000; font-size: 14px; font-weight: 500;}
+#gnb .login span:last-child { position: relative; margin-left: 10px; padding-left: 12px;}
+
+    /* 여기서부터 메뉴 */
+#gnb .list { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto;}
+#gnb .list > ul > li:first-child { border-left: 1px solid #ddd;}   /* 선을 그었음 */
+#gnb .list > ul > li { float: left; width: 14.28%; height: 100%; box-sizing: border-box;} /* float-left로 옆으로 정렬시키고 각 와이드 14퍼만큼 박싱해서 정렬 / 메뉴가 줄어들으시면 이곳을 수정하시면 됩니다.*/
+li { list-style: none;} /* 한번더 초기화 */
+#gnb .list > ul > li > a { display: block; background: #fbfbfb; border-right: 1px solid #ddd; text-align: center;
+    color: #000; font-size: 18px; font-weight: 400; line-height: 70px;}     /* 메인메뉴와 서브메뉴를 나누는 구간 */
+
+#sub-menu { opacity: 0; visibility: hidden; transition: all 0.15s ease-in; margin: 0 auto; background-color: #fff;}	/* 서브메뉴를 숨기는 */
+#main-menu:hover #sub-menu { opacity: 1; visibility: visible;}		/* 서브메뉴를 보이게하는 */
+
+#gnb .subDepth { display: block !important;}        /* !important를 사용해 다음에 오는 스타일에 영향을 받지않도록 설정했다 */
+#gnb .subDepth { height: 0;  transition: all .3s; box-sizing: border-box;}    /* ;서브메뉴를 숨기고 on/off 함수를 사용하여 볼수있도록 했다*/
+#gnb .subDepth > ul { padding: 10px 0 0; border-right: 1px solid #ddd; height: 200px;}   /* 서브메뉴가 늘어나서 아래로 튀어나오면 이곳을 손봐주세요 */
+#gnb .subDepth li > a { display: block;  margin: 10px 0; padding: 0 30px; color: #666; font-size: 16px;} /* 서브메뉴의 크기를 조정 */
+
+a { color: inherit; text-decoration: none;}
+
+#gnb .list > ul:after { content: ""; display: block; clear: both;}
+#gnb:after { content: ""; position: absolute; top: 0; right: 0; left: 0; height: 70px; background: #fbfbfb;}
+
+    /* 여기까지가 헤더였고 이 아래로 인덱스입니다. */
+
+#container { outline: none; position: relative;  min-height: 900px; padding: 70px 0 0;}
+#vs {width: 100%; overflow: hidden;}
+.img_box { width: 400%;}
+.img_box li { float: left; width: 25%; position: relative; height: 300px;}
+.img_box li a {display: block;}
+.img_box li a img { display: block; width: 100%; height: 100%;}
+.img_box .tit_box { position: absolute; top: 50px; left: 50px; color: #fff; 
+	text-shadow: 1px 1px 1px #000; padding-left: 40px;} 
+.vs_tit { font-size:43px; line-height: 1.6; font-family: 'jalnan' }
+.vs_com { font-size: 20px; padding-top: 40px;  font-family: 'GangwonEdu'}
+/*이 위로 슬라이더*/
+
+.bgCon { background: #f6f6fa;}
+.main .section { max-width: 1400px; padding: 60px 0;}
+.mainFirst { float: left; width: 68%;}
+.mainFirst .box { margin-right: 40px; padding: 40px 35% 50px 60px; background: #fff url(./images/main/bg_main2.jpg) no-repeat 100% 100%; border: 1px solid forestgreen;}
+.mainFirst .txt { color: #000; font-size: 22px; font-weight: 400; line-height: 1.4;}
+.mainFirst .txt strong { display: block; margin: 10px 0 0; color: forestgreen; font-size: 44px; font-weight: 500; letter-spacing: -2px;}	/*첫 박스의 스트롱 텍스트 규격 입니다.*/
+
+.mainFirst .link { position: relative; margin: 20px 0 0;}
+.mainFirst .link span { float: left; width: 50%;}
+.mainFirst .link a:not(.guide-btn) { display: block; margin: 5px; background: #fff; border: 1px solid #ddd; color: forestgreen;
+    font-size: 22px; font-weight: bold;text-align: center; line-height: 82px; transition: all .3s;}
+.mainFirst .link a.guide-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.mainTime { float: right; width: 32%; text-align: center;}
+.mainTime .box { padding: 55px 50px 60px; background: #fff; border: 1px solid #ddd;}
+
+/* 이 아래부분이 전화번호 박스입니다. */
+.mainTime .phone { color: #1f75b0; font-size: 40px; font-weight: 500; line-height: 1;}
+.mainTime .phone .ico { display: inline-block; width: 42px; height: 41px; margin-right: 15px; background: url(./images/main/icon_phone.png) no-repeat;
+    font: 0/0 a; vertical-align: 35px;}
+.mainTime .time { margin: 25px 0 0; border-bottom: 1px solid #999;}
+.mainTime .time li:first-child { border-top: 1px solid #999;}
+.mainTime .time li .cont { display: inline-block;}
+.mainTime .time .tit.word2 { letter-spacing: 35px;}
+.mainTime .time .sub { display: block; font-size: 14px; color: #666; font-weight: 500;}
+.mainTime .time li { padding: 12px 0 13px; border-top: 1px solid #ddd; text-align: center; color: #000; font-weight: 400; line-height: 1.4;}
+.mainTime .time .tit { display: inline-block; width: 90px; color: forestgreen; white-space: nowrap;} /* 평일, 점심시간, 토요일 의 규격입니다. */
+.mainTime .time .tit.word3 { letter-spacing: 8px;} /* 토요일의 규격입니다. */
+
+.section { margin: 0 auto;  padding: 80px 0;} /* 섹션의 크기를 잡아줍니다 넒게 퍼진다면 이부분또는 이아래를 수정하시면됩니다. */
+.section { max-width: 1400px; padding: 60px 0;}
+.mainMap { float: right;  width: 32%;}
+.mainMap .box { height: 428px; background: #f6f6fa; border: 1px solid #ddd; text-align: center; padding: 0 40px;}
+.mainMap .title { padding: 50px 0 5px; font-size: 30px; color: #000;}
+.mainMap .txt { font-size: 16px;}
+.mainMap .link { margin: 40px 0 0;}
+.mainMap .link li { float: left; width: 50%;}
+.mainMap .link li a { display: block;  margin: 1px 0 0 1px; line-height: 110px; text-align: center; color: #fff; background: forestgreen;}
+.mainMap .link li a:before { content: ""; display: inline-block; width: 40px; height: 38px; margin-left: -20px; vertical-align: -10px;}
+.mainMap .link li.bus a:before { background: url(./images/main/icon_bus.png) no-repeat 50%;}
+.mainMap .link li.parking a:before { background: url(./images/main/icon_parking.png) no-repeat 50%;}
+.mainMap .link li.map a:before { background: url(./images/main/icon_map.png) no-repeat 50%;}
+
+.mainNotice { float: left; width: 42.5%;}
+.mainNotice .box { height: 428px; padding: 0 40px; border: 1px solid #ddd;}
+.mainNotice .title { padding: 50px 0; color: #000; font-size: 30px; text-align: center;}
+.mainNotice .list { border-bottom: 1px solid #999;}
+.mainNotice .list li:first-child { border-top: 1px solid #999;}
+.mainNotice .list li { position: relative; padding: 15px 110px 15px 25px; border-top: 1px solid #e1e1e1; font-size: 16px;}
+.mainNotice .list li a { display: inline-block; max-width: 100%; color: #000;}
+.mainNotice .list li .date { position: absolute; top: 15px; right: 25px; color: #999;}
+
+.mainAfter { float: left; width: 25.5%;}
+.mainAfter .box {  height: 430px; margin-right: 40px; padding: 0 40px; background: url(./images/main/bg_main3.jpg) no-repeat 50%; text-align: center; color: #fff;} /*사진 여기서 바꿀수 있습니다*/
+.mainAfter .title { padding: 50px 0; font-size: 30px;}
+.mainAfter .list { border-bottom: 1px solid #90939a;}
+.mainAfter .list li { padding: 17px 0; border-top: 1px solid #90939a; font-size: 16px;}
+
+.botInfo { overflow: hidden; padding-top: 50px;}
+.botInfo .title { color: #000; text-align: center; font-size: 30px; line-height: 1;}
+.botInfo .list { margin: 50px -13px 0;}
+.botInfo .list li { float: left; width: 25%;}
+.botInfo .list .box { display: block; margin: 0 13px; border: 1px solid #ddd;}
+.botInfo .list .img { display: block; border-bottom: 1px solid #ddd;}
+.botInfo .list .img img { width: 100%;}
+.botInfo .list .cont { display: block; height: 210px; padding: 0 20px;}
+.botInfo .list .tit { display: block; padding: 35px 0 10px; font-size: 18px; color: #000;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.botInfo .list .txt { font-size: 14px; display: block; display: -webkit-box; height: 65px; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+.botInfo .list .opt { display: block; margin: 15px 0 0; font-size: 14px; line-height: 1;}
+.botInfo .list .opt .writer { font-weight: 500;}
+.botInfo .list .opt .date { display: inline-block; padding-left: 10px; margin-left: 6px; color: #999; border-left: 1px solid #ddd;}         /* 각각 나눠진 그룹마다 인덱스의 박스들입니다. */
+
+/* 이 아래로는 푸터입니다. */
+#footer .footSns { font-size: 0; padding: 18px 0; background: gray;}
+#footer .inner { position: relative; max-width: 1400px; margin: 0 auto;}
+#footer .footSns .tit { display: inline-block; margin-right: 10px; color: #fff; font-size: 16px; font-weight: 400; vertical-align: middle;}
+#footer .footSns .link { display: inline-block; vertical-align: middle;}
+#footer .footSns .link a { display: inline-block; width: 45px; height: 45px; margin: 0 10px; font: 0/0 a; vertical-align: middle; background-size: cover;}
+#footer .footSns .link a.link1 { background-image: url(./images/icon_quick_link1.png);}
+#footer .footSns .link a.link2 { background-image: url(./images/icon_quick_link2.png);}
+#footer .footSns .link a.link3 { background-image: url(./images/icon_quick_link3.png);}
+#footer .footSns .link a.link4 { background-image: url(./images/icon_quick_link4.png);}
+#footer .footSns .link a.link5 { background-image: url(./images/icon_quick_link5.png);}
+#footer .footSns .link a.link6 { background-image: url(./images/icon_quick_link6.png);}
+
+#footer .footLink { padding: 15px 0; border-bottom: 1px solid #ddd;}
+#footer .inner { position: relative; max-width: 1400px; margin: 0 auto;}
+#footer .footLink a { font-size: 16px; color: #000;}
+#footer .footLink span { display: inline-block;}
+#footer .footLink span ~ span { position: relative; margin-left: 10px; padding-left: 14px;}
+#footer .footLink span ~ span:after { content: ""; position: absolute; top: 50%; left: 0; height: 16px; margin-top: -7px; border-left: 1px solid #ddd;}
+.mobShow { display: none;}
+
+#footer .footLink .net { position: absolute; top: 0; right: 0; color: #666;}
+#footer .footLink a { font-size: 16px; color: #000;}
+#footer .footLink .net a { display: inline-block; padding: 3px 42px 3px 0; background: url(./images/icon_network_link.png) no-repeat 100% 50%; background-size: 28px;}
+#footer .footLink span { display: inline-block;}
+#footer .footLink .net span { color: #1f75b0;}
+
+#footer .footInfo .inner { padding: 25px 0 50px; background: url(./images/logo_img.jpg) no-repeat 100% 25px; background-size: 245px; font-size: 16px;}
+#footer .footInfo .inner b { display: block; margin: 0 0 10px; font-size: 18px; color: #000;}
+#footer .footInfo .inner span { display: inline-block; margin-right: 15px; color: #666;}
+#footer .footInfo .copy { display: block; margin: 15px 0 0; font-size: 14px; color: #444;}
+
+/* agree */
+content {padding-top: 80px; text-align:center; }  /*헤더와 콘텐츠 영역이 겹쳐서 구현되지 않고, 해당 페이지의 주제목을 가운데로 올 수 있도록 함.*/
+.subtit {padding-bottom: 20px; } /*서브 제목이 좀 더 크게 보이도록 하기*/
+.container-fluid {padding-top: 80px; text-align:center; margin-left:100px ;} /*콘텐츠 영역을 가운데로 보일 수 있도록 함.*/
+ /*버튼 위치 및 사이즈 조절*/
+.btn {background-color: rgb(163, 186, 230); padding-left: 20px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px; margin-top: 20px; font-size: 15px;}
+.checkbox{float: right; margin-right: 90px; margin-top: 10px;} /*동의문구와 체크박스 위치 조정*/
+.btn:hover{color: #ececec;} /*마우스를 버튼에 올리면 색상이 바뀜*/
+
+/* join */
+.title{font-size: 30px; padding-bottom: 20px;}  /*페이지 제목 글씨 크기*/
+.container-fluid {padding-top: 150px; text-align:center; margin-left:180px ;  } /*콘텐츠 영역을 가운데로 보일 수 있도록 함.*/
+.table { margin-left: 50px; margin-top: 20px;  border-collapse: collapse; border-spacing: 0;   } /*회원가입 입력란과 페이지 주제의 간격조절 및 회면에서 나타나는 위치 조절*/
+.tbody tr td { border-collapse : collapse; border-spacing : 2px; padding-left: 100px; padding-right: 200px;} /*회원정보 입력란 위치 조절*/
+.table tbody tr{height: 72px; padding: 40px 20px; box-sizing: border-box; background: #fff; border: 1px solid #ddd; border-left: 0; border-right: 0; width: 100px solid#ddd;} /*회원정보 입력란 항목 사이 공백 조절 및 라인생성*/
+.form{width: 380px; height: 30px; } /*각 항목 입력 input태그 사이즈 조절*/
+.form2{width: 50px; height: 15px; border-top: 0;} /*이메일 수신 여부 태그 사이즈 조절*/
+.necessary {float:left; padding-top: 25px;} /*각 항목 이름 정렬*/
+.necessary2{float:left; margin-left: 100px;} /*이벤트 수신여부 항목 이름 정렬*/
+input:focus{background-color: rgba(185, 206, 250, 0.582);  }   /*항목의 입력란 중 선택된 항목의 입력란 색상 변화*/
+.joinbtn {margin-top: 30px; margin-left: 40px; margin-right: 35px; padding-top: 5px; padding-bottom: 5px; padding-left: 25px; padding-right: 25px; background-color: rgb(163, 186, 230); font-size: 18px;}/*버튼 색상 및 크기와 위치 설정*/  
+.joinbtn:hover{color: #ececec;} /*마우스를 버튼에 올리면 색상이 바뀜*/
+
+/* login */
+.container-fluid {padding-top: 180px; text-align:center; } /*콘텐츠 영역을 가운데로 보일 수 있도록 함.*/
+.title { text-align:center; margin: 30px; font-size: 30px; margin-left:20px; padding-bottom: 50px;}/*로그인 글씨를 크게 보일 수 있도록 조정함.*/
+.indata {font-size: 20px;} /*아이디와 비밀번호 입력창 위치를 잡아주기 위함*/
+.btn_frame a {text-decoration: none;}
+.btn_frame {padding-left: 10px; box-sizing: border-box;}
+ul{list-style: none;}
+.form_wrap tr td{ border-collapse: collapse; border-spacing: 0;} 
+input:focus{background-color: rgba(65, 108, 163, 0.384);}
+.btn {background-color: rgb(163, 186, 230); padding-left: 20px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px;}   
+.btn:hover{color: #ececec;} /*마우스를 버튼에 올리면 색상이 바뀜*/
+
+/* mypage */
+.subtitle {padding-bottom: 20px; font-size: 30px; margin-left: 50px;} /*페이지 제목 위치 및 사이즈*/
+.container-fluid {padding-top: 150px; text-align:center; margin-left:100px ;  } /*콘텐츠 영역을 가운데로 보일 수 있도록 함.*/
+.table { margin-top: 20px;  border-collapse: collapse; margin-left: 430px; padding-left: 100px;} /*입력란 위치*/
+.tbody tr td {padding-bottom: 10px; padding-top: 7px;  border-collapse : collapse; border-spacing : 0; padding-left: 10px; }
+.table tbody tr{height: 72px;  border: 1px solid #ddd; border-left: 0; border-right: 0; } /*각 항목 구분 라인 및 양 옆 라인제거*/
+.table tbody tr:first-child{border-top: 0;} /* 첫번째 칸 윗줄 제거*/       
+.tbody tr td input{width: 300px; height: 30px;  border: 1px solid #ddd;} /*input태그 라인색상 설정*/
+input:focus{background-color: rgba(185, 206, 250, 0.582); } /*선택된 입력란에 색상변화*/
+.btn_wrap{margin-left: 50px;} /*버튼위치*/  
+.btn {margin-top: 30px;  padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; background-color: rgb(163, 186, 230); }/*맨 아래 버튼 색상 및 위치 설정*/  
+.btn:hover{color: #ececec;} /*마우스를 버튼에 올리면 색상이 바뀜*/
