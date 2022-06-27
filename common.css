@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5 { font-weight: 500;}
 
 hr { border: 0; border-top: 1px solid #ddd;}	/* 선을 긋는데 이용했습니다 */
 
-.align, #header .logo:after, #gnb .login:after, #footer .footSns:after, .chkTitList .wrapBlueLine .box:after {
+.align, #header .logo:after, #gnb .login:after, .chkTitList .wrapBlueLine .box:after {
     content: ""; display: inline-block; height: 100%; vertical-align: middle;}
 
 #header { position: relative; background: #fff;}
@@ -145,6 +145,7 @@ a { color: inherit; text-decoration: none;}
 .botInfo .list .opt .date { display: inline-block; padding-left: 10px; margin-left: 6px; color: #999; border-left: 1px solid #ddd;}         /* 각각 나눠진 그룹마다 인덱스의 박스들입니다. */
 
 /* 이 아래로는 푸터입니다. */
+#footer { clear: both;}
 #footer .footSns { font-size: 0; padding: 18px 0; background: gray;}
 #footer .inner { position: relative; max-width: 1400px; margin: 0 auto;}
 #footer .footSns .tit { display: inline-block; margin-right: 10px; color: #fff; font-size: 16px; font-weight: 400; vertical-align: middle;}

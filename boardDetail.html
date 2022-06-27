@@ -10,6 +10,7 @@
     <title>Document</title>
 </head>
 <body>
+	<header id="header" class="header" name="header" ></header>
 	<h1 class="bd">글 상세보기</h1>
 	<form action="" method="post">
 	<table class="bdetail">
@@ -22,5 +23,12 @@
 		<!-- <input type="submit" value="저장" /> -->
 		<a href="board.html"><input type="button" value="목록보기"></a>
 	</form>
+	<script>
+		$(function(){
+			$("#header").load("header.html"); 
+			$("#footer").load("footer.html"); 
+		});
+	</script>
+	<footer id="footer" class="footer" name="footer"></footer>
 </body>
 </html>

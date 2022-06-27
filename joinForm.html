@@ -112,7 +112,8 @@ tbody {
     font-size: 14px;
 }
 </style>
-
+<body>
+<header id="header" class="header" name="header" ></header>
 <div id="container" tabindex="0">
     <div class="subTop1">
         <h2>회원정보입력</h2>
@@ -122,9 +123,11 @@ tbody {
 <script type="text/javascript" src="/js/jquery.alphanumeric.js"></script>
 <script type="text/javascript" src="/js/mem/mem_join2.js"></script>
 <form action="" id="base_form" name="base_form" class="contain" method="post" novalidate="novalidate" >
+<link rel="stylesheet" href="common.css">
 <input type="hidden" value="MEM_REG" id="mode" name="mode">
 <fieldset class="joinWrap">
 <legend>회원정보 입력</legend>
+
 <table class="infoInput">
     <caption>가입 정보 입력 테이블</caption>
     <tbody>
@@ -208,3 +211,11 @@ tbody {
 </div>
 </fieldset>
 </form>
+<script>
+	$(function(){
+		$("#header").load("header.html"); 
+		$("#footer").load("footer.html"); 
+	});
+</script>
+<footer id="footer" class="footer" name="footer"></footer>
+</body>
