@@ -1,0 +1,286 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="${path}/resources/css/normalize.css">
+    <link rel="stylesheet" href="${path}/resources/css/common.css">
+   <title>login</title>
+       <style>
+        .form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  margin-top:100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #2c51c0;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form button:hover,.form button:active,.form button:focus {
+    background: #4a6ac7;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.form .message a {
+  color: #343a40;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+* { margin: 0; padding: 0;}
+ul { list-style: none; } 
+a { text-decoration: none; color: #333; }
+html, body { height: 100%;}
+h1, h2, h3, h4, h5 { font-weight: 500;}
+
+.clear, .section:after, .tabMenu ul:after, .btnWrap:after, .boardThumb ul, .boardBtn:after, #header .inner:after, #gnb .list > ul:after,				/* 페이지 전체의 규격을 맞추기위해 div들은 다넣었습니다 */
+ .mainFirst .link:after, .mainMap .link:after,.imgClumn:after { content: ""; display: block; clear: both;}
+
+ .mainNotice .list li a, .botInfo .list .tit {
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+
+hr { border: 0; border-top: 1px solid #ddd;}	/* 선을 긋는데 이용했습니다 */
+
+.align, #header .logo:after, #gnb .login:after, .chkTitList .wrapBlueLine .box:after {
+    content: ""; display: inline-block; height: 100%; vertical-align: middle;}
+
+#header { position: relative; background: #fff;}
+#header .inner { position: relative; max-width: 1400px; margin: 0 auto;}
+#header .logo { height: 100px; font: 0/0 a;}
+#header .logo a { display: inline-block; vertical-align: middle;}
+#header .logo img { height: 52px; border: 0; vertical-align: top;}
+
+#gnb { position: absolute; z-index: 100; top: 100px; left: 0; width: 100%; background: #fff;
+    border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+
+    /* 여기서부터 로그인 */
+#gnb .login { position: absolute; z-index: 2; top: -75px; right: 50%; height: 46px; margin-right: -700px;
+    padding: 0 20px; border: 2px solid #eee; border-radius: 46px;}
+#gnb .login .sign:before { content: ""; display: inline-block; width: 15px; height: 18px; margin-right: 10px;
+    background: url(./images/icon_login.png) no-repeat; vertical-align: -3px;}
+#gnb .login a { color: #000; font-size: 14px; font-weight: 500;}
+#gnb .login span:last-child { position: relative; margin-left: 10px; padding-left: 12px;}
+#gnb .login span:last-child:before { content: ""; position: absolute; top: 8px; left: 0; height: 16px;
+    border-left: 1px solid #ddd;}
+#gnb .login a { color: #000; font-size: 14px; font-weight: 500;}
+#gnb .login span:last-child { position: relative; margin-left: 10px; padding-left: 12px;}
+
+    /* 여기서부터 메뉴 */
+#gnb .list { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto;}
+#gnb .list > ul > li:first-child { border-left: 1px solid #ddd;}   /* 선을 그었음 */
+#gnb .list > ul > li { float: left; width: 14.28%; height: 100%; box-sizing: border-box;} /* float-left로 옆으로 정렬시키고 각 와이드 14퍼만큼 박싱해서 정렬 / 메뉴가 줄어들으시면 이곳을 수정하시면 됩니다.*/
+li { list-style: none;} /* 한번더 초기화 */
+#gnb .list > ul > li > a { display: block; background: #fbfbfb; border-right: 1px solid #ddd; text-align: center;
+    color: #000; font-size: 18px; font-weight: 400; line-height: 70px;}     /* 메인메뉴와 서브메뉴를 나누는 구간 */
+
+#sub-menu { opacity: 0; visibility: hidden; transition: all 0.15s ease-in; margin: 0 auto; background-color: #fff;}	/* 서브메뉴를 숨기는 */
+#main-menu:hover #sub-menu { opacity: 1; visibility: visible;}		/* 서브메뉴를 보이게하는 */
+
+#gnb .subDepth { display: block !important;}        /* !important를 사용해 다음에 오는 스타일에 영향을 받지않도록 설정했다 */
+#gnb .subDepth { height: 0;  transition: all .3s; box-sizing: border-box;}    /* ;서브메뉴를 숨기고 on/off 함수를 사용하여 볼수있도록 했다*/
+#gnb .subDepth > ul { padding: 10px 0 0; border-right: 1px solid #ddd; height: 200px;}   /* 서브메뉴가 늘어나서 아래로 튀어나오면 이곳을 손봐주세요 */
+#gnb .subDepth li > a { display: block;  margin: 10px 0; padding: 0 30px; color: #666; font-size: 16px;} /* 서브메뉴의 크기를 조정 */
+
+a { color: inherit; text-decoration: none;}
+
+#gnb .list > ul:after { content: ""; display: block; clear: both;}
+#gnb:after { content: ""; position: absolute; top: 0; right: 0; left: 0; height: 70px; background: #fbfbfb;}
+#footer { clear: both;}
+#footer .footSns { font-size: 0; padding: 18px 0; background: gray;}
+#footer .inner { position: relative; max-width: 1400px; margin: 0 auto;}
+#footer .footSns .tit { display: inline-block; margin-right: 10px; color: #fff; font-size: 16px; font-weight: 400; vertical-align: middle;}
+#footer .footSns .link { display: inline-block; vertical-align: middle;}
+#footer .footSns .link a { display: inline-block; width: 45px; height: 45px; margin: 0 10px; font: 0/0 a; vertical-align: middle; background-size: cover;}
+#footer .footSns .link a.link1 { background-image: url(./images/icon_quick_link1.png);}
+#footer .footSns .link a.link2 { background-image: url(./images/icon_quick_link2.png);}
+#footer .footSns .link a.link3 { background-image: url(./images/icon_quick_link3.png);}
+#footer .footSns .link a.link4 { background-image: url(./images/icon_quick_link4.png);}
+#footer .footSns .link a.link5 { background-image: url(./images/icon_quick_link5.png);}
+#footer .footSns .link a.link6 { background-image: url(./images/icon_quick_link6.png);}
+
+#footer .footLink { padding: 15px 0; border-bottom: 1px solid #ddd;}
+#footer .inner { position: relative; max-width: 1400px; margin: 0 auto;}
+#footer .footLink a { font-size: 16px; color: #000;}
+#footer .footLink span { display: inline-block;}
+#footer .footLink span ~ span { position: relative; margin-left: 10px; padding-left: 14px;}
+#footer .footLink span ~ span:after { content: ""; position: absolute; top: 50%; left: 0; height: 16px; margin-top: -7px; border-left: 1px solid #ddd;}
+.mobShow { display: none;}
+
+#footer .footLink .net { position: absolute; top: 0; right: 0; color: #666;}
+#footer .footLink a { font-size: 16px; color: #000;}
+#footer .footLink .net a { display: inline-block; padding: 3px 42px 3px 0; background: url(./images/icon_network_link.png) no-repeat 100% 50%; background-size: 28px;}
+#footer .footLink span { display: inline-block;}
+#footer .footLink .net span { color: #1f75b0;}
+
+#footer .footInfo .inner { padding: 25px 0 50px; background: url(./images/logo_img.jpg) no-repeat 100% 25px; background-size: 245px; font-size: 16px;}
+#footer .footInfo .inner b { display: block; margin: 0 0 10px; font-size: 18px; color: #000;}
+#footer .footInfo .inner span { display: inline-block; margin-right: 15px; color: #666;}
+#footer .footInfo .copy { display: block; margin: 15px 0 0; font-size: 14px; color: #444;}
+
+    </style>
+</head>
+<body>
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="inner">
+            <h1 class="logo"><a href="/"><img src="./images/logo.png" alt="판교예스yes의원"></a></h1>
+            <button type="button" class="btnMenu"><span>MENU</span></button>
+        </div>
+        <nav id="gnb">
+            <div class="login">
+                <span class="sign"><a href="/login2.html">로그인</a></span>
+                    <span><a href="join.html">회원가입</a></span>
+            </div>
+            <div class="list" >
+                <ul id="main-menu" >
+                    <li class=""><a href="intro.html#page1">본원 소개</a>
+                        <div class="subDepth">
+                            <ul id="sub-menu" style="border-left:  1px solid #ddd;">
+                                <li class=""><a href="intro.html#page1">의료진 소개</a></li>
+                                <li class=""><a href="intro.html#page2">둘러보기</a></li>
+                                <li class=""><a href="intro.html#page3">찾아오시는길</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class=""><a href="subpage_1.html#page1">진료 과목</a>
+                        <div class="subDepth">
+                            <ul id="sub-menu">
+                                <li class=""><a href="subpage_1.html#page1">내과</a></li>
+                                <li class=""><a href="subpage_1.html#page2">정형외과/통증의학과</a></li>
+                                <li class=""><a href="subpage_1.html#page3">피부과</a></li>
+                                <li class=""><a href="subpage_1.html#page4">비뇨기과</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class=""><a href="subpage_2.html#page1">비수술 통증치료</a>
+                        <div class="subDepth">
+                            <ul id="sub-menu">
+                                <li class=""><a href="subpage_2.html#page1">카이로프랙틱</a></li>
+                                <li class=""><a href="subpage_2.html#page2">인대강화주사</a></li>
+                                <li class=""><a href="subpage_2.html#page3">신경자극치료</a></li>
+                                <li class=""><a href="subpage_2.html#page4">체외 충격파</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class=""><a href="subpage_3.html#page1">도수치료</a>
+                        <div class="subDepth">
+                            <ul id="sub-menu">
+                                <li class=""><a href="subpage_3.html#page1">도수치료</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class=""><a href="subpage_4.html#page1">물리치료</a>
+                        <div class="subDepth">
+                            <ul id="sub-menu">
+                                <li class=""><a href="subpage_4.html#page1">레이저자기장치료</a></li>
+                                <li class=""><a href="subpage_4.html#page2">전기치료</a></li>
+                                <li class=""><a href="subpage_4.html#page3">초음파치료</a></li>
+                                <li class=""><a href="subpage_4.html#page4">요추견인치료</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class=""><a href="subpage_5.html#page1">탈모 치료</a>
+                        <div class="subDepth">
+                            <ul id="sub-menu">
+                                <li class=""><a href="subpage_5.html#page1">남성형탈모</a></li>
+                                <li class=""><a href="subpage_5.html#page1">여성형탈모</a></li>
+                                <li class=""><a href="subpage_5.html#page1">원형탈모</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class=""><a href="">안내 및 후기</a>
+                        <div class="subDepth">
+                            <ul id="sub-menu">
+                                <li class=""><a href="board.html">치료후기</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+<div id="ct">
+  <div class="loginbox">
+      <div class="login-page">
+    <div class="form">
+      <form class="login-form" action="${path }/member/login" method="post">
+        <input type="text" placeholder="userid" name="mid" id="mid" required />
+        <input type="password" placeholder="password" name="mpw" id="mpw" required />
+        <button type="submit">login</button>
+        <p class="message">아이디가 없으십니까? <a href="./agreement.html">회원가입</a></p>
+      </form>
+    </div>
+      </div>
+  </div>
+</div>
+<footer id="footer" class="footer">
+  <div class="footSns">
+      <div class="inner">
+          <h4 class="tit">판교 예스Yes! 의원 SNS</h4>
+          <p class="link">
+              <a href="https://www.youtube.com/" class="link5" target="_blank">유튜브</a>
+              <a href="https://tv.naver.com/" class="link1" target="_blank">네이버TV</a>
+              <a href="http://post.naver.com/" class="link2" target="_blank">포스트</a>
+              <a href="http://blog.naver.com/" class="link4" target="_blank">블로그</a>
+              <a href="https://audioclip.naver.com/" class="link3" target="_blank">오디오클립</a>
+              <a href="https://www.facebook.com/" class="link6" target="_blank">페이스북</a>
+          </p>
+      </div>
+  </div>
+  <nav class="footLink">
+      <div class="inner">
+          <span><a href="">이용약관</a></span>
+          <span><a href="">개인정보처리방침</a></span>
+          <span><a href="">환자의 권리와 의무</a></span><br class="mobShow">
+          <span><a href="">비급여안내</a></span>
+  
+          <p class="net"><a href="" target="_blank">판교예스Yes의원 실시간채팅 <span>바로가기</span></a></p>
+      </div>
+  </nav>
+  <div class="footInfo">
+      <div class="inner">
+          <b>판교예스Yes의원</b>
+          <span>경기도 성남시 분당구 삼평동 670 유스페이스 1동 304호 판교예스Yes의원</span><br>
+          <span>대표자 : 김성민 외 3명</span><span>사업자등록번호 : 011-77-10047</span><span>대표전화 : 02-1004-1004</span><br>
+          <small class="copy">COPYRIGHT© 2017 yes clinic. ALL RIGHT RESERVED.</small>
+      </div>
+  </div>
+</footer>
+</body>
+</html>
