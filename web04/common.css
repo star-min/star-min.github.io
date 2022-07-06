@@ -139,7 +139,7 @@ a { color: inherit; text-decoration: none;}
 .botInfo .list .img img { width: 100%;}
 .botInfo .list .cont { display: block; height: 210px; padding: 0 20px;}
 .botInfo .list .tit { display: block; padding: 35px 0 10px; font-size: 18px; color: #000;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
-.botInfo .list .txt { font-size: 14px; display: block; display: -webkit-box; height: 65px; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+.botInfo .list .txt { font-size: 14px; display: block;  height: 65px; overflow: hidden;}
 .botInfo .list .opt { display: block; margin: 15px 0 0; font-size: 14px; line-height: 1;}
 .botInfo .list .opt .writer { font-weight: 500;}
 .botInfo .list .opt .date { display: inline-block; padding-left: 10px; margin-left: 6px; color: #999; border-left: 1px solid #ddd;}         /* 각각 나눠진 그룹마다 인덱스의 박스들입니다. */
@@ -191,7 +191,7 @@ content {padding-top: 80px; text-align:center; }  /*헤더와 콘텐츠 영역�
 .container-fluid {padding-top: 150px; text-align:center; margin-left:180px ;  } /*콘텐츠 영역을 가운데로 보일 수 있도록 함.*/
 .table { margin-left: 50px; margin-top: 20px;  border-collapse: collapse; border-spacing: 0;   } /*회원가입 입력란과 페이지 주제의 간격조절 및 회면에서 나타나는 위치 조절*/
 .tbody tr td { border-collapse : collapse; border-spacing : 2px; padding-left: 100px; padding-right: 200px;} /*회원정보 입력란 위치 조절*/
-.table tbody tr{height: 72px; padding: 40px 20px; box-sizing: border-box; background: #fff; border: 1px solid #ddd; border-left: 0; border-right: 0; width: 100px solid#ddd;} /*회원정보 입력란 항목 사이 공백 조절 및 라인생성*/
+.table tbody tr{height: 72px; padding: 40px 20px; box-sizing: border-box; background: #fff; border: 1px solid #ddd; border-left: 0; border-right: 0; width: 100px solid #ddd;} /*회원정보 입력란 항목 사이 공백 조절 및 라인생성*/
 .form{width: 380px; height: 30px; } /*각 항목 입력 input태그 사이즈 조절*/
 .form2{width: 50px; height: 15px; border-top: 0;} /*이메일 수신 여부 태그 사이즈 조절*/
 .necessary {float:left; padding-top: 25px;} /*각 항목 이름 정렬*/
