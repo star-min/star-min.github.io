@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/* 초기화 부분 */
+* { margin: 0; padding: 0;}
+body, html { font-family: 'Noto Sans KR', sans-serif; width: 100%;} 
+ul { list-style: none; } 
+a { text-decoration: none; color: #333; }
+
+/* 헤더부분 */
+i[class*='xi'] { font-size:28px; color:#000; }
+i[class*='xi']:hover { color:rgb(226, 55, 25); }
+
+.wrap { clear:both; width: 100%; }
+
+/* position: fixed; background-color: rgba(255, 255, 255, 0.7) */
+#hd { clear:both; width: 100%; top: 0px; z-index: 9999; } 
+
+.hd_wrap { clear:both; width: 1280px; margin: 0 auto; }
+.logo { display:block; width: 80px; float:left;  }
+.logo img { display:block; width: 100%; }
+#gnb { float:left; margin-top: 15px;}
+
+#gnb > ul > li { float:left; padding-left: 50px; padding-right: 20px; position: relative; padding-top: 20px;}
+#gnb > ul > li > span { display:block; line-height: 36px; cursor:pointer; }
+#gnb ul li .sub {display: none; position: absolute; left: 10px; top: 36px; z-index: 999;
+padding-left: 10px; width: 160px; height: 200px; background-color: #fff; background-color: rgba( 255, 255, 255, 0.5 ); padding-bottom: 80px;}
+#gnb ul li .sub li { line-height: 38px;}
+#gnb ul li:hover .sub {display: block; padding-left: 40px; margin-top: 20px;}
+
+li > span { font-size: 18px;}
+
+#gnb ul li .sub li:hover a { color: green;}
+#gnb ul li:hover span { color: forestgreen;}
+#tnb a:hover { color: forestgreen;}
+
+#tnb { float:right; padding-top: 45px; padding-bottom: 20px;}
+#tnb a { padding-left: 20px; font-size: 0.8em;}
+
+#footer { background: #3e4044; display: block; position: relative; margin-top: 200px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+#footer a { color: #b4b4b3;}
+#footer .inner { letter-spacing: -1px;line-height: 1.5; background-repeat: no-repeat; border: 0; box-sizing: border-box;
+    margin: 0 auto; color: #b4b4b3; position: relative; font-size: 14px; padding: 50px 0 50px 260px; width: 1200px;}
+#footer .wrap {color: #b4b4b3; background-repeat: no-repeat;
+    border: 0; box-sizing: border-box; position: absolute; padding: 0 0 0 30px; margin: 0; left: 0; top: 50px;}
+#footer figure { background-repeat: no-repeat; margin: 0; padding: 0; border: 0; box-sizing: border-box; display: block; position: absolute; top: 0; width: 81px;
+    left: auto; right:50px;}
+#footer ul { width: 145px; list-style-type: none;}
+#footer > div > div > ul > li:not(:last-child) { margin-bottom: 3px; position: relative;}
+#footer address { font-style: normal; line-height: 24px; font-weight: 300;}
+#footer img { width: 100%; height: auto;}

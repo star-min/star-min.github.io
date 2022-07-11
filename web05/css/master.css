@@ -1,0 +1,757 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+#gnb_layout .gnb_m_open button { display:none; text-indent:-9999px; }
+#mnb_layout .search_m_open { display: none; }
+#mnb_layout .search_m_open a {  display:block; text-indent:-9999px; width: 38px; height: 38px; overflow: hidden; font-size: 0; color: transparent; }
+#all_menu { display: none; }
+#all_menu { display: none; }
+
+@media screen and (min-width:0) and (max-width: 1080px) {
+
+.sitelink_r { margin-right:2%;}
+	
+#mcont .info_link {width:96%; margin:0 auto; height:415px;}
+#mcont .info_link .list_box { float:left;}
+#mcont .info_link .list_box:before {bottom:15px;}
+#mcont .info_link .list_box:after {height: 260px;}
+#mcont .info_link .line_bg .section1:after { background:none;}
+#mcont .info_link .line_bg .section2:before {left:35%;}
+#mcont .info_link .list_box:nth-child(4)::after { display:none;}
+#mcont .info_link .list_box .section2 a.more3 { right:53%; }
+#mcont .info_link .line_bg .icon5:before { background-position:-800px 0;}
+#mcont .info_link .icon1 {width:33.3%;  }
+#mcont .info_link .icon2 {width:33.3%; }
+#mcont .info_link .icon3 { width:33.3%;}
+#mcont .info_link .line_bg {width:100%; height:auto !important; overflow:hidden; border-top:#d7d7d7 solid 1px; }
+#mcont .info_link .line_bg .icon4 {width:33.3%; float:left; border-right:#d7d7d7 solid 1px; box-sizing:border-box;   }
+#mcont .info_link .line_bg .icon5 {width:66.7%;float:left; background:#f1f3f4; height:118px; padding-bottom:30px;}
+#mcont .info_link .line_bg .icon5 ul { width:200px;}
+#mcont .info_link .list_box ul li:last-child{margin-bottom:10px;}
+
+#mcont .info_link h3{margin-bottom:10px;}
+#mcont .info_link h3.info_l_tit {padding-top:5px}
+#mcont .info_link h3.info_l_tit1 {padding-top:8px;}
+#mcont .info_link h3.info_l_tit2 {padding-top:13px;}
+#mcont .info_link .icon3:before {bottom:95px;}
+#mcont .info_link .icon4:after {bottom:10px;}
+#mcont .info_link .icon4.covid_kr a{padding-left:20%; background-position:left 6px, right -5px bottom -5px, right top;}
+#mcont .info_link .icon4.covid_kr_1 a{background-position:left -10px, 90% top, right top -10px, right bottom -10px, left bottom, left bottom; font-size:20px;}
+
+#mcont .second_area {padding:2% 0;}
+#mcont .second_area .indicator {width:96%;}
+#mcont .second_area .indicator ul li:nth-child(3) { display:none; } 
+
+#mcont .third_area {width:100%; margin:0 auto; float:none; clear: both; overflow:hidden;position:relative;}
+#mcont .third_area .group_L {width:auto; float:none; padding:3px 2% 2% 2%; position:relative;}
+#mcont .third_area .group_R {width:auto; float:none; padding:0 2% 2% 2%; position:relative;}
+
+#mcont .third_area .group_L  > div::after { content:''; display: block; float: none; clear: both; }
+.group_L .career_b {width:49%; float:left; position:relative; margin-bottom:30px;}
+.group_L .notice_b {width:49%; float:left; position:relative; margin-bottom:30px; margin-left: 2%;}
+
+.group_R .popup_zone {position:relative; width:49%; margin-bottom:28px;float: left; max-height:200px;}
+/*.group_R .popup_zone .pz_list { height: 175px; }*/
+.group_R .popup_zone .pz_list li img { height:200px;}
+	
+/*자주찾는 서비스*/	
+.group_R .popular_service {position:relative; width:49%; margin-bottom:20px; float: left;margin-left: 2%; height:107px;}
+.group_R .popular_service .ps_list ul { padding:20px 12px; box-sizing: border-box; height: 80px;}
+.group_R .popular_service .ps_list_on ul { padding:2% 0 2% 5%;}
+.group_R .banner_zone {position:relative; width:49%;float: left;  margin-left: 2%; }	
+.group_R .banner_zone .bz_list ul li a > img { width:100%; height:45px; border:1px solid #d9d9d9;}
+
+/* top */
+#skip {float:left; width:100%;}
+#skip .accessibility{float:left; width:100%;}
+#skip .accessibility a:focus, .accessibility a:active{width:100%;} 
+#tnb_layout .t_nav {width: 100%; }
+.t_logo {left:2%;  }
+.t_innologo {display:none;}
+#mnb_layout { width:100%; }
+
+#search {width:310px; left:50%; margin-left:-280px;}
+#search input[type="text"] {width:105px; }
+
+.relation_link { margin-right:2%;}
+
+/* 인구주택총조사 D-DAY */
+.ic_day{width:320px; left:50%; background-position:20px 8px; padding:15px 0 0 100px; margin-left:-280px;}
+.ic_day span.ic_ti{font-size:15px;}
+.ic_day span.ic_ti strong{font-size:16px;}
+
+/* 뉴스기반통계검색 */
+.newsbased_search{left:50%; margin-left:50px;}
+
+/* gnb */
+#gnb_layout .g_nav {width: 100%; }
+#mn_list li {text-align:center;}
+#mn_list li ul li { margin-right:6px; }
+#mn_list #gnb1 .mn_dep2 {left:50%; margin-left:-350px;}
+#mn_list #gnb2 .mn_dep2 {left:50%; margin-left:-130px;}
+#mn_list #gnb3 .mn_dep2 {left:50%; margin-left:-370px;}
+#mn_list #gnb3 .mn_dep2 li { margin-right:2px; letter-spacing:-2px;}
+#mn_list #gnb4 .mn_dep2 {left:80%; margin-left:-380px; width:540px;}
+#mn_list .mn_type01{ width:16%;}
+#mn_list .mn_type02{ width:16%;}
+#mn_list .mn_type03{ width:12%;}
+#mn_list .mn_type01 > a {padding:0; }
+#mn_list .mn_type02 > a {padding:0;}
+#mn_list .mn_type03 > a {padding:0;}
+
+#all_menu { display:block;overflow-y: auto;position:fixed;top:0;right:0;width:100%;height:100%;background: rgba(0,0,0,0.35);z-index: 1000;}
+#all_menu .gnb_m_device { display:block;position:absolute;top:0; right:0;overflow:auto;width:290px;height:100%;background:#fff;z-index:1040}
+#all_menu .gnb_m_device .gnb_m_logo img{ width:77px; height:30px; padding:20px 0 20px 20px  }
+#all_menu .gnb_m_hd { background:#002139; height:50px;  }
+#all_menu .gnb_m_hd ul { overflow:hidden; padding-left:6px; padding-top:16px;}
+#all_menu .gnb_m_hd ul li{float:left; position: relative; padding: 0 10px 10px 10px;vertical-align: top;}
+#all_menu .gnb_m_hd ul li a { color:#fff; }
+#all_menu .gnb_m_hd ul li:before{content:"";display:block;width:1px;height:12px;background:#c3c3c3;position:absolute;right:0;top:7px;margin-top:-6px}
+#all_menu .gnb_m_hd ul li:last-child:before{display:none}
+#all_menu .gnb_m_device .btn_allNavClose{position:absolute;top:0;right:0;width:30px; font-size:0; cursor:pointer;height:30px;background:url(/portal/korea/img_kor/btn_allNavClose.png) no-repeat left bottom;}
+#all_menu .gnb_m_device .btn_allNavClose a { display: block; width: 12px; height: 12px; text-indent: -9999px; font-size: 0; color: transparent; overflow: hidden; margin-top: 18px; }
+#all_menu .mo_dropdown_mn { padding:10px 10px 0 10px; }
+#all_menu .mo_dropdown_mn li a { display:block; float:none; line-height:46px;font-size:18px;color:#111111; border-bottom:#dddddd solid 1px; padding-left:10px; font-weight:bold;}
+#all_menu .mo_dropdown_mn li a.M_on { font-weight:bold; border-bottom:3px solid #222; margin-bottom:2px;}
+#all_menu .mo_dropdown_mn li li a { border-bottom:#dddddd solid 1px;background:url(/portal/korea/img_kor/bu_mo_drop01.png) no-repeat 17px 22px; background-size:12px; padding:2px 10px 1px 43px; font-size:16px; font-weight:normal;}
+#all_menu .mo_dropdown_mn li li a.M_on {color:#0050a5;background:url(/portal/korea/img_kor/bu_mo_drop02.png) no-repeat 7px 50%; border:#0064cc solid 3px; padding-left:40px;font-weight:bold;}
+#all_menu .mo_dropdown_mn li li li a { padding:0 0 0 25px; color:#333; border-bottom:none; line-height:1.8; background:url(/portal/korea/img_kor/main_bg_list.png) no-repeat; background-position:-30px -193px; font-size:14px;font-weight:normal;}
+#all_menu .mo_dropdown_mn li li li a.M_on { padding:0 0 0 25px; color:#0050a5; text-decoration:underline;border:none; line-height:1.8; background:url(/portal/korea/img_kor/main_bg_list.png) no-repeat; background-position:-30px -193px; font-weight:bold;}
+#all_menu .mo_dropdown_mn ul ul { background:#f8f8f8; padding:5px 15px;border-bottom:#dddddd solid 1px;}
+#all_menu .mo_dropdown_mn li li a[target="_blank"] {background:url(../img_kor/ikor_layout/index/t_blank_icon.png) no-repeat 15px center;}
+#all_menu .mo_dropdown_mn li li li a[target="_blank"] {background:url(../img_kor/ikor_layout/index/t_blank_icon.png) no-repeat 5px center;}
+#all_menu .mo_dropdown_mn li.mo_type01 {background:#053863; margin:0 1px 0 0; border-bottom:#fff solid 1px; width:calc(33% - 1px); }
+#all_menu .mo_dropdown_mn li.mo_type01 > a {color:#ffffff; text-align:center; background:none; letter-spacing:-1px; padding-left:0; font-size:14px;}
+#all_menu .mo_dropdown_mn li.mo_type02 {background:#0079ca; margin:0 1px 0 0; border-bottom:#fff solid 1px; width:calc(33% - 1px);}
+#all_menu .mo_dropdown_mn li.mo_type02 > a {color:#ffffff; text-align:center; background:none;letter-spacing:-2px; padding-left:0; font-size:14px;}
+#all_menu .mo_dropdown_mn li.mo_type01,#all_menu .mo_dropdown_mn li.mo_type02 { float:left;  }
+#all_menu .mo_dropdown_mn li:nth-child(4) { float:none; clear:both; }
+
+/*footer*/
+#footer_n .fnb_bg .fnb_group{padding:0 2%; box-sizing:border-box;}
+#footer_n .fnb_bg .fnb_group .fg_list {width:100%; margin-top:40px; display:inline-block; text-align:center;}
+#footer_n .fnb_bg .fnb_group .sns_list {position:absolute; top:10px; left:50%; margin-left:-85px; overflow:hidden;}
+#footer_n .add_group{width:96%;}
+#footer_n #siteListBox{width:96%; position:absolute; box-sizing:border-box;}
+#footer_n #siteListBox .siteList{width:49.7%; box-sizing:border-box;}
+#footer_n #siteListBox .siteList:last-child{float:right; margin:0;}
+#footer_n #siteListBox .siteList > div{width:100%;}
+
+/* 통계서비스안내 */
+.service_all {width:100%; box-sizing:border-box;}
+.service_all .b_tit { padding:10px 0 0 15px; height:40px; }
+.service_all dl {margin:0 0 0 2%;}
+.service_all dl dt { width:18%;  padding:0; line-height:1.5;}
+.service_all dl dd { width:72%;  padding:0;}
+.service_all dl dd ul li { line-height:2; background-position:-39px -193px; display:block;}
+.service_all .More { position:absolute; top:12px; right:1%; }
+
+/* sub layout */
+#container { width:100%; }
+#slnb { width:22%;}
+#contgr { width:73%; margin-right:2%  }
+#contgr .cont_t_icon { display:none; } 
+#slnb h2.title2 { padding:28px 2px 36px 2px; font-size:22px; }
+#slnb > ul > li > a[target="_blank"] { background-position:100% center;}
+#slnb > ul > li > a  {height:auto; padding:12px 12px 12px 10px; line-height:20px;}
+#slnb > ul > li > a.M_on {font-weight:500; color: #215fc1; border:#0064cc solid 3px; padding-right:35px;  background:url(/portal/korea/img_kor/bu_slnb_depth1.png) no-repeat 95% 50%;}
+#slnb > ul .mn_depth2 { padding:5px 8px 5px 10px; }
+#slnb > ul > li > .mn_depth2 > li > a[target="_blank"] { background-position:95% center;}
+
+/*style_content*/
+/* 탭스타일 */
+.tab_list02 li {display:inline-block; width:calc(50% - 5px); vertical-align:top;}
+.tab_list02 li a { height:55px; }
+
+.open_info_wrap .op_info_tab {font-size:14px; width:50%; display:block}
+.open_info_wrap .oit_01 {position:absolute; top:0; left:0;}
+.open_info_wrap .oit_02 {position:absolute; top:0; left:50%;}
+.open_info_wrap .oit_03 {position:absolute; top:50px; left:0%;}
+.open_info_wrap .oit_04 {position:absolute; top:50px; left:50%;}
+.open_info_wrap .op_list {padding:105px 0 0 0;}
+
+/*정보공개안내-청구절차_bf*/
+.open_info_wrap .op_list .info_list_search .circle_tit { width:20%; border-radius:10px; margin:0;}
+.open_info_wrap .op_list .info_list_search .circle_tit > span { margin-top:50px; }
+.open_info_wrap .op_list .info_list_search .search_flow { width:68%; background-position:-15px center; padding:0 0 0 35px; }
+.open_info_wrap .op_list .info_list_search .search_flow > li:first-child {width:28%;}
+.open_info_wrap .op_list .info_list_search .search_flow > li ol li {width:29%; padding:0 0 0 17px; background-position:-10px center;}
+
+/* 청구절차_흐름도2  */
+.info_list_search2 .circle_tit { width:20%; border-radius:10px; margin:0;}
+.info_list_search2 .circle_tit > span { margin-top:50px; }
+.info_list_search2 .search_flow { width:68%; background-position:-15px center; padding:0 0 0 35px; }
+.info_list_search2 .search_flow > li:first-child {width:28%;}
+.info_list_search2 .search_flow > li ol li {width:29%; padding:0 0 0 17px; background-position:-10px center;}
+
+/* 국가통계위원회 */
+.nsc_chart {background:none;}
+.nsc_chart ul .nc_01 { width:35%; margin-bottom:10px;  }
+.nsc_chart ul .nc_02 { width:48%;margin-right:2%; margin-bottom:10px;}
+.nsc_chart ul .nc_03 { width:48%;}
+/* 통계품질관리 자체통계품질진단 */
+.ss_procedure_n ol li ul { height:70px;}
+/* 청장인사말 */
+.greeting_n {/* background-size:85%; background-position:right center; */}
+.gr_mv_wrap .video_frame { width:100%; }
+/* 청장_차장 */
+.profile_top_bg01 { height:520px; background-position:right bottom;}
+.profile_top_bg02 { height:350px; background-position:80% bottom;}
+.profile_top_bg03 { height:420px; background-position:116% bottom;}
+
+.profile_top_info {width:65%;}
+.profile_top_info li .p_date { width:auto; margin-right:10px;}
+.profile_top_info02 {width:75%;}
+.pt_box { padding:18px 0 0 25px; }
+
+ /* 차장사진수정 */
+.profile_top_bg05 {height: auto; padding-bottom:290px}
+.pt_box.type_01{padding:18px 0 0 25px;} 
+
+/* 청장과의 대화 */
+.talk_wrap { position:relative;  background-position:right center; /* padding-right:45%; */}
+/* 역대통계청장 */
+.committee_list li {width:25%; }
+/* 일반현황 연혁 */
+.history_wrap .h_list > dl dt {width:25%; }
+.history_wrap .h_list > dl dd {width:75%; } 
+/* 통계청 MI */
+.ci_color_wrap > ul > li {  height:150px;}
+/* 조직도 */
+.org_chart { background:url(/portal/korea/img_kor/org_chart_line3.gif) no-repeat center top;  }
+.org_chart .org_top { padding-bottom:5px; }
+.org_chart .org_list2 { border:#ddd solid 1px; background:#fff; padding:2%; width:96%; }
+.org_chart .org_list2 > li {  }
+/* 조직기능 상단탭*/
+.tab_type01 { padding:10px 15px; }
+/* 통계전시관 */
+.exhibit_g .p_img { width:35%; margin-right:5%;}
+.exhibit_g .p_img img { width:100%; }
+.exhibit_g .conbox { width:59%; }
+/* 정부부처 */
+.government_dep dt { width:25% }
+.government_dep dd { width:70% }
+.government_dep dd ul li { width:48%;}
+/* 유관기관 */
+.corporation_list li {width:48%;}
+/* 배너광장 */
+.banner_list li { width:31%; margin-right:2%}
+.banner_list li img { width:100%; }
+/* 알림판 */
+.pzlist_wrap{padding:0;}
+.pzlist_wrap li img { box-sizing:border-box;}
+
+/* style_board */
+/* 주요동정 */
+.Board_list03 .sum_img {width:30%; }
+.Board_list03 .sum_img img {width:100%; height:auto;}
+.Board_list03 .brd_text_g {float: right; width: 67%; margin-left: 2%; margin-top:0;}
+.b_list_top .b_search_type3 input[type="button"] {margin-top:3px;}
+/* 홍보동영상*/
+.Board_list04 > ul > li { width:calc(32% - 14px);}
+.Board_list04 .brd_tit_g .title { height:2.5em; line-height:1.2;}
+.Board_list04 .vod_img img { height:auto;}
+/* 테이블 */
+.tb_type1 thead th,.tb_type1 thead td { padding:8px 2px; }
+.tb_type1 tbody th,.tb_type1 tbody td { padding:6px; }
+/*평가하기*/
+#Valuation_n .satisfaction_wrap .Comment input[type="text"] { width:79%; }
+
+
+}
+
+@media all and (max-width:1024px){
+    /* 청장일정 */
+    .schedule_top .sch_left {float:left; width:51%;}
+    .schedule_top .sch_right {float:right; width:48%;}
+    
+    .week_schedule  > ul .week_date {width:21%;}
+    .week_schedule  > ul > li > ul {width:77%;}
+
+	/* 알림판 */
+	.pzlist li {width:46%; margin:0 2% 14px 2%;}
+	.pzlist li img { width:100%;}
+
+    /*footer*/
+    #footer_n .add_group address strong{display:block; margin:5px 0 0 0;}
+}
+
+@media all and (max-width:970px){
+/* 청장인사말 */
+/*.greeting_n p {padding-right:50%;}*/
+
+/* 차장_사진 */
+.profile_top_bg04 { height:400px; }
+
+/* 사전정보공표 목록210805 */	
+.claimant_box dl {width:100%; margin-bottom: 5px; }
+.claimant_box dd { padding:10px 0 0 0 ;  }
+.claimant_box dl:nth-child(3) dd { padding:10px 0 10px 0 ; height:40px; }
+.claimant_box dd span { height:20px; }
+}
+
+
+@media all and (max-width:900px){
+    /*footer*/
+    #footer_n .add_group {width:100%; margin:0 auto; position:relative; padding:10px 0; font-size:11px;}
+    #footer_n .add_group address { padding:1% 2%; text-align:center; line-height:1.5;}
+    #footer_n .add_group address strong {margin:0;}
+    #footer_n .add_group .copy { padding:0 2%;text-align:center; }
+    #footer_n .add_group .f_img01 {display:none; }
+    #footer_n .add_group .f_img02 {display:none; }
+    #footer_n .add_group .sns_list{position:relative; top:0; left:0; text-align:center; padding:10px 0 10px 0;}
+    #footer_n .add_group .sns_list li{float:none; display:inline-block;}
+
+	/* 통계별 이용자 의견수렴 팝업 */
+	#popWrap.userTalk{margin:-240px 0 0 -110px;}
+
+}
+
+
+@media all and (max-width:850px){
+.ic_day_w{background-color:#f0f1f4;}
+.ic_day{margin-left:-175px;}
+
+#mcont .info_link_bg { padding-top:2%; }
+#mcont .info_link .list_box {height:250px;}
+#mcont .info_link .list_box .section1 { height:110px;}	
+#mcont .info_link {height:auto;}	
+#mcont .info_link .icon1 {width:50%; border-top:none; }
+#mcont .info_link .icon2 {width:50%;  }
+#mcont .info_link .icon3 { width:50%; clear:both; position:relative; padding-bottom:10px;}
+#mcont .info_link .line_bg {width:50%;  }
+/* #mcont .info_link .icon3 h3:after {content: "";position: absolute;top: 0;left: 0;height: 1px;width: 100%;background-color: #d7d7d7;} 200427 숨김 */
+#mcont .info_link .icon3 h3:first-child:after {content: "";position: absolute;top: 0;left: 0;height: 1px;width: 100%;background-color: #d7d7d7;}/* 200427 추가 */
+#mcont .info_link .list_box:nth-child(3):after { display:none; }
+#mcont .info_link .list_box:nth-child(4):after { display:block; content: "";position: absolute;top: 0;right: 0;height: 291px;width: 1px;background-color: #d7d7d7;}
+#mcont .info_link .line_bg .section2:before { left:auto;}
+#mcont .info_link .list_box .section2 a.more3 { right:5%; }
+#mcont .info_link .line_bg .icon4 {width:100%;  border-right:none;  }
+#mcont .info_link .line_bg .icon5 {width:100%;float:left; background:none; height:108px;}
+#mcont .second_area .indicator ul li:nth-child(2) { display:none; } 
+#mcont .info_link .icon4.covid_kr a{padding-left:20%; background-position:left 6px, right -5px bottom -23px, right top -5px;}/* 200427 추가 */
+#mcont .info_link .icon4.covid_kr_1 a{background-position:left top, right top -20px, right top -20px, right bottom -15px, left bottom -5px, left 50px bottom -30px;}
+
+.h2_tit { line-height:1.2;}
+.sitelink_l li + li  { display:none; }
+
+#mnb_layout .search_m_open {display: block; position:absolute;top:35px;right:2.5%;width:38px;height:38px; margin-right:41px; background:#003b6f url(/portal/korea/img_kor/icon_search.png) center center no-repeat;cursor:pointer;text-indent:-9999px; }
+#mnb_layout .search_m_close {position:absolute;top:35px;right:2.5%;width:38px;height:38px; background:#003b6f url(/portal/korea/img_kor/icon_search_close.png) center center no-repeat;text-indent:-9999px; display:none;}
+#gnb_layout .gnb_m_open {visibility:visible; opacity:1; position:absolute; top:65px; right:2.5%; z-index:20; width:36px; height:36px; border:1px solid #005baa; background-color:#fff; transition-property:none;}
+#gnb_layout .gnb_m_open button {display:block; width:100%; height:100%; cursor:pointer; padding-top:0; padding-right:0; padding-bottom:0; padding-left:0; background: url(/portal/korea/img_kor/icon_lnb_m_open.png) no-repeat center center; font-size:0; }
+#gnb_layout {width:100%; height:0; border-bottom:none; }
+#gnb_layout .g_nav { display:none; }
+
+#search { display:none; }
+.relation_link { display:none; }
+
+/* 뉴스기반통계검색 */
+.newsbased_search{top:37px; left:auto; right:calc(2.5% + 84px); margin:0; height:36px; line-height:36px; border-radius:18px;}
+.newsbased_search a{height:36px;}
+
+.group_L .news_b .list_breif dl {width:45%;}
+.group_L .news_b .list_breif ul li .date { display:none; }
+.group_L .news_b .list_breif dl dd .data2 { display:none; }
+.group_L .news_b .list_breif dl dt { margin:12px 0 10px 15px;}
+.group_L .news_b .list_breif dl dd { margin:10px 15px;}
+/*자주찾는 서비스*/	
+.group_R .popular_service .ps_list_on ul { padding:2% 0 2% 2%;}
+.group_R .popular_service .ps_list_on ul li {margin:5px 3px; letter-spacing:-1px; padding-left:35px;}
+
+/*sub layout*/
+#slnb { display:none; }
+#contgr { width:100%; margin:0; position:relative; }
+#container { padding:0; }
+#contgr #path {position:absolute; left:0; top:0; background:#f4f5f6; width:100%; border-bottom:#d6d7d7 solid 1px; border-top:#d6d7d7 solid 1px; padding:13px 5px 8px 10px;}
+#contgr #path a, #contgr #path span { margin-bottom:9px; }
+#contgr #path .home { margin-right:5px; }
+#contgr .contents { width:96%; margin:2% 2% 30px 2%;}
+#contgr .h1_tit {width:96%; margin-right:2%; margin-left:2%; padding:85px 0 15px 0;}
+#contgr .cont_t_icon { right:2%; top:85px; }
+
+/*style_board*/
+/* vod board */
+.Board_list04 .vod_img img {height:auto;}
+
+/*style_content*/
+/* 통계품질관리 정기품질관리진단 */
+.rq_procedure_n ol .rq_li {width:46%; }
+.rq_procedure_n ol .rq_li:after {right:-16px;}
+.rq_procedure_n ol .rq_last {width:46%; }
+.rq_procedure_n .d_txt { height:45px; }
+.rq_procedure_n .t_txt { height:31px; }
+/* 통계품질관리 자체통계품질진단 */
+.ss_procedure_n ol .ss_li {width:46%;}
+.ss_procedure_n ol .ss_li:after {right:-16px;}
+.ss_procedure_n ol .ss_last {width:46%;}
+/* 사이트맵 */
+.site_map > ul > li { width:33%;}
+/*평가하기*/
+#Valuation_n .satisfaction_wrap {width:96%; margin:2% 2%}
+#Valuation_n .satisfaction_wrap .t_text { margin-bottom:8px;}
+#Valuation_n .satisfaction_wrap .Comment input[type="text"] { width:94%; }
+#Valuation_n .satisfaction_wrap .Comment input[type="button"] { margin:8px 0 0 0;}
+
+/* e브리핑-바로가기 */
+#mergerFrame { display:none; }
+.no_support { display:block;}
+
+
+    
+/* 테이블 dl로 전환*/
+.dltb_type2 dt { width: 30%;  }
+.dltb_type3 dt { word-break: break-all;  }
+.dltb_type3 dd:first-of-type { width: 50%; word-break: break-all; }
+
+/* 청장일정 */
+    .schedule_top .sch_left {float:left; width:52%;}
+    .schedule_top .sch_right {float:right; width:46%;} 
+
+    /*footer*/
+    #footer_n .fnb_bg .fnb_group .fg_list li { font-size:11px; margin:3px 5px 3px 0; padding-left:5px;}
+    #footer_n .fnb_bg .fnb_group .fg_list{padding:13px 0;} 
+
+/* 청장인사말 */
+/*.greeting_n p {padding-right:45%;}*/
+
+/* 통계별 이용자 의견수렴 팝업 */
+#popWrap.userTalk{margin:-240px 0 0 -210px;}
+
+}
+
+@media all and (max-width:720px){
+/* 사전정보공표 목록210805 */	
+.open_icon_tab .list_title { font-size: 14px ; }	
+.open_icon_tab .iconlist_type01 li { width:33.3% ; }
+.open_icon_tab .iconlist_type01 li a {background-image:none ; padding:16px 0 14px 0 ; border-radius: 0 ; }
+.open_icon_tab .iconlist_type01 li a:hover { padding: 14px 0 ; }
+.open_icon_tab .iconlist_type01 li.t_on a{ padding: 14px 0 ; }
+	
+.open_icon_tab .iconlist_type02 li { width:33.3% ; }
+.open_icon_tab .iconlist_type02 li a {background-image:none ; padding:16px 0 14px 0 ; border-radius: 0 ; }
+.open_icon_tab .iconlist_type02 li a:hover { padding: 14px 0 ; }
+.open_icon_tab .iconlist_type02 li.t_on a{ padding: 14px 0 ; }
+
+.open_icon_tab .iconlist_type03 li {width:calc(33.3% - 4px); }
+.open_icon_tab .iconlist_type03 li a {background-image:none ; padding:16px 0 14px 0 ; border-radius: 0 ; }
+.open_icon_tab .iconlist_type03 li a:hover { padding: 14px 0 ; }
+.open_icon_tab .iconlist_type03 li.t_on a{ padding: 14px 0 ; }
+}
+
+@media all and (max-width:700px){
+/* 청장일정 */
+    .schedule_top .sch_left {float:none; width:100%;}
+    .schedule_top .sch_right {float:none; width:100%;}  
+    .today_cal .today_sch .list_style05 {width:92%; margin:0 auto; padding:5px 0;}
+    .today_cal .today_sch {height:inherit; min-height:inherit;}
+    
+    .week_schedule {margin-top:20px;}
+    
+    .week_schedule  > ul .week_date {width:100%; float:none;}
+    .week_schedule  > ul > li > ul {width:100%; float:none; margin: 18px 0 0 0;}
+
+/* 청장인사말 */
+/*.greeting_n p {padding-right:53%;}*/
+    
+.profile_top_bg03 { height:480px; background-position:116% bottom;}
+.profile_top_info02 {width:96%;}
+.profile_top_info02 li .p_date02 {width:auto; vertical-align:top; margin:2px 20px 0 6px;}
+.profile_top_info02 li .vt_t {vertical-align:top; margin:1px 20px 0 6px;}
+.profile_top_info02 li .p_date {width:auto; margin:1px 20px 0 6px;}
+
+/* 차장_사진 */
+.profile_top_bg04 { height:600px; background-position:bottom }
+
+/* 청구절차_흐름도2  */
+.info_list_search2 .circle_tit { width:12%; height:150px; padding:0 3px;}
+.info_list_search2 .search_flow { width:70%; }
+.info_list_search2 .search_flow > li:first-child {width:25%;}
+.info_list_search2 .search_flow > li ol li {width:25%; }
+
+}
+
+
+/* mobile orientation:portrait */
+@media all and (max-width:600px){
+
+.group_L .news_b .list_breif ul { width:96%; }
+.group_L .news_b .list_breif ul .on { background:none; }
+.group_L .news_b .list_breif ul li .date { display:block; }
+.group_L .news_b .list_breif dl { display:none !important; width:0;  }
+.group_L .news_b .nb_btn { display:none;}
+.group_L .career_b {width:100%; float:none; position:relative;}
+.group_L .notice_b {width:100%; float:none; position:relative; margin-left: 0;}
+.group_R { padding:0 2%; }
+.group_R .popup_zone {width:100%; float:none; position:relative; max-height:280px;  }
+.group_R .popup_zone .pz_list li img { max-height:240px;}
+.group_R .popular_service {position:relative; width:100%; float: none; margin-left:0;margin-bottom:25px;}
+.group_R .banner_zone {position:relative; width:100%; float: none; margin-left:0; margin-bottom:30px;}	
+/*자주찾는 서비스*/	
+.group_R .popular_service .ps_list_on ul { padding:1% 0 1% 3%;}
+.group_R .popular_service .ps_list_on ul li {margin:1px 6px; }
+
+
+
+
+/* 컨텐츠 */
+.b_list_top .b_search_type2 input[type='text'] { width:150px; }
+/* 2020년 주요업무 계획 */
+.mainwork_wrap .title .t_line {padding:8px 0; border:none;}
+.mainwork_wrap .list_box { height:auto; background:none;}
+.mainwork_wrap .mainwork01 {position:relative; top:0; left:0; margin-left:0;}
+.mainwork_wrap .mainwork02 {position:relative; top:0; right:0; padding-right:0;}
+.mainwork_wrap .mainwork03 {position:relative; top:0; left:0; margin-left:0;}
+.mainwork_wrap .mainwork04 {position:relative; top:0; left:0; margin-left:0; }
+.mainwork_wrap .list_box div { position:relative; width:100%;   }
+.mainwork_wrap .list_box div header { padding:10px 0;width:auto;border-radius:100px;}
+.mainwork_wrap .list_box div ul { padding:30px 0 30px 30%;}
+.mainwork_wrap .mainwork01 header { border:#4d87c6 6px solid;  }
+.mainwork_wrap .mainwork02 header { border:#00a7e2 6px solid;  }
+.mainwork_wrap .mainwork03 header { border:#00aca0 6px solid;  }
+.mainwork_wrap .mainwork04 header { border:#5eaf2f 6px solid;  }
+.mainwork_wrap .mainwork01 ul { padding-left:0; margin-top:0;}
+.mainwork_wrap .mainwork02 ul { margin-top:0;  }
+.mainwork_wrap .mainwork03 ul { margin-left:0; margin-top:0; }
+.mainwork_wrap .mainwork04 ul { margin-left:0; margin-top:0;}
+/* 2021년 주요업무 계획 */
+.mainwork2021_wrap .title .t_line {padding:8px 0; border:none;}
+.mainwork2021_wrap .list_box { height:auto; background:none;}
+.mainwork2021_wrap .mainwork01 {position:relative; top:0; left:0; margin-left:0;}
+.mainwork2021_wrap .mainwork02 {position:relative; top:0; right:0; padding-right:0;}
+.mainwork2021_wrap .mainwork03 {position:relative; top:0; left:0; margin-left:0;}
+.mainwork2021_wrap .mainwork04 {position:relative; top:0; left:0; margin-left:0; }
+.mainwork2021_wrap .list_box div { position:relative; width:100%;}
+.mainwork2021_wrap .list_box div header { padding:10px 0;width:auto;border-radius:100px;}
+.mainwork2021_wrap .list_box div ul { padding:30px 0 30px 5%;}
+.mainwork2021_wrap .list_box div ul br {display:none;}
+.mainwork2021_wrap .mainwork01 header { border:#4d87c6 6px solid;}
+.mainwork2021_wrap .mainwork02 header { border:#00a7e2 6px solid;}
+.mainwork2021_wrap .mainwork03 header { border:#00aca0 6px solid;}
+.mainwork2021_wrap .mainwork04 header { border:#5eaf2f 6px solid;}
+.mainwork2021_wrap .mainwork01 ul { padding-left:0; margin-top:0;}
+.mainwork2021_wrap .mainwork02 ul { margin-top:0;}
+.mainwork2021_wrap .mainwork03 ul { margin-left:0; margin-top:0;}
+.mainwork2021_wrap .mainwork04 ul { margin-left:0; margin-top:0;}
+/*정보공개안내-청구절차*/
+.open_info_wrap .op_list .info_list_search .circle_tit { width:12%; height:150px; padding:0 3px;}
+.open_info_wrap .op_list .info_list_search .search_flow { width:70%; }
+.open_info_wrap .op_list .info_list_search .search_flow > li:first-child {width:25%;}
+.open_info_wrap .op_list .info_list_search .search_flow > li ol li {width:25%; }
+/* 연관조사 */
+.associated_svy dl dt {width:100%;}
+.associated_svy dl dd {width:100%;margin-top:10px;}
+.associated_svy dl dd ul li {margin-bottom:10px; }
+/* 국가통계위원회 */
+.nsc_chart ul .nc_01 { width:50%;  }
+/* 미션 및 비전 */
+.line_box dd { border-radius:20px;}
+/* 청장인사말 */
+/*.greeting_n {background-size:100%; background-position:bottom center; padding-bottom:400px;}*/
+.greeting_n {background:url(../img_kor/ikor_content/greeting_img_20220516.jpg) right -20px no-repeat; background-size:100%; padding:0; }
+.greeting_n .greet_tit{position:relative; top:0; width:70%; padding:10px 0 20px 0; line-height:32px}
+
+
+
+/* 청장_차장 */
+.profile_top_bg01 { height:600px;}
+.profile_top_bg02 { height:520px;}
+.profile_top_info {width:90%;}
+
+
+/* 역대통계청장 */
+.committee_list li {width:33.3%; }
+/* 일반현황 연혁 */
+.history_wrap .h_list > dl dt { float:none; width:100%; }
+.history_wrap .h_list > dl dd { float:none; width:94%; padding:0 1% 15px 5%; } 
+/* 조직도 */
+.org_chart .org_top li span { width:50%; }
+.org_chart .org_top .org_r .li_02 { width:70%; float:right; }
+.org_chart .org_top .org_r .li_05 { width:70%; float:right; }
+.org_chart .org_list2 > li { width:100%;  }
+.org_chart .org_list2 > li:nth-of-type(4) {width:100%; }
+.org_chart .org_list2 > li:nth-of-type(5) {width:100%; }
+.org_chart .org_list2 > li .kostat_data {width:100%;}
+.org_chart .org_list2 > li .kostat_service {width:100%;  }
+.org_chart .org_list2 > li:nth-of-type(1) {margin-bottom:30px;}
+.org_chart .org_list2 > li:nth-of-type(2) {margin-bottom:30px;}
+.org_chart .org_list2 > li:nth-of-type(3) {margin-bottom:30px;}
+.org_s dt {width:28%;}
+.org_s dd {width:71%;}
+/* 정부부처 */
+.government_dep dt { width:30% }
+.government_dep dd { width:65% }
+.government_dep dd ul li { width:95%;}
+/* 유관기관 */
+.corporation_list li {width:98%;}
+/* 저작권정책 */
+.open_list li { width:49%;}
+.open_list li:nth-child(2) {border:none;}
+/* 배너광장 */
+.banner_list li { width:48%; margin-right:2%}
+.banner_list li:last-child { margin-right:0; }
+/* 알림판 */
+.pzlist li { width:49%; margin:0 1% 5px 0;}
+.pzlist li:nth-child(2) { margin-right:0; }
+/* 사이트맵 */
+.site_map > ul > li { width:49%;}
+/* 테이블 */
+.tb_type2 tbody td { padding:4px 3px; }
+.tb_type1 thead th { padding:9px 4px; }
+.tb_type1 tbody th,.tb_type1 tbody td { padding:3px; }
+/* style_board 우측-파일미리보기 게시판*/
+.Board_list01 .brd_tit_g { width:63%; }
+.Board_list01 .brd_file_g { width:25%; }
+/*style_board 게시판 상단 테이블*/
+.info_list_top dl dt { padding:0 0 0 4px; }
+	
+}
+
+@media all and (max-width:600px){
+.profile_top_info02 li .p_date {width:auto;}
+.profile_top_info02 li .p_date02 {width:auto;}
+#mcont .info_link .icon4.covid_kr a{padding:0 0 0 8%; font-size:23px; background:url(../img_kor/ikor_layout/index/covid01.jpg) right bottom -15px no-repeat, url(../img_kor/ikor_layout/index/covid02.jpg) right top -10px no-repeat; background-color:#f5e8ea;}/* 200427 추가 */
+#mcont .info_link .icon4.covid_kr_1 a{background-position:left -30px, right -50px top -60px, right -50px top -20px, right -10px bottom -15px, left -20px bottom -10px, left bottom -30px; font-size:18px;}
+}
+
+
+@media all and (max-width:550px){
+.tab_list05 li{width:100%;}
+#mcont .info_link .icon4:after {bottom:30px;}
+.profile_top_info02.type_01 li span.p_text{display:block; padding-left:15px; margin:0}
+}
+
+@media all and (max-width:520px){
+#mcont .info_link .icon4.covid_kr_medi a{padding: 0 0 30px 15px;}
+/* 정보공개제도안내 - 주요내용210805  */
+.claimant_box dl:nth-child(3) dd { padding:10px 0 10px 0 ; height:60px; }
+
+}
+
+/* mobile orientation:portrait */
+@media all and (max-width:460px){	
+#mcont .info_link h3  { padding:15px 0 0 10px; }
+#mcont .info_link .list_box .section1 ul { margin-left:0; padding-top:15px;}
+#mcont .info_link .list_box .section2 ul li { letter-spacing:-2px; }
+#mcont .info_link .list_box .section2 ul li li { letter-spacing:0; }
+#mcont .info_link .list_box ul { padding-left:10px; }
+#mcont .info_link .list_box::before { background:none; }
+#mcont .info_link .line_bg .section1::before, #mcont .info_link .line_bg .section2::before { background:none; }
+#mcont .info_link .icon1, #mcont .info_link .icon2 { height:220px;}
+#mcont .info_link .list_box {}
+#mcont .info_link .icon1 { height:auto; }	
+#mcont .second_area .indicator:after {content: "";position: absolute; top:0; left:170px;height: 50px;width: 50px;background:none;  }
+#mcont .second_area .indicator ul { margin-left:10px; padding-top:40px; }
+#mcont .info_link .icon4:after{background:none;}/* 200427 추가 */
+#mcont .info_link .icon4.covid_kr_1 a span{display:block;}
+
+.group_L .news_b .list_breif ul { margin:15px 0 07px;}
+.group_L .news_b .list_breif ul li { letter-spacing:-1px;}
+.group_L .news_b .list_breif ul li .date { padding:0; }
+.group_R .popular_service .ps_list ul { padding:8px 6px 8px 10px; }
+
+/* 타이틀*/
+#contgr .h1_tit { font-size:26px; letter-spacing:-2px;}
+/* 2020년 주요업무 계획 */
+.mainwork_wrap .list_box {margin-top:60px;}
+
+/* 2021년 주요업무 계획 */
+.mainwork2021_wrap .list_box {margin-top:60px;}
+
+/*상단설명문구-아이콘제거*/
+.cont_tbox p { padding:20px; background:none;}
+/* 홍보동영상*/
+.Board_list04 > ul > li { width:calc(50% - 14px);}
+/* 통계품질관리 자체통계품질진단 */
+.ss_procedure_n ol li:nth-child(3) ul { height:110px;}
+.ss_procedure_n ol li:nth-child(4) ul { height:110px;}	
+/* 청장인사말 */
+/*.greeting_n { background-size:100%; background-position:left bottom; padding-bottom:250px;}*/
+
+/* 약력 */
+.profile_top_blank { height:400px; }
+.profile_top_bg03 {height:500px; padding:0 0 10px 0; background-position:90% bottom;}
+.profile_top_info02 li .p_date {width:auto; margin:1px 0 0 6px;}
+.profile_top_info02 li .p_text {width:100%; display:block; margin:0 0 0 18px;} 
+.profile_top_info02 li .p_date02 {width:15%;} 
+
+/* 차장_사진 */
+.profile_top_bg04 { height:670px; background-position:bottom }
+
+
+/* 청장과의 대화 */
+.talk_wrap { position:relative; background-size:100%; background-position:left bottom; padding-right:0; /* padding-bottom:150px; */}
+/* 역대통계청장 */
+.committee_list li {width:50%; }
+/* 통계청 MI */
+.ci_color_wrap > ul > li {  height:190px;}
+
+/* 청장일정 */
+    .week_schedule  > ul > li > ul .week_location {float: none; color:#777777; font-size:13px; display: block;}
+    .cal_tb tbody td a {padding:5px 0 30px 4px;}
+    .cal_tb tbody td:hover a { padding:4px 0 29px 3px;}
+    .cal_tb tbody td .today {padding:4px 0 29px 3px;}
+	
+/* 통계별 이용자 의견수렴 팝업 */
+#popWrap{top:0; left:0;}
+#popWrap.userTalk{width:100%; height:100%; margin:0;}
+	
+ }
+
+ @media all and (max-width:420px){
+
+	.ic_day{background: url(../img_kor/ikor_layout/index/img_inchong_s.png) 40px center no-repeat; width:320px; padding: 15px 0 0 40px; margin-left:-160px;}
+	.ic_day span.ic_ti{font-size:14px;}
+	.ic_day span.ic_ti strong{font-size:16px;}
+
+	/* 알림판 */
+	.pzlist li { width:100%; margin:0 0 5px 0;}
+	.pzlist li:last-child{margin:0;}
+
+	#mcont .info_link .icon4.covid_kr a{font-size:18px; background-position:right -10px  bottom -25px, right top -10px; background-color:#f5e8ea;}/* 200427 추가 */
+	/*footer*/
+	#footer_n .fnb_bg .fnb_group .fg_list{margin-top:80px;}
+	#footer_n #siteListBox .siteList{width:100%;}
+	#footer_n #siteListBox .siteList:last-child{margin-top:-1px;}
+
+ /* 20210429 추가 */
+    #mcont .info_link .list_box h3  br { display:none; }
+
+}
+
+@media all and (max-width:400px){
+
+/* 사전정보공표 목록210805 */
+	.open_icon_tab .list_title a {width:100% ; }
+    .seeAll{width:100% ; padding: 9px 0 11px 0 ; text-align: center ; }
+    .open_icon_tab .iconlist_type01 li {width:100% ; display:block ; }
+    .open_icon_tab .iconlist_type01 li a {background-image:none ; padding:16px 0 14px 0 ; border-radius: 0 ; }
+    .open_icon_tab .iconlist_type01 li a:hover { padding: 14px 0 ; }
+    .open_icon_tab .iconlist_type01 li.t_on a{ padding: 14px 0 ; }
+    
+    .open_icon_tab .iconlist_type02 li {width:100% ; display:block ; }
+    .open_icon_tab .iconlist_type02 li a {background-image:none ; padding:16px 0 14px 0 ; border-radius: 0 ; }
+    .open_icon_tab .iconlist_type02 li a:hover { padding: 14px 0 ; }
+    .open_icon_tab .iconlist_type02 li.t_on a{ padding: 14px 0 ; }
+}
+
+ @media all and (max-width:340px){
+
+/* 뉴스기반통계검색 */
+.newsbased_search a{background:none; padding:0 15px 0 12px;}
+
+/* 청장인사말 */
+.greeting_n {background-size:100%;}
+
+/* 정보공개제도안내 - 주요내용210805  */
+.claimant_box dl:nth-child(3) dd { padding:10px 0 20px 0 ; height:70px; }
+
+}
+
+@media all and (max-height:500px){
+/* 통계별 이용자 의견수렴 팝업 */
+#popWrap{top:0; left:0; overflow:auto;}
+#popWrap > div{position:relative;}
+#popWrap.userTalk{width:100%; height:100%; margin:0;}
+
+}

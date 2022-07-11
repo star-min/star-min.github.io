@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        <div id="skip">
+            <p class="Hidden">반복영역 건너뛰기</p>
+           <ul class="accessibility">
+                <li><a href="#mcont_s">본문바로가기</a></li>
+                <li><a href="#gnb_s1">주요메뉴바로가기</a></li>
+            </ul>
+       </div>
+        <div id="header_n">             
+            <div id="tnb_layout">
+            <div class="t_nav">
+                <h1 class="t_logo"><a href="index.html"><img src="img/logo.png" alt="통계청" /></a></h1>
+                <ul class="sitelink_r">
+                    <li><a href="" >로그인</a></li>
+                    <li class="eng"><a href="" target="_blank">회원가입</a></li>
+                </ul>
+            </div>  
+            </div>
+            <div id="mnb_layout">
+            <h2 class="Hidden">통합검색</h2>
+    <div class="search_m_open">
+       <a href="http://kostat.go.kr/wnsearch/search.jsp" target="_blank">검색 열기</a>
+      </div>
+            <div id="search"> 
+            <script> 
+    function quickSearch(query){
+        var frm = document.sForm;
+        frm.action = "https://kostat.go.kr/wnsearch/search.jsp";
+        frm.query.value = query;
+        frm.submit();
+    }
+        function goSearch(){
+            var frm = document.sForm;
+            var name = document.getElementById("query").value;
+    if(name  == null || name == ""){
+    alert("검색어를 입력하세요.");
+    document.getElementById("query").focus();
+    return false;
+    }
+                frm.action = "https://kostat.go.kr/wnsearch/search.jsp";
+                frm.submit();
+            return false;
+        }
+        function handlepress(){	
+            if(event.keyCode == 13){	
+                goSearch();	
+            }
+        }
+        function selectWord(word){
+            var frm = document.sForm;
+            frm.query.value=word;
+            frm.submit();
+        }
+        function kostat() {
+            alert("현재 검색이 원활히 되지 않고 있습니다. 이용에 불편을 드려 죄송합니다. 빠른 시일내에 복구하도록 하겠습니다.");
+        }
+    </script><noscript>스크립트 기능이 중지되어 있어, 게시판 화면을 정상적으로 표시할 수 없습니다. </noscript>
+    <form name="sForm" method="post" action="https://kostat.go.kr/wnsearch/search.jsp" onsubmit="return goSearch();">
+          <fieldset>
+          <legend class="Hidden">통합검색</legend>
+        <label for="collection" class="Hidden">검색분류</label>
+        <select name="collection" id="collection"  title="검색분류">
+    <option value="ALL" selected="selected">통합검색</option>
+            <option value="web_bodo">통계청 누리집</option>
+            <option value="statDB">국가통계포털(KOSIS) 통계표</option>
+            <option value="enara" >한눈에알아보는나라지표(e-나라지표)</option>
+            <option value="class" >통계분류</option>
+            <option value="online" >온라인간행물</option>
+            <option value="metaDB" >통계설명자료</option>
+            <option value="statTerms">통계용어</option>
+            <option value="employee">직원검색</option>
+            <option value="hire">채용정보</option>
+        </select>
+            <label for="query"  class="Hidden" >통합검색창</label>
+            <input name="query" type="text" id="query" class="searchInput" value="" title="검색어" style="ime-mode:active;" />
+            <label for="btn_ts_search"  class="Hidden">검색</label>
+    <input type="submit" id="btn_ts_search"  value="검색"/>
+          </fieldset>
+    </form>
+            </div>
+            <ul class="relation_link">
+                <li class="fst"><a href="http://kostat.go.kr/"  target="_blank" title="새창" class="c_point"><strong>민원</strong></a></li>
+                <li><a href="http://kostat.go.kr/" target="_blank" title="새창">통계이해</a></li>
+                <li><a href="http://kostat.go.kr/"  target="_blank" title="새창">채용</a></li>
+                <li class="last"><a href="http://kostat.go.kr/"  target="_blank" title="새창">통계조사</a></li>
+             </ul>   
+              </div>
+</body>
+</html>
