@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 내장 BOM(Browser Object Model) 객체</title>
+</head>
+<body>
+    <h2>BOM(Browser Object Model) : 브라우저를 제어하기 위한 목적의 객체</h2>
+    <p>window, screen, navigator, history, location, document 등 기분 객체가 있음</p>
+    <hr>
+    <button type="button" id="btn1" class="btn" onclick="openWindow1()">버튼1</button>
+    <button type="button" id="btn2" class="btn" onclick="openWindow2()">버튼2</button>
+    <button type="button" id="btn3" class="btn" onclick="openWindow3()">버튼3</button>
+    <button type="button" id="btn3" class="btn" onclick="openWindow4()">버튼4</button>
+    <a href="javascript:closeWindow()" id="btn4" class="btn">닫기</a>
+
+    <div>
+        <a href="http://www.naver.com">현재 창에 네이버 열기</a>
+        <a href="http://www.naver.com" target="_blank">새 창에 네이버 열기</a>
+    </div>
+    <select name="sel1" id="sel1" onchange="openApp()">
+        <option value="">선택안함</option>
+        <option value="http://www.naver.com">네이버</option>
+        <option value="http://www.daum.net">다음</option>
+        <option value="http://www.google.com">구글</option>
+    </select>
+    <script>
+        var win5;
+        function openApp(){
+            var sel1 = document.getElementById("sel1").value;
+            if(sel1!=""){
+                win5 = window.open(sel1,"child","width=300, height= 500");
+            }
+        }
+    </script>
+
+    <h2>window 객체</h2>
+    <div id="result1"></div>
+    <hr>
+    <h2>screen 객체</h2>
+    <div id="result2"></div>
+    <hr>
+    <h2>navigator 객체</h2>
+    <div id="result3"></div>
+    <hr>
+    <h2>history 객체</h2>
+    <div id="result4"></div>
+    <hr>
+    <h2>location 객체</h2>
+    <div id="result5"></div>
+    <hr>
+    <h2>document 객체</h2>
+    <div id="result6"></div>
+    <hr>
+    <script>
+        var name = "김성민";
+        var res1 = document.getElementById("result1");
+        var res2 = document.getElementById("result2");
+        var res3 = document.getElementById("result3");
+        var res4 = document.getElementById("result4");
+        var res5 = document.getElementById("result5");
+        var res6 = document.getElementById("result6");
+
+        // window 객체의 멤버 출력
+        var data1 = "<ul>";
+        for(var key in window){
+            data1 += "<li>"+key+" : "+window[key]+"</li>"
+        }
+        data1 += "</ul>";
+        res1.innerHTML = data1;
+
+        //screen 객체의 멤버 출력
+        var data2 = "<ul>";
+        for(var key in screen){
+            data2 += "<li>"+key+" : "+screen[key]+"</li>"
+        }
+        data2 += "</ul>";
+        res2.innerHTML = data2;
+
+        //navigator 객체의 멤버 출력
+        var data3 = "<ul>";
+        for(var key in navigator){
+            data3 += "<li>"+key+" : "+navigator[key]+"</li>"
+        }
+        data3 += "</ul>";
+        res3.innerHTML = data3;
+
+        //history 객체의 멤버 출력
+        var data4 = "<ul>";
+        for(var key in history){
+            data4 += "<li>"+key+" : "+history[key]+"</li>"
+        }
+        data4 += "</ul>";
+        res4.innerHTML = data4;
+
+        //location 객체의 멤버 출력
+        var data5 = "<ul>";
+        for(var key in location){
+            data5 += "<li>"+key+" : "+location[key]+"</li>"
+        }
+        data5 += "</ul>";
+        res5.innerHTML = data5;
+
+        //document 객체의 멤버 출력
+        var data6 = "<ul>";
+        for(var key in document){
+            data6 += "<li>"+key+" : "+document[key]+"</li>"
+        }
+        data6 += "</ul>";
+        res6.innerHTML = data6;
+
+
+        // 새 탭에서
+        var win1,win2,win3,win4;
+
+        function openWindow1(){
+            win1 = window.open("http://www.naver.com");
+        }
+
+        // 현재 탭에서
+        function openWindow2(){
+            win2 = window.open("http://www.naver.com", "_self");
+        }
+
+        // 팝업창으로
+        function openWindow3(){
+            win3 = window.open("http://www.naver.com", "win3", "width=200, height=600");
+        }
+
+        // 자식창으로
+        function openWindow4(){
+            win4 = window.open("child.html", "win4", "width=200, height=600");
+        }
+
+        function sendChild(){   //이게중요함
+            win4.document.getElementById("p_input").value = document.getElementById("p_input").value;
+        }
+
+    </script>
+        <div id="parents">
+            자식에게 전달할 값 :
+            <input type="text" id="p_input"/><br><br>
+            자식으로 부터 받은 값 : 
+            <input type="text" id="c_input"/><br><br>
+            <input type="hidden" id="h_input"/><br><br>
+            <button type="button" id="btn4" onclick="sendChild()"> 자식창으로 값 전송</button>
+        </div>
+</body>
+</html>

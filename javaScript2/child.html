@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="child">
+        부모에게 전달 받은 값 :
+        <input type="text" id="p_input"/><br><br>
+        부모에게 전달할 값
+        <input type="text" id="d_input"/><br><br>
+        <button type="button" id="btn5" onclick="sendParent()"> 부모창으로 값 전송</button>
+    </div>
+    <script>
+        function sendParent(){  // opener = 부모창
+            opener.document.getElementById("c_input").value=document.getElementById("d_input").value;
+            opener.document.getElementById("h_input").value=document.getElementById("p_input").value;
+        }
+    </script>
+</body>
+</html>

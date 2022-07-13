@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 변수와 객체</title>
+</head>
+<body>
+    <script>
+        //변수 선언
+        var name = "김성민";
+        //배열 선언
+        var arr = [90,100,80];
+        //객체 선언
+        var obj = {no:1, name:"kim"};
+        //객체배열 선언
+        var json = [{no:1, name:"kim"},{no:2, name:"yang"},{no:3, name:"jang"}];
+    
+        document.write("<h1>"+name+"</h1><hr>");
+        for(var key in arr){
+            document.write("<h2>"+arr[key]+"</h2>");
+        }
+        document.write("<hr>");
+
+        for(var key in obj){
+            document.write("<h3>"+key+" : "+obj[key]+"</h3>");
+        }
+        for(var i=0;i<json.length;i++){
+            document.write(i+"번째 no : "+json[i].no+"<br>");
+            document.write(i+"번째 name : "+json[i].name+"<br>");
+        }
+    </script>
+</body>
+</html>
