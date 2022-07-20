@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 내장 BOM(Browser Object Model) 객체</title>
+</head>
+<body>
+    <h2>BOM(Browser Object Model) : 브라우저를 제어하기 위한 목적의 객체</h2>
+    <p>window, screen, navigator, history, location, document 등 기본 객체가 있음</p>
+    <hr>
+    <button type="button" id="btn1" class="btn" onclick="openWindow1()">새 탭으로</button>
+    <button type="button" id="btn2" class="btn" onclick="openWindow2()">현재 탭에</button>
+    <button type="button" id="btn3" class="btn" onclick="openWindow3()">팝업 창으로</button>
+    <a href="javascript:closeWindow()" id="btn6" class="btn">닫기</a><hr>
+    <button type="button" id="btn4" class="btn" onclick="openWindow4()">자식 창 열기</button><hr>
+    <button type=""button" id="btn7" class="btn" onclick="javascript:history.back()">이전 페이지로</button>
+    <button type=""button" id="btn8" class="btn" onclick="javascript:history.forward()">다음 페이지로</button>
+    <button type=""button" id="btn9" class="btn" onclick="javascript:history.go(-2)">2페이지 이전 페이지로</button>
+    <button type=""button" id="btn10" class="btn" onclick="deviceConfirm()">접속기기 알아내기</button>
+    <button type=""button" id="btn11" class="btn" onclick="browserConfirm()">브라우저 알아내기</button>
+    <button type=""button" id="btn12" class="btn" onclick="screenSizeConfirm()">화면 크기 알아내기</button>
+    <button type=""button" id="btn13" class="btn" onclick="browserSizeConfirm()">창 크기 알아내기</button>
+    <h2>부모 창과 자식 창의 데이터 전달</h2>
+    <div id="parents">
+        자식에게 전달할 값 : <input type="text" id="p_input" /><br><br>
+        자식으로 부터 받은 값 : <input type="text" id="c_input" /><br><br>
+        <input type="hidden" id="h_input" /><br><br>
+        <button type="button" id="btn5" onclick="sendChild()">자식창으로 값 전송</button>
+    </div>
+    <hr>
+    <div id="urlCollection">
+        <div id="anchor">
+            <a href="http://www.naver.com">현재 창에 네이버 열기</a><br><br>
+            <a href="http://www.naver.com" target="_blank">새 창에 네이버 열기</a><br><br>
+        </div>
+        <select name="sel1" id="sel1" onchange="openApp()">
+            <option value="">선택안함</option>
+            <option value="http://www.naver.com">네이버</option>
+            <option value="http://www.daum.net">다음</option>
+            <option value="http://www.google.com">구글</option>
+        </select>
+        <script>
+        var win5;
+        function openApp(){
+            var sel1 = document.getElementById("sel1").value;
+            /* 새창으로 해당 사이트 열기 할 경우
+            if(sel1!="") {
+                win5 = window.open(sel1,"child","width=300, height=200");
+            }
+            */
+           //현재 창에 해당 사이트를 열기할 경우
+            if(sel1!="") { 
+                location.href = sel1;
+            }
+        } 
+        function deviceConfirm() {
+            if(isMobile()){
+                alert("모바일 기기입니다.");
+            } else {
+                alert("데스크탑 기기입니다.");
+            }
+        }   
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        
+        function browserConfirm() {
+            var agent = navigator.userAgent.toLowerCase();
+            var browserName;
+            switch(true) {
+                case agent.indexOf("edge") > -1:
+                    browserName = "IE Edge";
+                    break;
+                case agent.indexOf("edg/") > -1:
+                    browserName = "Chrome base Edge";
+                    break;
+                case agent.indexOf("opr") > -1 && !!window.opr:
+                    browserName = "Opera";
+                    break;
+                case agent.indexOf("chrome") > -1:
+                    browserName = "Chrome";
+                    break;
+                case agent.indexOf("trident") > -1:
+                    browserName = "MS IE";
+                    break;
+                case agent.indexOf("firefox") > -1:
+                    browserName = "Mozilla Firefox";
+                    break;
+                case agent.indexOf("safari") > -1:
+                    browserName = "Safari";
+                    break;
+                default :
+                    browserName = "other";    
+            }
+            alert("당신의 브라우저는 "+browserName+"입니다.");
+        }
+
+        function screenSizeConfirm() {
+            alert("화면의 가로크기 : "+screen.width+"이며, 세로 크기 : "+screen.height);
+        }
+
+        function browserSizeConfirm() {
+            alert("창의 가로크기 : "+window.innerWidth+"이며, 세로 크기 : "+window.innerHeight);
+        }
+
+        </script>
+    </div>
+
+    <div>
+        <h2>window 객체</h2>
+        <div id="result1"></div>
+        <hr>
+        <h2>screen 객체</h2>
+        <div id="result2"></div>
+        <hr>
+        <h2>navigator 객체</h2>
+        <div id="result3"></div>
+        <hr>
+        <h2>history 객체</h2>
+        <div id="result4"></div>
+        <hr>
+        <h2>location 객체</h2>
+        <div id="result5"></div>
+        <hr>
+        <h2>document 객체</h2>
+        <div id="result6"></div>
+        <hr>
+        <script>
+        var res1 = document.getElementById("result1");    
+        var res2 = document.getElementById("result2");
+        var res3 = document.getElementById("result3");
+        var res4 = document.getElementById("result4");
+        var res5 = document.getElementById("result5");
+        var res6 = document.getElementById("result6");
+
+        //window 객체의 멤버를 #result1에 출력
+        var data = "<ul>";
+        for(var key in window){
+            data += "<li>"+key+" : "+window[key]+"</li>";
+        }
+        data += "</ul>";
+        res1.innerHTML = data;
+
+        //screen 객체의 멤버를 #result2에 출력
+        var data2 = "<ul>";
+        for(var key in screen){
+            data2 += "<li>"+key+" : "+screen[key]+"</li>";
+        }
+        data2 += "</ul>";
+        res2.innerHTML = data2;
+
+        //navigator 객체의 멤버를 #result3에 출력
+        var data3 = "<ul>";
+        for(var key in navigator){
+            data3 += "<li>"+key+" : "+navigator[key]+"</li>";
+        }
+        data3 += "</ul>";
+        res3.innerHTML = data3;
+
+        //history 객체의 멤버를 #result4에 출력
+        var data4 = "<ul>";
+        for(var key in history){
+            data4 += "<li>"+key+" : "+history[key]+"</li>";
+        }
+        data4 += "</ul>";
+        res4.innerHTML = data4;
+
+        //location 객체의 멤버를 #result5에 출력
+        var data5 = "<ul>";
+        for(var key in location){
+            data5 += "<li>"+key+" : "+location[key]+"</li>";
+        }
+        data5 += "</ul>";
+        res5.innerHTML = data5;
+
+        //document 객체의 멤버를 #result6에 출력
+        var data6 = "<ul>";
+        for(var key in document){
+            data6 += "<li>"+key+" : "+document[key]+"</li>";
+        }
+        data6 += "</ul>";
+        res6.innerHTML = data6;
+        </script>
+    </div>
+    <script>
+    var win1, win2, win3, win4;
+    function openWindow4(){        //자식 창(win4) 열기
+        win4 = window.open("child.html", "win4", "width=300, height=200");
+    }
+    function sendChild(){ //자식창(win4)의 p_input의 값을 현재 부모 창의 p_input 값을 전달
+        win4.document.getElementById("p_input").value = document.getElementById("p_input").value;
+    }
+
+    function closeWindow() { //팝업 창으로 열기 된 것만 닫기 가능
+        win3.close();
+    }
+    function openWindow1(){
+        //새 탭으로 창 열기
+        win1 = window.open("http://www.naver.com");
+    }
+    function openWindow2(){
+        //현재 창에 열기
+        win2 = window.open("http://www.naver.com", "_self");
+    }
+
+    function openWindow3(){
+        //팝업 창으로 열기
+        win3 = window.open("http://www.naver.com", "win3", "width=300, height=200");
+    }
+    </script>
+</body>
+</html>

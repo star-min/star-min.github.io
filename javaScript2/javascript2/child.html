@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자식창</title>
+</head>
+<body>
+    <div id="child">
+        부모로 부터 전달 받은 값 :
+        <input type="text" id="p_input" /><br><br>
+        부모에게 전달 할 값 : 
+        <input type="text" id="d_input" /><br><br>
+        <button type="button" id="btn5" onclick="sendParent()">부모창으로 값 전송</button>
+    </div>
+    <script>
+    function sendParent() { //opener = 부모창 으로 d_input에 있는 값을 전송 후 자식 창 닫기
+        opener.document.getElementById("c_input").value = document.getElementById("d_input").value; 
+        opener.document.getElementById("h_input").value = document.getElementById("p_input").value; 
+        self.close();
+    }    
+    </script>
+</body>
+</html>

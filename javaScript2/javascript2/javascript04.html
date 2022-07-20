@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 - DOM 객체</title>
+    <style>
+    .box { width:300px; height:200px; border:1px solid #333; float:left; 
+        transition:0.5s; }    
+    </style>
+</head>
+<body>
+    <h2>DOM(Document Object Model) : html 문서에 있는 태그(Element)를 제어하는 모델</h2>
+    <button type="button" id="btn1">p요소 알아보기</button>
+    <button type="button" id="btn2">.item 클래스 요소 알아보기</button>
+    <button type="button" id="btn3">querySelector 클래스 요소 알아보기</button>
+    <button type="button" id="btn4">요소 추가하기</button>
+    <button type="button" id="btn5">css 변경하기</button>
+    <p>이규호</p>
+    <p>김성민</p>
+    <p>여승원</p>
+    <p>이민환</p>
+    <p>임소희</p>
+    <div class="item">아이템1</div>
+    <div class="item">아이템2</div>
+    <div class="item">아이템3</div>
+    <div class="wrap">
+        <ul id="lst">
+            <li id="data1">데이터1</li>
+            <li id="data2">데이터2</li>
+            <li id="data3">데이터3</li>
+            <li id="data4">데이터4</li>
+        </ul>
+    </div>
+    <div id="canvas">
+    </div>
+    <script>
+    var btn1 = document.getElementById("btn1");
+    btn1.addEventListener("click", function(){ paragraphsConfirm(); });
+
+    function paragraphsConfirm() {
+        var paragraphs = document.getElementsByTagName("p");
+        for(var key in paragraphs){
+            alert(paragraphs[key].innerHTML);
+        }    
+    }
+
+    var btn2 = document.getElementById("btn2");
+    btn2.addEventListener("click", function(){ itemConfirm(); });
+    function itemConfirm(){
+        var items = document.getElementsByClassName("item");
+        for(var key in items){
+            alert(items[key].innerHTML);
+        }
+    }
+
+    //querySelector()는 하나의 요소만 선택시 사용, querySelectorAll()는 여러 요소를 선택시 사용
+    var btn3 = document.getElementById("btn3");
+    btn3.addEventListener("click", function(){ querySel(); });
+    function querySel(){
+        var li = document.querySelectorAll("#lst li");
+        for(var key in li){
+            alert(li[key].innerHTML);
+        }
+    }
+
+    var btn4 = document.getElementById("btn4");
+    btn4.addEventListener("click", function(){ addDom() });
+    function addDom(){
+        var canvas = document.getElementById("canvas");
+        var el = "<div class='box'>박스</div>";
+        canvas.innerHTML = canvas.innerHTML + el;
+    }
+
+    var btn5 = document.getElementById("btn5");
+    btn5.addEventListener("click", function(){ cssRuleSup() });
+    function cssRuleSup(){
+        var box = document.getElementsByClassName("box");
+        for(var idx in box) {
+            box[idx].style.color = 'red';
+            box[idx].style.backgroundColor = 'yellow';
+            box[idx].style.lineHeight = '100px';
+            box[idx].style.textAlign = 'center';
+            box[idx].style.width = "100px";
+            box[idx].style.height = "100px";
+        }
+    }
+
+    /*
+    var btn5 = $("html body #btn5");
+    $(btn5).click(function(){
+        $(".box").css({
+            "color":"red",
+            "background-color":"yellow",
+            "line-height":"100px"
+        });
+    });
+    */
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - 기입위치</title>
+    <script src="../jquery-3.6.0.js"></script>
+    <style>
+        h2 {line-height: 2.4; padding-top: 1em; transition-duration: 1.5s;}
+        .style1 { color:red; font-size: 60px; text-decoration: underline;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("h2").addClass("style1");
+        });
+    </script>
+</head>
+<body>
+    <h2>jQuery plugin</h2>
+    <p>jQuery가 제어할 요소(Element)보다 앞서 기재될 경우는 $(document).ready(function(){스크립트위치;}); 로 기술하며,
+        그보다 뒤에 기재될 경우는 "$(function(){스크립트위치; });"로 기재해야함
+    </p>
+    <script>
+        $(function(){
+            $("h2").css("padding-left","300px");
+        })
+    </script>
+</body>
+</html>

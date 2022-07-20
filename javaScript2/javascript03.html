@@ -14,12 +14,31 @@
     <button type="button" id="btn2" class="btn" onclick="openWindow2()">버튼2</button>
     <button type="button" id="btn3" class="btn" onclick="openWindow3()">버튼3</button>
     <button type="button" id="btn3" class="btn" onclick="openWindow4()">버튼4</button>
+    <button type="button" id="btn7" class="btn" onclick="javascript:history.back()">이전 페이지로</button>
+    <button type="button" id="btn8" class="btn" onclick="javascript:history.forward()">다음 페이지로</button>
+    <button type="button" id="btn9" class="btn" onclick="javascript:history.go(-2)">2페이지 전 페이지로</button>
+
+    <button type="button" id="btn10" class="btn" onclick="deviceConfirm()">모바일인지 데스크탑인지</button>
+    <button type="button" id="btn11" class="btn" onclick="browserConfirm()">어떤 브라우저 인지</button>
+    <button type="button" id="btn12" class="btn" onclick="screenSizeConfirm()">화면의 크기</button>
+    <button type="button" id="btn13" class="btn" onclick="browserSizeConfirm()">브라우저의 크기</button>
+
     <a href="javascript:closeWindow()" id="btn4" class="btn">닫기</a>
 
     <div>
         <a href="http://www.naver.com">현재 창에 네이버 열기</a>
         <a href="http://www.naver.com" target="_blank">새 창에 네이버 열기</a>
     </div>
+
+    <div id="parents">
+        자식에게 전달할 값 :
+        <input type="text" id="p_input" value=""/><br><br>
+        자식으로 부터 받은 값 : 
+        <input type="text" id="c_input" value=""/><br><br>
+        <input type="hidden" id="h_input" value="h_input"/><br><br>
+        <button type="button" id="btn4" onclick="sendChild()"> 자식창으로 값 전송</button>
+    </div>
+
     <select name="sel1" id="sel1" onchange="openApp()">
         <option value="">선택안함</option>
         <option value="http://www.naver.com">네이버</option>
@@ -27,12 +46,78 @@
         <option value="http://www.google.com">구글</option>
     </select>
     <script>
+        // 자식창으로
+        function openWindow4(){
+            win4 = window.open("child.html", "win4", "width=200, height=600");
+        }
+
+        function sendChild(){   //이게중요함
+            win4.document.getElementById("p_input").value = document.getElementById("p_input").value;
+        }
+
         var win5;
         function openApp(){
             var sel1 = document.getElementById("sel1").value;
             if(sel1!=""){
                 win5 = window.open(sel1,"child","width=300, height= 500");
             }
+        }
+        function deviceConfirm(){
+            if(isMobile()){
+                alert("모바일 기기 입니다.")
+            } else {
+                alert("데스크탑 기기 입니다.")
+            }
+        }
+        function isMobile(){
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        function browserConfirm(){
+            var agent = navigator.userAgent.toLowerCase();
+            var browserName;
+            // alert(agent);    이거는 브라우저의 상세정보까지 나옴
+            switch(true){
+                case agent.indexOf("edge") > -1:
+                    browserName = "IE Edge";
+                    break;
+
+                    case agent.indexOf("edg/") > -1:
+                    browserName = "Chrome base Edge";
+                    break;
+                
+                    case agent.indexOf("opr") > -1 && !!window.opr:
+                    browserName = "Opera";
+                    break;
+
+                    case agent.indexOf("chrome") > -1:
+                    browserName = "Chrome";
+                    break;
+
+                    case agent.indexOf("trident") > -1:
+                    browserName = "MS IE";
+                    break;
+
+                    case agent.indexOf("firefox") > -1:
+                    browserName = "Mozilla Firefox";
+                    break;
+
+                    case agent.indexOf("safari") > -1:
+                    browserName = "Safari";
+                    break;
+
+                    default :
+                        browserName = "other";
+            }
+            alert("당신의 브라우저는 "+browserName+"입니다.")
+        }
+
+        function screenSizeConfirm() {
+            alert("화면의 가로크기 : "+screen.width+"이며, 세로크기 : "+screen.height);
+        }
+
+        function browserSizeConfirm() {
+            alert("브라우저의 가로크기 : "+window.innerWidth+"이며, 세로크기 : "+window.innerHeight);
         }
     </script>
 
@@ -129,23 +214,7 @@
             win3 = window.open("http://www.naver.com", "win3", "width=200, height=600");
         }
 
-        // 자식창으로
-        function openWindow4(){
-            win4 = window.open("child.html", "win4", "width=200, height=600");
-        }
-
-        function sendChild(){   //이게중요함
-            win4.document.getElementById("p_input").value = document.getElementById("p_input").value;
-        }
-
     </script>
-        <div id="parents">
-            자식에게 전달할 값 :
-            <input type="text" id="p_input"/><br><br>
-            자식으로 부터 받은 값 : 
-            <input type="text" id="c_input"/><br><br>
-            <input type="hidden" id="h_input"/><br><br>
-            <button type="button" id="btn4" onclick="sendChild()"> 자식창으로 값 전송</button>
-        </div>
+
 </body>
 </html>

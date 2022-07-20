@@ -1,0 +1,161 @@
+.root {
+    font-family: sans-serif;
+}
+
+.root *,
+.root *:before,
+.root *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.root .wrapper {
+    width: 1140px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.root .clearfix:after {
+    content: " ";
+    clear: both;
+    display: table;
+}
+/* @root end */
+
+/* @cards1 start */
+.cards1 {
+    margin-bottom: 30px;
+}
+
+.cards1 .header {
+    margin-bottom: 25px;
+}
+
+.cards1 .header:after {
+    content: " ";
+    display: table;
+    clear: both
+}
+
+.cards1 .header .left {
+    float: left;
+}
+
+.cards1 .header .left>.title {
+    color: #262626;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.cards1 .header .left>.desc {
+    color: #6a6a6a;
+}
+
+.cards1 .header .right {
+    float: right;
+}
+
+.cards1 .header .right>button {
+    border: 1px solid #ddd;
+    background: none;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cards1 .header .right>button:hover {
+    background: #eee;
+}
+
+.cards1>.wrapper .cards {
+    margin: 0 -15px;
+}
+
+.cards1>.wrapper .cards:after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.cards1>.wrapper .cards .card {
+    float: left;
+    width: calc(100%/3);
+    margin-bottom: 15px;
+}
+
+.cards1>.wrapper .cards .card .inner1 {
+    padding: 0 15px;
+}
+
+.cards1>.wrapper .cards .card .inner1 .inner2 {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.cards1>.wrapper .cards .card .inner1 .inner2 .background {
+    cursor: pointer;
+    display: block;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    color: #fff;
+    position: relative;
+}
+
+.cards1>.wrapper .cards .card .inner1 .inner2 .texts {
+    padding: 15px;
+}
+
+.cards1>.wrapper .cards .card .inner1 .inner2 .texts .tag {
+    background: #146ece;
+    color: #fff;
+    font-size: 11px;
+    padding: 2.5px 5px;
+}
+
+.cards1>.wrapper .cards .card .inner1 .inner2 .texts .title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+}
+
+.cards1>.wrapper .cards .card .inner1 .inner2 .texts .desc {
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cards1>.wrapper .cards .card .inner1 .inner2 .texts .date {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
+}
+
+@media(max-width:991px) {
+    .cards1 .header .left>.title {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .cards1 .header .left>.desc {
+        display: block;
+    }
+
+    .cards1 .header .right>button {
+        margin-top: 21px;
+    }
+
+    .cards1>.wrapper .cards .card {
+        width: 100%;
+    }
+}
+/* @cards1 end */

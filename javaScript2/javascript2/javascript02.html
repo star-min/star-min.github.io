@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 함수와 메서드</title>
+</head>
+<body>
+    <button type="button" onclick="fnc1()" title="인라인이벤트">함수1</button><br><br>
+    <button type="button" id="btn2" name="btn2" title="아웃바운드이벤트">함수2</button>
+    <br><br>
+    <script>
+    //인라인 이벤트
+    function fnc1(){
+        alert("fnc1를 호출하였습니다.");
+    }
+    var fnc2 = function() { alert("fnc2를 호출하였습니다."); } 
+    //함수는 정의되고, 호출되어야지 실행됨   
+    var btn2 = document.getElementById("btn2");
+    btn2.addEventListener("click", function(){  //아웃바운드이벤트
+        fnc2();
+    });
+
+    function fn1(){ //매개변수와 반환값이 없는 함수
+        var con = prompt("데이터를 입력해주세요");
+        alert(con+"을 입력하셨습니다.");
+    }
+    //fn1();
+    function fn2(ko, en){ //매개변수가 있고, 반환값이 없는 함수
+        var tot = ko + en;
+        alert("총점 : "+tot);
+    }
+    //var kor = parseInt(prompt("국어 점수 입력"));
+    //var eng = parseInt(prompt("영어 점수 입력"));
+    //fn2(kor, eng);
+    function fn3(){ //매개변수가 없고, 반환값이 있는 함수
+        var kor = parseInt(prompt("국어 점수 입력"));
+        var eng = parseInt(prompt("영어 점수 입력"));
+        var tot = kor + eng;
+        return tot;
+    }
+    //alert("총점 : "+fn3());
+    var fn4 = function (ko, en){ //매개변수와 반환값이 모두 있는 함수
+        return ko+en;
+    }
+    //var kor = parseInt(prompt("국어 점수 입력"));
+    //var eng = parseInt(prompt("영어 점수 입력"));
+    //alert("총점 : "+fn4(kor, eng));
+
+    //메서드는 객체의 멤버이므로 정의시에는 객체 안에 function으로 정의되고,
+    //실행시에는 객체.메서드명() 으로 호출되어야 함.
+    var obj = { kor:0, 
+                eng:0,
+                setKor : function(){ this.kor = parseInt(prompt("국어점수 입력")); },
+                setEng : function(){ this.eng = parseInt(prompt("영어점수 입력")); },
+                getKor : function(){ return this.kor; },
+                getEng : function(){ return this.eng; },
+                method1:function(){ alert("총점 : "+(this.kor+this.eng)); },
+                method2:function(){ alert("평균 : "+((this.kor+this.eng)/2)); }
+            };
+    //obj.setKor();
+    //obj.setEng();
+    //obj.method1();
+    //obj.method2();
+    //document.write("<h2> 총점 : "+(obj.getEng()+obj.getKor())+"</h2>");
+    //var kk = obj;
+
+    //생성자 함수 : 객체를 만들기 위한 함수
+    function Student(name, jumsu){
+        this.name = name;
+        this.jumsu = jumsu;
+        this.alim = function() {
+            alert(this.name+"님의 점수는 "+this.jumsu+"점 입니다.");
+        }
+    }
+
+    var chojaeyoung = new Student("조재영", 20);
+    chojaeyoung.alim();
+    var kimdongyeop = new Student("김동엽", 40); 
+    kimdongyeop.alim();
+    </script>
+</body>
+</html>

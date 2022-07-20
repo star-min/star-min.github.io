@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { }
+    </style>
+</head>
+<body>
+    <h2>DOM(Document Object Model) : html 문서에 있는 태그를 제어하는 모델</h2>
+    <button type="button" id="btn1">p요소 알아보기</button>
+    <button type="button" id="btn2">item요소 알아보기</button>
+    <button type="button" id="btn3">querySelector 클래스 요소 알아보기</button>
+    <button type="button" id="btn4">요소 추가하기</button>
+    <input type="text" id="test1" > <!--값1-->
+    <input type="text" id="test2" > <!--값2-->
+    <button type="button" id="test" onclick="testOne()">곱하기</button>
+    <input type="text" id="test3" > <!--저장할곳-->
+    <p>김성민</p>
+    <p>양지은</p>
+    <p>장소이</p>
+    <p>오영선</p>
+    <div class="item">아이템1</div>
+    <div class="item">아이템2</div>
+    <div class="item">아이템3</div>
+    <div class="wrap">
+        <ul id="lst">
+            <li id="data1"></li>
+            <li id="data2"></li>
+            <li id="data3"></li>
+            <li id="data4"></li>
+        </ul>
+    </div>
+    <script>
+        
+        
+        var btn1 = document.getElementById("btn1");
+        btn1.addEventListener("click",function(){paragraphsConfirm()});
+        function paragraphsConfirm(){
+            var paragraphs = document.getElementsByTagName("p");
+            for(var key in paragraphs){
+                alert(paragraphs[key].innerHTML);
+            }
+        }
+        var btn2 = document.getElementById("btn2");
+        btn2.addEventListener("click",function(){paragraphsConfirm()});
+        function itemConfirm(){
+            var items = document.getElementsByClassName("itme");
+            for(var key in itmes){
+                alert(items[key].innerHTML)
+            }
+        }
+        
+        //querySelector()는 하나의 요소마 ㄴ선택시 사용, querySelectorAll() 는 여러 요소를 선택시 사용
+        var btn3 = document.getElementById("btn3");
+        btn3.addEventListener("click",function(){paragraphsConfirm()});
+        function querySel(){
+            var li = lst.querySelector("#lst li");
+            for(var key in li){
+                alert(li[key].innerHTML);
+            }
+        }
+
+        var btn4 = document.getElementById("btn4");
+        btn4.addEventListener("click",function(){addDom()});
+        function addDom(){
+            var canvas = document.getElementById("canvas");
+            var el = "<div class='box'>박스</div>";
+            canvas.innerHTML = canvas.innerHTML + el;
+        }
+
+        var btn5 = document.getElementById("btn5");
+        btn5.addEventListener("click",function(){cssRuleSup()});
+        function cssRuleSup(){
+            var box = document.getElementsByClassName("box");
+            for(var idx in box){
+                box[idx].style.color = 'red';
+                box[idx].style.backgroundColor = 'yellow';
+                box[idx].style.lineHeigth = '200px';
+            }
+        }
+
+        //jquery 라면
+        // $("#btn5").click(function(){
+        //     $(".box").css({
+        //         "color":"red",
+        //         "background.color":"yellow"
+        //     });
+        // });
+
+        var test1,test2,test3;
+
+        function testOne(){
+            document.getElementById("test3").value = 
+            document.getElementById("test1").value*
+            document.getElementById("test2").value;
+        }
+
+    </script>
+</body>
+</html>
