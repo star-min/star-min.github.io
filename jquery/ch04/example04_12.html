@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트의 모든 부모 엘리먼트 찾기</title>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  //b요소의 모든 조상요소를 선택하여 그 요소의 태그이름을 출력
+  var arr = [];
+  $("b").parents().each(function(index){
+    //$("b").append(this.tagName + ", ");
+    arr[index] = this.tagName;
+  });
+  //arr.sort();  -- 알파벳순으로 정렬
+  arr.reverse(); //거꾸로 뒤집기
+  for(var i=0;i<arr.length;i++){
+    $("b").append(arr[i]+", ");
+  }
+});
+</script>
+</head>
+<body>
+  <div>
+    <p>
+      <span> <b> 부모 엘리먼트 모두 검색 : </b> </span>
+    </p>
+  </div>
+</body>
+</html>

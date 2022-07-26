@@ -5,11 +5,18 @@
 <title>조건에 만족하는 짝수와 홀수에 위치한 엘리먼트에 스타일을 적용하기-:odd, :even</title>
 <style>
    table {   table-layout:auto;   width: 75%;}      
-}
 </style>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+   //td의 짝수 번째는 글자색을 빨강으로 변경
+   $("td:even").css("color","red");
+   //td의 홀수 번째는 배경색을 빨강으로 변경
+   $("td:odd").css("background-color", "red");
+   //$("td:odd").css("backgroundColor", "red");
+   //$("td:odd").css("background-color", "red").css("color","yellow").css("font-size","30px");  -> 메서드 연결법(Method Chainning)
+   //$("td:odd").css({"background-color":"red","color":"yellow","font-size":"30px"}); -> 속성 열거법(Attribute Enumeration)
+});
 </script>
 </head>
 <body>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  p,div,button { margin: 8px; font-size:20px;  }  
+  .red { color:red; } 
+  .green { color:green; } 
+  .blue { color:blue; } 
+</style>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    //hasClass()메서드에 의해 클래스 존재유무를 반환하는 경우 false는 반환하지 않음
+  //button을 누르면, 첫 번째 p요소에 red 클래스가 존재유무를 파악하여 #result1에 그 결과를 반환
+  //마지막 p요소에 red 클래스가 존재유무를 파악하여 #result2에 그 결과를 반환
+  //p요소에 red 클래스가 존재하는 요소의 개수를 #result3에 반환
+  $("button").click(function(){
+    $("#result1").append($("p:first").hasClass("red"));
+    $("#result2").append($("p:last").hasClass("red"));
+    $("#result3").append($("p.red").length);
+  });
+});
+</script>
+</head>
+<body>
+  <p class="red">찾고자 하는 색상을 빨간색으로 변경하는 클래스가 있는 문장</p> 
+  <p> 찾고자 하는 색상을 빨간색으로 변경하는 클래스가 없는 문장</p> 
+  <p class="red">찾고자 하는 색상을 빨간색으로 변경하는 클래스가 있는 문장</p> 
+   
+  <button>hasClass</button>
+	
+  <div id="result1">첫 문장은 빨간색으로 변경하는 클래스가 있는가?: </div> 
+  <div id="result2">마지막 문장은 빨간색으로 변경하는 클래스가 있는가?: </div> 
+  <div id="result3">빨간색으로 변경하는 클래스가 있는 문장이 하나라도 있는가: </div> 
+</body>
+</html>

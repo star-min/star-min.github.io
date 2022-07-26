@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>셀렉트된 엘리먼트들 중 원하는 범위의 엘리먼트만 반환하기</title>
+<style>
+div {
+	width: 60px; height: 60px;
+	margin: 5px; float: left;
+	border: 2px blue solid;
+}
+</style>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//button 을 누르면 div 요소에 배경색을 골드로 하고, 그 중에서 세 번째 요소부터 여섯 번째 요소까지는 테두리색을 빨강으로 설정
+	$("button").click(function(){
+		$("div").css("background","yellow").slice(2,6).css("border-color","red");
+		$("div").slice(3).each(function(index){
+			$(this).text(index+4);
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<div></div>	<div></div>	<div></div>	<div></div>
+	<div></div>	<div></div>	<div></div>	<div></div>	
+	<button> 노란색 입히기</button>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  p,div,button { margin: 8px; font-size:20px;  }  
+  .red { color:red; } 
+  .green { color:green; } 
+  .blue { color:blue; } 
+</style>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  //button을 누를 때마다 p요소에 red 클래스가 있으면, green 클래스로 교체
+  //green 클래스가 있으면, blue 클래스로 교체
+  //blue 클래스가 있으면, red 클래스로 교체,
+  //클래스가 없는 경우는 red 클래스를 추가
+  $("button").click(function(){
+    $("p").each(function(){
+      if($(this).hasClass("red")){ 
+        $(this).removeClass("red").addClass("green");
+      } else if($(this).hasClass("green")){
+        $(this).removeClass("green").addClass("blue");
+      } else if($(this).hasClass("blue")){
+        $(this).removeClass("blue").addClass("red");
+      } else {
+        $(this).addClass("red")
+      }
+    });
+  });
+});
+</script>
+</head>
+<body>
+  <p> 찾고자 하는 색상을 빨간색으로 변경하는 클래스가 없는 문장</p> 
+  <p class="red">찾고자 하는 색상을 빨간색으로 변경하는 클래스가 있는 문장</p> 
+   
+  <button>hasClass</button>
+	
+  <div id="result1">첫 문장은 빨간색으로 변경하는 클래스가 있는가?: </div> 
+  <div id="result2">마지막 문장은 빨간색으로 변경하는 클래스가 있는가?: </div> 
+  <div id="result3">빨간색으로 변경하는 클래스가 있는 문장이 하나라도 있는가: </div> 
+</body>
+</html>

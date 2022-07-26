@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - 연결하기</title>
+    <!-- 파일을 다운로드 받아 연결 -->
+    <script src="jquery-3.6.0.js"></script>
+    <!-- 파일을 다운로드 받지 않고 CDN 방식으로 연결 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
+    <!-- 항상 최신버전을 활용하는 CDN 방식 연결 -->
+    <!-- <script src="https://code.jquery.com/jquery-latest.js"></script> -->
+    <style>
+    h2 { color:#000; font-size:20px; padding-left:0px; transition-duration:2s; }    
+    </style>
+</head>
+<body>
+    <h2>jQuery plugin</h2>
+    <p>다운로드 연결 방식, CDN 연결 방식, 항상 최신버전 유지 방식</p>
+    <script>
+    $(function(){
+        $("h2").css({"color":"red","font-size":"80px","padding-left":"150px"});
+    });    
+    </script>
+</body>
+</html>

@@ -3,9 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>조건에 반대되는 엘리먼트 검색하기-:not()</title>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+   //jQuery는 기본이 AJax(비동기 처리)
+   //비동기 처리와 동기 처리
+   //동기 처리 : 화면 전체의 요소나 데이터가 모두 변경됨 => a태그로 다른 페이지로 이동되면, 모든 데이터와 요소가 문서가 다르므로 바뀌게 됨
+   //비동기 처리 : 하나의 문서 내에서 문서가 바뀌지 않고, 필요한 데이터나 화면만 변경됨
+   //체크박스가 체크되면, 해당 요소의 다음 span 요소의 글자색이 빨강, 체크가 해제되면, 해당 요소의 다음 span 요소의 글자색은 파랑으로 변경
+   $("input[type='checkbox']").click(function(){
+      $("input[type='checkbox']:checked + span").css("color", "red");
+      $("input[type='checkbox']:not(:checked) + span").css("color", "blue");
+   }).click();
+   //이벤트 트리거 : $(선택자).이벤트메서드(function(){ 이벤트내용; }).이벤트메서드() -> 이벤트 강제 발생
+});
 </script>
 </head>
 <body>

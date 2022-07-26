@@ -7,9 +7,17 @@
 div {  padding: 5px 5px 5px 5px }
 .item {  float: left;  width: 100px;  }
 </style>
-<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+    //아이디가 selectBtn인 버튼을 클릭하면, name이 hobby인 체크 박스에서 체크된 값을 아이디가 contents 곳에 출력
+    $("#selectBtn").click(function(){
+        $("#contents").html("결과 : ");
+        $(":checkbox:checked").each(function(){
+            $("#contents").append($(this).val()+", ");
+        });
+    }).click();
+});
 </script>
 </head>
 <body>
