@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 태그 내부의 HTML 콘텐츠 변경하기</title>
+<style>
+.red {  color: red;  }
+</style>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  //버튼을 클릭하면, 첫 번째 div요소에는 <span>첫 번째 박스</span>를 태그를 포함하여 출력
+  //마지막 div요소에는 <strong>두 번째 박스</strong>를 태그를 포함하여 출력
+  $("button").click(function(){
+    $("div:first").html("<span>첫 번째 박스</span>");
+    $("div:eq(1)").html("<strong>두 번째 박스</strong>");
+  });
+});
+</script>
+</head>
+<body>  
+  <button> 클릭 </button>
+  <div>내용1</div>
+  <div>내용2</div>
+</body>
+</html>

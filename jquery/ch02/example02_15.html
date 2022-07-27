@@ -7,9 +7,43 @@
    div { padding: 5px 5px 5px 5px }
     .item{float:left; width:100px; }
 </style>
-<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+   //아이디, 이름, 암호, 암호확인을 입력하고, #regBtn을 누르면
+   //데이터의 유효성을 검사하도록 하고, 그 데이터를 ajaxJoin.do로
+   //보내도록 하시오.
+   var pass = "no";
+   var source;
+   $(":button").click(function(){
+      $(":text, :password").each(function(){
+         if($(this).val()==""){
+            alert("입력 데이터가 비어 있습니다.");
+            return false;
+         } else {
+            pass = "yes";
+         }
+      });
+      if(pass=="yes"){
+         source = {
+            "id":$("#userId").val(),
+            "name":$("#userName").val(),
+            "name":$("#pwd").val()
+         };
+         $.ajax({
+            url:"ajaxJoin.do?member="+source,
+            type:"get",
+            dataType:"json",
+            success:function(res){
+               alert(res);
+            },
+            error:function(res, status, err){
+               alert(res+"가 "+err+"인해 정상적으로 처리되지 못했습니다.");
+            }
+         });
+      }
+   });
+});
 </script>   
 </head> 
 <body>

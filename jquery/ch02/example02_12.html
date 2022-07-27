@@ -7,9 +7,16 @@
 div { float: left;  }
 span { color: blue; }
 </style>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+   //li 요소에서 홀수 번째 마다 글자색을 파랑으로 함.
+   $("li:nth-child(odd)").css("color","blue");
+   //li 요소에서 짝수 번째 마다 글자색을 빨강으로 함.
+   $("li:nth-child(even)").css("color","red");
+   //li 요소에서 2번 째 요소마다 배경색을 하늘색으로 함.
+   $("li:nth-child(2)").css("background-color","skyblue");
+});
 </script>
 </head>
 <body>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  ul { float:left; margin:5px; font-size:16px; font-weight:bold; } 
+  p { color:blue; margin:10px 20px; font-size:16px; padding:5px;  
+      font-weight:bolder; } 
+  .yellow { background:yellow; } 
+</style>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("li").css("border-width", "2px").even().css("border-color", "red");
+  $("li").css("border-width", "2px").odd().css("border-color", "blue");
+  $("li").css("border-width", "2px").first().css("border-color", "grey");
+  $("li").css("border-width", "2px").last().css("border-color", "grey");
+  $("b").append($(".yellow").siblings().length);
+  $("b").append($(".yellow").siblings().text());
+});
+</script>
+</head>
+<body>
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li class="yellow">Three</li>
+    <li>Four</li>
+  </ul>
+  <ul>
+    <li>Five</li>
+    <li>Six</li>
+    <li>Seven</li>
+  </ul>
+  <ul>
+    <li>Eight</li>
+    <li class="yellow">Nine</li>
+    <li>Ten</li>
+    <li>Eleven</li>
+  </ul>
+  <p>
+    찾은 형제 엘리먼트의 개수: <b></b>
+  </p>
+</body>
+</html>

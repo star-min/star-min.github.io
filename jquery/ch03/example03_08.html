@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트에 클래스 존재 여부 확인하기</title>
+<style>
+  div{ width:100px;  height:100px;  border:1px solid #000000;
+       cursor: pointer;  margin: 4px;  float:left}	
+  .toggleStyle { background-color: blue;   color:white;}
+</style>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  //div요소를 클릭하면, 해당 div에 toggleStyle이 있으면, "해당 클래스가 존재함"의 알림창을 띄우고, 만약, 존재하지 않는다면, "해당 클래스 존재하지 않음"의 알림창을 띄우기
+  $("div").click(function(){
+    if($(this).hasClass("toggleStyle")){
+      alert("해당 클래스가 존재함");
+    } else {
+      alert("해당 클래스 존재하지 않음");
+    }
+  });
+});
+</script>
+</head>
+<body>
+   <div class="toggleStyle"> hasClass()는 선택된 엘리먼트에 
+                             해당 클래스가 </div>   
+   <div> 적용되어 있으면 true를 리턴하고</div>
+   <div> 아직 적용되어 있지 않으면 false를 리턴한다.</div>
+</body>
+</html>

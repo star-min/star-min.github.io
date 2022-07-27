@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트 집합들을 한 번에 처리하기</title>
+<style>
+img { height:300px; width:auto; }   
+</style>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+   //이미지 세 개를 준비하여 해당 요소에 각 각 반복문인 each를 활용하여 다른 이미지를 적용하고, 대체 텍스트와 타이틀 속성을 부여하기
+   $("img").each(function(index){
+      var tit = ["명수","여자","블랙"];
+      $(this).attr({
+         src:"img"+(index+1)+".jpg",
+         alt:"사진"+(index+1),
+         title:tit[index]
+      });
+   });
+});
+</script>
+</head>
+<body>
+   <center>
+      <img /> <img /> <img /> 
+   </center>
+</body>
+</html>

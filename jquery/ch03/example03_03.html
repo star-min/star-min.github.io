@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 어트리뷰트 값을 콜백 함수에서 얻어 와서 설정하기</title>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+   //해당 이미지 요소의 title 속성을 src 속성과 alt 속성으로 설정될 수 있도록 할 것.
+   $("img").each(function(){
+      $(this).attr({
+         src:$(this).attr("title"),
+         alt:$(this).attr("title")
+      });
+   });
+});
+</script>
+</head>
+<body>
+<center>
+   <img title="img1.jpg"/>  
+   <img title="img2.jpg"/>  
+   <img title="img3.jpg"/>  
+</center>
+</body>
+</html>
