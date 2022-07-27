@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>필요 없는 이벤트 제거하기 </title>
+<style type="text/css">
+img{ 
+   width: 140px; height: auto;		
+}
+</style>
+<script type="text/javascript" src="../jquery-3.6.0.js"></script>
+<script type="text/javascript">
+$(function(){
+   var n=0;
+   $("img").on("click", function(event){
+      n++;
+      if(n>3){
+         $(event.target).off();
+         alert("그만 키우세요~! 이미지 깨져요~!");
+      } else {
+         $(event.target).width($(event.target).width()*1.5);
+      }
+   });
+});
+</script>
+</head>
+<body>   
+   <img src="image02.jpg">
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 객체</title>
+<style type="text/css">
+img{ 
+   width: 140px; height: auto;		
+}
+</style>
+<script type="text/javascript" src="../jquery-3.6.0.js"></script>
+<script type="text/javascript">
+$(function(){
+   $("img").on({
+      click:function(event){ $(event.target).width($(event.target).width()*1.5);},
+      mouseout:function(event){ $(event.target).width($(event.target).width()/1.5);}
+   })
+})
+</script>
+</head>
+<body>   
+   <img src="image02.jpg">
+</body>
+</html>

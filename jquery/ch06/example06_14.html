@@ -1,0 +1,82 @@
+<!doctype html><html lang="ko"><head>
+    <meta charset="UTF-8">
+    <title>jQuery 이벤트13 - 개별이벤트메서드 scroll(), 개별이벤트로 사용하지 못하는 이벤트 mousewheel</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body, html { width: 100%; -ms-scroll-style:none; }
+        body { overflow:auto; }
+        ::-webkit-scrollbar { display:none; }    
+        .page { clear:both; background-repeat: no-repeat; background-size:cover;
+            background-position: center center;  overflow:hidden;
+        box-sizing:border-box; }    
+        .page_wrap { width:94%; height:100vh; margin:0 auto; overflow:hidden;
+        box-sizing:border-box; } 
+            
+        #page1 { background-image:url("1.jpg"); }
+        #page2 { background-image:url("2.jpg"); }
+        #page3 { background-image:url("3.jpg"); }    
+        #page4 { background-image:url("4.jpg"); }  
+        .page_title { margin-top: -300px; opacity:0; text-align:center; line-height: 3; color:#fff; transition:0.5s; font-size:60px; }
+        .page.on .page_title { margin-top: 0; opacity:1; }
+        .page_top_btn { position:fixed; right:30px; bottom:120px; z-index:999;
+            color:#fff; background:#333; width:48px; height: 48px; border-radius:25px; 
+            line-height: 48px; font-size:20px; text-align:center; }    
+        </style>
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(function(){
+                var p = $(".page");
+                var cur = 0;
+                var ofs = new Array();
+                var pos = new Array();
+                var ht = new Array();
+                var k = $(window).height();
+                p.each(function(){
+                    ofs = $(this).offset();
+                    pos = ofs.top;
+                });
+                p.on("mousewheel DOMMouseScroll"), function(e){
+                    var idx = $(this).index();
+                    p.eq(idx+1).addClass("on");
+                    p.eq(idx+1).siblings().removeClass("on");
+                    var oe = e.originalEvent;
+                    var sc = $(window).scrollTop();
+                    if(oe.wheelDelta < 0){
+                        $("body, html").not(":animated").animate({"scrollTop":sc+k});
+                    } else {
+                        $("body, html").not(":animated").animate({"scrollTop":sc-k});
+                    }
+                };
+            });
+        </script>
+    </head>
+    <body>
+    <div class="page on" id="page1">
+        <div class="page_wrap">
+            <h2 class="page_title">페이지1</h2>
+            <figure class="page_pic"><img src="" alt=""></figure>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <div class="page_wrap">
+            <h2 class="page_title">페이지2</h2>
+            <figure class="page_pic"><img src="" alt=""></figure>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <div class="page_wrap">
+            <h2 class="page_title">페이지3</h2>
+            <figure class="page_pic"><img src="" alt=""></figure>
+        </div>
+    </div>
+    <div class="page" id="page4">
+        <div class="page_wrap">
+            <h2 class="page_title">페이지4</h2>
+            <figure class="page_pic"><img src="" alt=""></figure>
+        </div>
+    </div>
+    <div class="page_top_btn">
+        <span class="txt">↑</span>
+    </div>
+</body>
+</html>

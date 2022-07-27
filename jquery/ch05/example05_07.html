@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <title>해당 엘리먼트를 원하는 엘리먼트로 바꾸기</title>
 <style>
-*{   margin:10px;   paddinag:0px 30px;    width: 100px;  }
+*{   margin:10px;   padding:0px 30px;    width: 100px;  }
 .border { border: 2px solid red;  }
 </style>
-<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+  //$("<div class='border'>Border</div>").replaceAll(".box");
+  $(".box").replaceWith("<div class='border'>Border</div>");
+});
 </script>
 </head>
 <body>	

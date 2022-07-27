@@ -13,7 +13,10 @@ $(document).ready(function(){
    var car = ["BMW", "제네시스", "롤스로이스", "랜드로버"];
 
    for(var i=0;i<fr.length;i++){
-      $("#fruit_list").append("<li>"+fr[i]+"</li>");
+      $("#fruit_list").prepend("<li>"+fr[i]+"</li>");
+   };
+   for(var i=0;i<car.length;i++){
+      $("<li>"+car[i]+"</li>").prependTo("#car_list");
    };
 });
 </script>

@@ -10,9 +10,14 @@ div{ width: 70px; height: 50px;
 }
 span { display :block }
 </style>
-<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+     $("#result1").html("너비 : "+$("div").outerWidth(true)+
+     ", 높이 : "+$("div").outerHeight(true));
+     //$("#result1").html("너비 : "+$("div").outerWidth()+
+     //", 높이 : "+$("div").outerHeight());
+});
 </script>
 </head>
 <body>

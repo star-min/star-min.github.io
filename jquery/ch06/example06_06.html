@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클릭할 때마다 서로 다른 동작함수 호출하기</title>
+<style type="text/css">
+img{ 
+   width: 200px; height: auto;		
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.0.js"></script>
+<script type="text/javascript">
+$(function(){
+   $("div").toggle(
+      function(event){ $(event.target).css({"background":"#669933","width":"400px"})},
+      function(event){ $(event.target).css({"background":"#993366","width":"200px"})},
+      function(event){ $(event.target).css({"background":"#33cc99","width":"300px"})},
+      function(event){ $(event.target).css({"background":"#aa33cc","width":"250px"})},
+   );
+});
+</script>
+</head>
+<body>
+	<img src="image02.jpg">
+   <div>버튼</div>
+</body>
+</html>

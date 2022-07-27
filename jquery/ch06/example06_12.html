@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>콤보 박스에서 선택한 과일 그림 출력하기</title>
+<style type="text/css">
+img{ 
+   width: 400px; height: auto; margin-left: 50px;		
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+//이벤트 메서드
+//마우스 관련
+//click, dblclick, 
+//hover, mouseover, mouseenter
+//mouseout, mouseleave, mousemove
+//mousewheel(DOMMouseScroll), scroll, contextmenu
+//키보드 관련 - keyup, keypress
+//창 또는 문서 관련 - load, ready, resize
+//폼 관련 - focus, blur, change, select, submit
+$(document).ready(function(){
+	$("#sel").change(function(){
+		$("#img").attr("src", $(this))
+	})
+});
+
+</script>
+</head>
+<body>
+	<form name="frm">
+		<table>
+			<tr>
+				<td>
+					<select id="sel">
+							<option value="image01" selected>딸기
+							<option value="image02">바나나
+					</select>
+				</td>
+				<td><img id="img"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

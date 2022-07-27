@@ -1,0 +1,81 @@
+<!doctype html><html lang="ko"><head>
+    <meta charset="UTF-8">
+    <title>jQuery 이벤트13 - 개별이벤트메서드 scroll(), 개별이벤트로 사용하지 못하는 이벤트 mousewheel</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body, html { width: 100%; -ms-scroll-style:none; }
+        body { overflow:auto; }
+        ::-webkit-scrollbar { display:none; }    
+        .page { clear:both; background-repeat: no-repeat; background-size:cover;
+            background-position: center center;  overflow:hidden;
+        box-sizing:border-box; }    
+        .page_wrap { width:94%; height:100vh; margin:0 auto; overflow:hidden;
+        box-sizing:border-box; } 
+            
+        #page1 { background-image:url("1.jpg"); }
+        #page2 { background-image:url("2.jpg"); }
+        #page3 { background-image:url("3.jpg"); }    
+        #page4 { background-image:url("4.jpg"); }  
+        .page_title { margin-top: -300px; opacity:0; text-align:center; line-height: 3; color:#fff; transition:0.5s; font-size:60px; }
+        .page.on .page_title { margin-top: 0; opacity:1; }
+        .page_top_btn { position:fixed; right:30px; bottom:120px; z-index:999;
+            color:#fff; background:#333; width:48px; height: 48px; border-radius:25px; 
+            line-height: 48px; font-size:20px; text-align:center; }    
+        </style>
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <script src="./jquery.easing.min.js"></script>
+        <script>
+          $(document).ready(function(){        
+      //휠로 스크롤 할 때마다 한 페이지씩 스크롤 되도록 하고, 클래스가 pageNum인 곳에 현재 페이지번호가 변경되어 출력되도록 구현
+        var ht = parseInt($(window).height());
+        var n=1;
+        $(window).on("mousewheel", function(e){
+            if(e.originalEvent.wheelDelta < 0){
+                $("body, html").not(":animated").animate({scrollTop:"+="+ht+"px"}, 500, 'easeOutQuad');
+            } else {
+                $("body, html").not(":animated").animate({scrollTop:"-="+ht+"px"}, 500, 'easeOutQuad');
+            }
+        });
+        $("body").scroll(function(){
+            var sc_top = parseInt($("body").scrollTop()); 
+            n = parseInt(sc_top/(ht-5))+1;
+            if(n==4){ $("#ft").fadeIn(); } 
+            else { $("#ft").fadeOut(); }
+            $(".pageNum").text(n);
+            $(".page").eq(n-1).addClass("on");
+            $(".page").eq(n-1).siblings().removeClass("on");
+        });
+    });
+
+        </script>
+    </head>
+    <body>
+    <div class="page on" id="page1">
+        <div class="page_wrap">
+            <h2 class="page_title">페이지1</h2>
+            <figure class="page_pic"><img src="" alt=""></figure>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <div class="page_wrap">
+            <h2 class="page_title">페이지2</h2>
+            <figure class="page_pic"><img src="" alt=""></figure>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <div class="page_wrap">
+            <h2 class="page_title">페이지3</h2>
+            <figure class="page_pic"><img src="" alt=""></figure>
+        </div>
+    </div>
+    <div class="page" id="page4">
+        <div class="page_wrap">
+            <h2 class="page_title">페이지4</h2>
+            <figure class="page_pic"><img src="" alt=""></figure>
+        </div>
+    </div>
+    <div class="page_top_btn">
+        <span class="txt">↑</span>
+    </div>
+</body>
+</html>

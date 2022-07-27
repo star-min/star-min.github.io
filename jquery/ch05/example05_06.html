@@ -12,9 +12,11 @@
 	width: 60px;
 }
 </style>
-<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+	$("p").wrap("<div class='border'></div>");
+});
 </script>
 </head>
 <body>

@@ -6,9 +6,12 @@
 <style type="text/css">
 span { display:block; }
 </style>
-<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+   // $("b").appendTo($("span"));
+    $("span").append($("b").clone());
+});
 </script>
 </head>
 <body>   

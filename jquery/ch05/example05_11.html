@@ -11,7 +11,10 @@ div.abs{ width: 50px; height: 50px; position: absolute;
 </style>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+     var st = $(".abs").offset();
+     $("#result").html("x : "+st.left+", y :"+st.top);
+});
 </script>
 </head>
 <body>
