@@ -6,13 +6,14 @@
 <style>
 	span {  color: blue; }
 </style>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	//button 을 누르면 div 요소는 배경색을 골드로 하고, 그 자식인 span요소에는 빨간색 border를 지정
 	$("button").click(function(){
-		$("div").css("background-color", "gold").children("span").css("border","2px solid red");
+		$("div").css("background","gold").children("span").css("border","2px solid red");
 	});
-})
+});
 </script>
 </head>
 <body>

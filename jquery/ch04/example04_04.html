@@ -8,14 +8,17 @@ div {
 	width: 60px; height: 60px;
 	margin: 5px; float: left;
 	border: 2px blue solid;
-	
 }
 </style>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	//button 을 누르면 div 요소에 배경색을 골드로 하고, 그 중에서 세 번째 요소부터 여섯 번째 요소까지는 테두리색을 빨강으로 설정
 	$("button").click(function(){
-		$("div").css("background-color", "yellow").slice(2,6).css("background-color", "red");
+		$("div").css("background","yellow").slice(2,6).css("border-color","red");
+		$("div").slice(3).each(function(index){
+			$(this).text(index+4);
+		});
 	});
 });
 </script>

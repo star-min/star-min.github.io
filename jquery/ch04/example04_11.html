@@ -9,13 +9,19 @@
       font-weight:bolder; } 
   .yellow { background:yellow; } 
 </style>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-  $("li").css("border-width", "2px").even().css("border-color", "red");
-  $("li").css("border-width", "2px").odd().css("border-color", "blue");
-  $("li").css("border-width", "2px").first().css("border-color", "grey");
-  $("li").css("border-width", "2px").last().css("border-color", "grey");
+	//li의 요소에 테두리를 2px 지정하고, li의 짝수 번째 요소는 테두리 색을 빨강으로 하며, => even()
+  $("li").css("border-width","2px").even().css("border-color","red");
+  //홀수 번째 요소는 테두리 색을 파랑으로 함 => odd()
+  $("li").css("border-width","2px").odd().css("border-color","blue");
+  //li의 첫 번째 요소들은 배경색을 회색으로 함. => first()
+  $("li").css("border-width","2px").first().css("background","grey");
+  //li의 마지막 요소들은 배경색을 핑크로 함. => last()
+  $("li").css("border-width","2px").last().css("background","pink");
+  //yellow 클래스의 형제 들의 개수를 b요소에 추가 => siblings()
+  //siblings = sister+brother = prevAll+nextAll
   $("b").append($(".yellow").siblings().length);
   $("b").append($(".yellow").siblings().text());
 });

@@ -4,27 +4,28 @@
 <meta charset="UTF-8">
 <title>셀렉트된 엘리먼트들 중에서 조건에 맞는 엘리먼트 얻기</title>
 <style>
-div {
+div, p {
 	width: 60px; height: 60px;
 	margin: 5px; float: left;
 	border: 2px white solid;
 }
 </style>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
-		
-	})
+$(document).ready(function(){
+	//div 요소에 배경색을 골드로 하고, 그 중에서 middle 클래스가 있는 요소는 테두리색을 빨강으로 설정
+	$("div").css("background","gold").filter(".middle").css("border-color","red");
+});
 </script>
 </head>
 <body>
 	<div id="first"></div>	
-
+	<p class="middle">p</p>
 	<div id="second" class="middle"></div>
 	<div id="third"  class="middle"></div>
 	<div id="fourth"  class="middle"></div>
 	<div id="fifth"  class="middle"></div>
-	
+	<p class="middle">p</p>
 	<div id="sixth"></div> 
 </body>
 </html>

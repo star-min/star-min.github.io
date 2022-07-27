@@ -13,9 +13,10 @@ div, span {
 .after { background: pink } 
 .selected {border: 5px blue solid;}
 </style>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	//button 을 누르면 아이디가 first 요소는 selected 클래스를 부여하고, 그의 동생(바로 다음) 요소에는 글자색을 빨강으로 하고, 그 요소의 모든 동생요소들에게는 after 클래스를 부여
 	$("button").click(function(){
 		$("#first").addClass("selected").next().css("color","red").nextAll().addClass("after");
 	});
