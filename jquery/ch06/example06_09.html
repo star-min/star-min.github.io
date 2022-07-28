@@ -9,22 +9,22 @@ div{ width: 70px; height: 50px; float:left;
      margin: 5px
 }
 </style>
-<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(function(){
    $("div").mousedown(function(){
-      $(this).css("background-color", "blue");
+      $(this).css("background-color","blue");
    });
    $("div").mouseup(function(){
-      $(this).css("background-color", "red");
-   })
-   $("div").mouseup(function(){
-      $(this).css("background-color", "red");
-   })
-   $("div").mouseup(function(){
-      $(this).css("background-color", "red");
-   })
-})
+      $(this).css("background-color","red");
+   });
+   $("div").mouseenter(function(){ //mouseover, hover
+      $(this).css("background-color","yellow");
+   });
+   $("div").mouseleave(function(){ //mouseout
+      $(this).css("background-color","green");
+   });
+});
 </script>
 </head>
 <body>   

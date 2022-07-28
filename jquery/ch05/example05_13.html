@@ -10,13 +10,13 @@ div{ width: 70px; height: 50px;
 }
 span { display :block }
 </style>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-     $("#result1").html("너비 : "+$("div").outerWidth(true)+
-     ", 높이 : "+$("div").outerHeight(true));
-     //$("#result1").html("너비 : "+$("div").outerWidth()+
-     //", 높이 : "+$("div").outerHeight());
+     //아이디가 result1인 요소에 마진이 포함되지 않은 너비와 높이를 계산하여 출력
+     $("#result1").html("너비 : "+$("div").outerWidth()+", 높이 : "+$("div").outerHeight());
+     //아이디가 result2인 요소에 마진이 포함된 너비와 높이를 계산하여 출력
+     $("#result2").html("너비 : "+$("div").outerWidth(true)+", 높이 : "+$("div").outerHeight(true));
 });
 </script>
 </head>

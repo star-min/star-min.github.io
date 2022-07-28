@@ -5,12 +5,13 @@
 <title>필요 없는 이벤트 제거하기 </title>
 <style type="text/css">
 img{ 
-   width: 140px; height: auto;		
+   width: 140px; height:auto;		
 }
 </style>
-<script type="text/javascript" src="../jquery-3.6.0.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(function(){
+   //이미지를 클릭하면, 클릭된 이미지에 대하여 2배 커지도록 하되, 3번 까지만 이벤트가 작동되고, 그 이후에는 이벤트가 작동되지 않도록 함. - event.target(이벤트 타겟), on/off, bind/unbind
    var n=0;
    $("img").on("click", function(event){
       n++;
@@ -18,13 +19,13 @@ $(function(){
          $(event.target).off();
          alert("그만 키우세요~! 이미지 깨져요~!");
       } else {
-         $(event.target).width($(event.target).width()*1.5);
+         $(event.target).width($(event.target).width()*2);
       }
    });
 });
 </script>
 </head>
 <body>   
-   <img src="image02.jpg">
+   <img src="image3.jpg">
 </body>
 </html>

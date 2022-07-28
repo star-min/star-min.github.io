@@ -3,9 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>포커스를 받으면 글씨 지우고 포커스를 잃으면 글씨 나타내기</title>
-<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript">
-
+$(function(){
+	$("#ID").focus(function(event){
+		$(event.target).val("").css("color","#333");
+	});
+	$("#ID").blur(function(event){
+		if($(event.target).val()==""){
+			$(event.target).val("아이디 입력").css("color","#f00");
+		} else {
+			$(event.target).css("color","blue");
+			alert($(event.target).val()+"이 입력되었습니다.");
+		}
+	}); //focus(), blur(), change(), select(), submit();
+});
 </script>
 </head>
 <body>

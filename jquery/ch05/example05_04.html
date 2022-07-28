@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>해당 엘리먼트에 형제 엘리먼트로 추가하기</title>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+    //header의 동생으로 "<main id='content'>콘텐츠</main>"를 추가 - after, insertAfter
+    //footer의 형으로 "<main id='content'>콘텐츠</main>"를 추가 - before, insertBefore
     $("header").after("<main id='content'>콘텐츠</main>");
-    $("footer").before("<main id='content'>콘텐츠</main>");
-})
+});
 </script>
 </head>
 <body>  

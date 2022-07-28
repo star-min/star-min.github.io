@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <title>일회성 이벤트 만들기</title>
 <style type="text/css">
-img{ 
-   width: 140px; height: auto;		
+img { 
+   width: 140px; height:auto;		
 }
 </style>
-<script type="text/javascript" src="../jquery-3.6.0.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+   //이미지를 클릭하면, 이미지가 두 배로 커지되 한 번만 동작되도록 할 것. - one
    $("img").one("click", function(){
       $(this).width($(this).width()*2);
    });
@@ -18,6 +19,6 @@ $(document).ready(function(){
 </script>
 </head>
 <body>   
-   <img src="image01.jpg">
+   <img src="image3.jpg">
 </body>
 </html>

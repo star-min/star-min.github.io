@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <title>이벤트 위임하기</title>
 <style type="text/css">
- p { background:forestgreen; font-weight:bold; 
+ p { background:yellow; font-weight:bold; 
      cursor:pointer; padding:5px; } 
 </style>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.0.js"></script>
 <script type="text/javascript">
 $(function(){
+    //이벤트 위임(전가 또는 상속) : 이벤트에 의해 발생된 요소에게도 이벤트가 작동되도록 하는 것
     $("p").live("click", function(){
         $(this).after("<p>new append Paragraph~!</p>");
     });

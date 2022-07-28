@@ -4,23 +4,61 @@
 <meta charset="UTF-8">
 <title>마우스가 움직인 곳의 위치 알아내기</title>
 <style type="text/css">
-div{ width: 200px; height: auto; 
+div{ width: 200px; height: 150px; 
      background-color: red; cursor: pointer;
      margin: 30px
 }
 </style>
-<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(function(){
-   $("div").mouseover(function(){
-      
-   })
+   //div의 요소 안에서 마우스 포인터가 움직이면, 그 곳의 가로 위치와 세로 위치를 client 기반의 위치 값으로 표시할 것. - mousemove
+   // p의 첫 요소에 브라우저를 기준으로 하는 마우스포인터의 좌표값(x축, y축) 값을 표시
+   // p.middel 요소에 화면을 기준으로 하는 마우스포인터의 좌표값(x축, y축) 값을 표시
+   // p의 마지막 요소에 페이지를 기준으로 하는 마우스포인터의 좌표값(x축, y축) 값을 표시
+   $("div").mousemove(function(event){
+      $("p:first").html("브라우저를 기준으로 하는 좌표값 ("+event.clientX+","+event.clientY+")");
+      $("p.middle").html("화면을 기준으로 하는 좌표값 ("+event.screenX+","+event.screenY+")");
+      $("p:last").html("페이지를 기준으로 하는 좌표값 ("+event.pageX+","+event.pageY+")");
+   });
+// 1. clientX, clientY
+// 위 메서드는 클라이언트 영역 내의 가로,세로 좌표를 제공합니다. 여기서 클라이언트 영역은 현재 보이는 브라우저 화면이 기준이 됩니다.
+
+// clientX : 브라우저 페이지에서의 X좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+// clientY : 브라우저 페이지에서의 Y좌표 위치를 반환하나 스크롤은 무시하고 해당 페이지의 상단을 0으로 측정합니다.
+
+// 2. offsetX, offsetY
+// 위 메서드는 이벤트 대상이 기준이 됩니다. ( 화면 중간에 있는 박스 내부에서 클릭한 위치를 찾을 때 해당 박스의 왼쪽 모서리 좌표가 0이됩니다. 화면의 기준이 아닙니다)
+// 전체 문서를 기준으로 합니다(스크롤 화면 포함)
+// offsetX : 이벤트 대상 객체에서의 상대적 마우스 x좌표 위치를 반환합니다.
+// offsetY : 이벤트 대상 객체에서의 상대적 마우스 y좌표 위치를 반환합니다.
+
+// 3. pageX, pageY
+// 위 메서드는 전체 문서를 기준으로 x,y 좌표를 반환 합니다. 스크롤 화면을 포함해서 측정합니다.
+// pageX : 해당 페이지에서의 x좌표 위치를 반환합니다.
+// pageY : 해당 페이지에서의 Y좌표 위치를 반환합니다.
+
+// 4. screenX, screenY
+// 위 메서드는 모니터 화면을 기준으로 좌표를 제공합니다. 여기서 중요한 점은 브라우저 화면이 아니라 자신의 모니터 화면 전체를 기준으로 좌표를 측정한다는 점입니다.
+// screenX : 전체 모니터 스크린에서의 x좌표 위치를 반환합니다.
+// screenY :전체 모니터 스크린에서의 y좌표 위치를 반환합니다.
+
 });
+//이벤트 메서드
+//마우스 관련
+//click, dblclick, 
+//hover, mouseover, mouseenter
+//mouseout, mouseleave, mousemove
+//mousewheel(DOMMouseScroll), scroll, contextmenu
+//키보드 관련 - keyup, keypress
+//창 또는 문서 관련 - load, ready, resize
+//폼 관련 - focus, blur, change, select, submit
 </script>
 </head>
 <body>   
    <div></div> 
    <p></p>
+   <p class="middle"></p>
    <p></p>
 </body>
 </html>

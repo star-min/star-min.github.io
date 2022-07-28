@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <title>이벤트 객체</title>
 <style type="text/css">
-img{ 
-   width: 140px; height: auto;		
-}
+img { width: 140px; height:auto; }
 </style>
-<script type="text/javascript" src="../jquery-3.6.0.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(function(){
+   //img를 클릭하면, 클릭할 때 마다 1.5배 커지며,
+   //마우스 포인터가 빠져 나오면, 1.5배로 작아지는 이벤트를 작성 - event.target 객체와 on 메서드  활용
    $("img").on({
-      click:function(event){ $(event.target).width($(event.target).width()*1.5);},
-      mouseout:function(event){ $(event.target).width($(event.target).width()/1.5);}
-   })
-})
+      click:function(event){ $(event.target).width($(event.target).width()*1.5); },
+      mouseout:function(event){ $(event.target).width($(event.target).width()/1.5); }
+   });
+});
 </script>
 </head>
 <body>   
-   <img src="image02.jpg">
+   <img src="image3.jpg">
 </body>
 </html>

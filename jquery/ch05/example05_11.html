@@ -9,9 +9,10 @@ div.abs{ width: 50px; height: 50px; position: absolute;
      cursor: pointer;
 }
 </style>
-<script type="text/javascript" src="../js/jquery.js"></script>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	//abs클래스 요소의 위치값을 아이디가 result인 곳에 출력 - offset(), top, left
      var st = $(".abs").offset();
      $("#result").html("x : "+st.left+", y :"+st.top);
 });

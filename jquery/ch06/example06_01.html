@@ -3,29 +3,25 @@
 <head>
 <style type="text/css">
 ul { float:left; margin:30px}
-img { width: 400px;}
+img { width:400px; }
 </style>
 <meta charset="UTF-8">
 <title>DOM 엘리멘트에 이벤트 적용하기</title>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-   // $("li").click(function(){
-   //    $(this).find("a").attr("src", $(this).find("a").attr("href"));
-   //    $(this).find("a").attr("href", "javascript:none");
-   //    $("img").attr("src", $(this).find("a").attr("src"));
-   // });
+   //사진 image3.jpg와 image4.jpg를 준비
+   //li안의 a요소에 마우스 포인터를 올리면, 선택된 a요소의 href의 내용을 img src로 전달하여 해당 이미지가 나올 수 있도록 할 것.
    $("li a").on("mouseover", function(){
-      $("img").attr("src", $(this).attr("href")).css("display", "none").
-      delay(200).fadeIn(800);
-   )};
+      $("img").attr("src", $(this).attr("href")).css("display","none").delay(200).fadeIn(800);
+   });
 });
 </script>
 </head>
 <body>   
    <ul>
-   <li> <a href="image01.jpg"> 유나 사진 </a> </li>
-   <li> <a href="image02.jpg"> 예지 사진 </a> </li>
+   <li> <a href="image3.jpg"> 똘이 사진 </a> </li>
+   <li> <a href="image4.jpg"> 을이 사진 </a> </li>
    </ul>
    <img>
 </body>

@@ -7,9 +7,11 @@
 *{   margin:10px;   padding:0px 30px;    width: 100px;  }
 .border { border: 2px solid red;  }
 </style>
-<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+  //추가(자식-append/prepend,형제-before/after,부모-wrap), 복제(clone), 제거(remove), 비우기(empty), 교체(replace) -> DOM 조작 메서드
+  //box클래스 요소를 border클래스 요소로 변경 - replaceAll, replaceWith
   //$("<div class='border'>Border</div>").replaceAll(".box");
   $(".box").replaceWith("<div class='border'>Border</div>");
 });

@@ -12,9 +12,10 @@
     #result2 { width:100px; height:200px; position:fixed;
     right:50px; top:100px; z-index:999; background-color: deeppink; }
 </style>
-<script type="text/javascript" src="jquery.js"></script>
+<script src="jquery-3.6.0.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+  //아이디가 result2인 곳에 현재 창에서 스크롤한 량을 측정하여 출력
   $(window).scroll(function(){
     var wd = $("body, html").scrollLeft();
     var ht = $("body, html").scrollTop();
@@ -27,8 +28,7 @@ $(document).ready(function(){
     var sY = event.screenY;
     var cX = event.clientX;
     var cY = event.clientY;
-    $("#result").html("페이지 기준 위치 : "+"x-"+pX+", y-"+pY+"<br>화면 기준 위치 : x-"
-    +sX+", y-"+sY+"<br>브라우저 기준 위치 : x-"+cX+", y-"+cY);
+    $("#result").html("페이지 기준 위치 : "+"x-"+pX+", y-"+pY+"<br>화면 기준 위치 : x-"+sX+", y-"+sY+"<br>브라우저 기준 위치 : x-"+cX+", y-"+cY);
   });
 });
 </script>

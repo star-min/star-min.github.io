@@ -12,10 +12,10 @@
         .page_wrap { width:94%; height:100vh; margin:0 auto; overflow:hidden;
         box-sizing:border-box; } 
             
-        #page1 { background-image:url("1.jpg"); }
-        #page2 { background-image:url("2.jpg"); }
-        #page3 { background-image:url("3.jpg"); }    
-        #page4 { background-image:url("4.jpg"); }  
+        #page1 { background-image:url("im1.jpg"); }
+        #page2 { background-image:url("im2.jpg"); }
+        #page3 { background-image:url("im3.jpg"); }    
+        #page4 { background-image:url("im4.jpg"); }  
         .page_title { margin-top: -300px; opacity:0; text-align:center; line-height: 3; color:#fff; transition:0.5s; font-size:60px; }
         .page.on .page_title { margin-top: 0; opacity:1; }
         .page_top_btn { position:fixed; right:30px; bottom:120px; z-index:999;
@@ -24,30 +24,30 @@
         </style>
         <script src="https://code.jquery.com/jquery-latest.js"></script>
         <script>
-            $(function(){
-                var p = $(".page");
-                var cur = 0;
-                var ofs = new Array();
-                var pos = new Array();
-                var ht = new Array();
-                var k = $(window).height();
-                p.each(function(){
-                    ofs = $(this).offset();
-                    pos = ofs.top;
-                });
-                p.on("mousewheel DOMMouseScroll"), function(e){
-                    var idx = $(this).index();
-                    p.eq(idx+1).addClass("on");
-                    p.eq(idx+1).siblings().removeClass("on");
-                    var oe = e.originalEvent;
-                    var sc = $(window).scrollTop();
-                    if(oe.wheelDelta < 0){
-                        $("body, html").not(":animated").animate({"scrollTop":sc+k});
-                    } else {
-                        $("body, html").not(":animated").animate({"scrollTop":sc-k});
-                    }
-                };
+        $(function(){
+            var p = $(".page");
+            var cur = 0;
+            var ofs = new Array();  //위치 계산 저장 배열
+            var pos = new Array();  //각 페이지의 위로 부터의 위치(top) 저장 배열
+            var ht = new Array(); //각 페이지의 높이 계산 저장 배열
+            var k = $(window).height();
+            p.each(function(){
+                ofs = $(this).offset();
+                pos = ofs.top;
             });
+            p.on("mousewheel DOMMouseScroll", function(e){
+                var idx = $(this).index();
+                p.eq(idx+1).addClass("on");
+                p.eq(idx+1).siblings().removeClass("on");
+                var oe = e.originalEvent;
+                var sc = $(window).scrollTop();
+                if(oe.wheelDelta < 0){ //wheelDelta 값이 음수이면, 아래로 스크롤
+                    $("body, html").not(":animated").animate({"scrollTop":sc+k});
+                } else {//wheelDelta 값이 0이상 이면, 위로 스크롤
+                    $("body, html").not(":animated").animate({"scrollTop":sc-k});
+                }
+            });
+        });
         </script>
     </head>
     <body>

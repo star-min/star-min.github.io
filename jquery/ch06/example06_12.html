@@ -4,27 +4,17 @@
 <meta charset="UTF-8">
 <title>콤보 박스에서 선택한 과일 그림 출력하기</title>
 <style type="text/css">
-img{ 
-   width: 400px; height: auto; margin-left: 50px;		
+img { 
+   width:200px; height:auto; margin-left: 50px;		
 }
 </style>
-<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript">
-//이벤트 메서드
-//마우스 관련
-//click, dblclick, 
-//hover, mouseover, mouseenter
-//mouseout, mouseleave, mousemove
-//mousewheel(DOMMouseScroll), scroll, contextmenu
-//키보드 관련 - keyup, keypress
-//창 또는 문서 관련 - load, ready, resize
-//폼 관련 - focus, blur, change, select, submit
 $(document).ready(function(){
 	$("#sel").change(function(){
-		$("#img").attr("src", $(this))
-	})
+		$("#img").attr("src",$(this).val());
+	}).change();
 });
-
 </script>
 </head>
 <body>
@@ -33,8 +23,10 @@ $(document).ready(function(){
 			<tr>
 				<td>
 					<select id="sel">
-							<option value="image01" selected>딸기
-							<option value="image02">바나나
+							<option value="bora.jpg">보라</option>
+							<option value="hyorin.jpg">효린</option>
+							<option value="soyu.jpg">소유</option>
+							<option value="dasom.jpg" selected>다솜</option>
 					</select>
 				</td>
 				<td><img id="img"></td>

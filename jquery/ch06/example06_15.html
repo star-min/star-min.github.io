@@ -12,10 +12,10 @@
         .page_wrap { width:94%; height:100vh; margin:0 auto; overflow:hidden;
         box-sizing:border-box; } 
             
-        #page1 { background-image:url("1.jpg"); }
-        #page2 { background-image:url("2.jpg"); }
-        #page3 { background-image:url("3.jpg"); }    
-        #page4 { background-image:url("4.jpg"); }  
+        #page1 { background-image:url("im1.jpg"); }
+        #page2 { background-image:url("im2.jpg"); }
+        #page3 { background-image:url("im3.jpg"); }    
+        #page4 { background-image:url("im4.jpg"); }  
         .page_title { margin-top: -300px; opacity:0; text-align:center; line-height: 3; color:#fff; transition:0.5s; font-size:60px; }
         .page.on .page_title { margin-top: 0; opacity:1; }
         .page_top_btn { position:fixed; right:30px; bottom:120px; z-index:999;
@@ -24,7 +24,7 @@
         </style>
         <script src="https://code.jquery.com/jquery-latest.js"></script>
         <script>
-          window.onload = function () {
+            window.onload = function () {
                 var p = $(".page");
                 p.each(function (index) {
                     // 개별적으로 Wheel 이벤트 적용
@@ -69,7 +69,6 @@
                     });
                 });
             }
-
         </script>
     </head>
     <body>
